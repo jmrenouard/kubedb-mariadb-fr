@@ -15,7 +15,7 @@ Vous devez être familier avec les ressources personnalisées suivantes :
 * [Liaison d'application](../../../concepts/appbinding.md)
 * [Fonction](https://stash.run/docs/latest/concepts/crds/function/)
 * [Tâche](https://stash.run/docs/latest/concepts/crds/task/)
-* [SauvegardeConfiguration](https://stash.run/docs/latest/concepts/crds/backupconfiguration/)
+* [BackupConfiguration](https://stash.run/docs/latest/concepts/crds/backupconfiguration/)
 * [Session de sauvegarde](https://stash.run/docs/latest/concepts/crds/backupsession/)
 * [Restaurer la session](https://stash.run/docs/latest/concepts/crds/restoresession/)
 
@@ -94,6 +94,9 @@ Une fois le pod de base de données installé `Running` état, vérifiez que les
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -125,6 +128,9 @@ Ici, nous allons utiliser l'utilisateur root (`MYSQL_ROOT_USERNAME`) information
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -410,6 +416,9 @@ Maintenant, simulons un scénario de suppression accidentelle. Ici, nous allons 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -504,6 +513,9 @@ Maintenant, exécutons le pod de base de données et vérifions si les données 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341

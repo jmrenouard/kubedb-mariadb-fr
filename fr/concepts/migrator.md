@@ -66,12 +66,12 @@ spec:
         fsGroup: 65534
 ```
 
-### spécification.source
+### spec.source
 
 `spec.source` est un champ obligatoire qui décrit la base de données en cours de migration **depuis**. Il détient le
 Champs sources MariaDB (`connectionInfo`, `schema`, `snapshot`, `streaming`) directement.
 
-### spécification.cible
+### spec.target
 
 `spec.target` est un champ obligatoire qui décrit la base de données gérée par KubeDB en cours de migration **dans**.
 Il contient directement les champs cibles MariaDB.
@@ -152,7 +152,7 @@ cible avant que les données ne soient copiées.
 (un `PodTemplateSpec`). Utilisez-le pour définir les paramètres au niveau du pod tels que `securityContext`, `nodeSelector`,
 `resources`, `serviceAccountName`, et ainsi de suite.
 
-## MariaDBStatut de migration
+## Statut de MariaDBMigration
 
 `status` reflète l’état observé de la migration.
 

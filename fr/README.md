@@ -28,24 +28,24 @@
 * Créer [Cluster MariaDB](clustering/galera-cluster.md).
 * Créer [MariaDB avec configuration personnalisée](configuration/using-config-file.md).
 * Utiliser [RBAC personnalisé](custom-rbac/using-custom-rbac.md).
-* Utiliser [registre Docker privé](private-registry/quickstart.md) pour déployer MySQL avec KubeDB.
+* Utiliser [registre Docker privé](private-registry/quickstart.md) pour déployer MariaDB avec KubeDB.
 * Initialiser [MariaDB avec script](initialization/using-script.md).
 * Sauvegarde et restauration [MariaDB](backup/stash/overview.md).
-* Vous voulez pirater KubeDB ? Consultez notre [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
+* Vous souhaitez contribuer à KubeDB ? Consultez nos [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
 
 ## Index complet des pages
 
-### Autoscaler ➔ Compute
+### Autoscaler ➔ Calcul
 
 * [Mise à l'échelle automatique de la ressource de calcul d'une base de données de cluster MariaDB](autoscaler/compute/cluster.md)
 * [Mise à l'échelle automatique des ressources de calcul MariaDB](autoscaler/compute/overview.md)
 
-### Autoscaler ➔ Storage
+### Autoscaler ➔ Stockage
 
 * [Mise à l'échelle automatique du stockage d'un cluster MariaDB](autoscaler/storage/cluster.md)
 * [Mise à l'échelle verticale automatique de MariaDB](autoscaler/storage/overview.md)
 
-### Backup ➔ Kubestash
+### Sauvegarde ➔ KubeStash
 
 * [Sauvegarde et restauration au niveau de l'application de la base de données MariaDB à l'aide de KubeStash](backup/kubestash/application-level.md)
 * [Sauvegarder MariaDB à l'aide de la sauvegarde automatique KubeStash](backup/kubestash/auto-backup.md)
@@ -53,16 +53,16 @@
 * [Sauvegarder et restaurer la base de données MariaDB à l'aide de KubeStash](backup/kubestash/logical.md)
 * [Présentation de la sauvegarde et de la restauration MariaDB](backup/kubestash/overview.md)
 
-### Backup ➔ Stash
+### Sauvegarde ➔ Stash
 
 * [Sauvegarder MariaDB à l'aide de la sauvegarde automatique Stash](backup/stash/auto-backup.md)
 * [Personnalisation du processus de sauvegarde et de restauration](backup/stash/customization.md)
 * [Présentation de la sauvegarde et de la restauration MariaDB](backup/stash/overview.md)
 
-### Backup ➔ Stash ➔ Logical
+### Sauvegarde ➔ Stash ➔ Logique
 
 * [Sauvegarder le cluster MariaDB géré par KubeDB à l'aide de Stash](backup/stash/logical/cluster.md)
-* [Sauvegarder KubeDB géré Stanadlone MariaDB à l'aide de Stash](backup/stash/logical/standalone.md)
+* [Sauvegarder une instance MariaDB autonome gérée par KubeDB avec Stash](backup/stash/logical/standalone.md)
 
 ### Clustering
 
@@ -77,45 +77,45 @@
 * [Version MariaDB](concepts/mariadb-version.md)
 * [MariaDB](concepts/mariadb.md)
 * [MariaDBMigration](concepts/migrator.md)
-* [MariaDBOpsDemande](concepts/opsrequest.md)
+* [MariaDBOpsRequest](concepts/opsrequest.md)
 
 ### Configuration
 
 * [Utilisation d'un fichier de configuration personnalisé](configuration/using-config-file.md)
 * [Exécutez MariaDB avec un PodTemplate personnalisé](configuration/using-pod-template.md)
 
-### Custom-Rbac
+### RBAC personnalisé
 
 * [Utilisation de ressources RBAC personnalisées](custom-rbac/using-custom-rbac.md)
 
-### Distributed
+### Déploiement distribué
 
 * [Présentation du cluster MariaDB Galera distribué](distributed/overview.md)
 
-### Distributed ➔ Autoscaler ➔ Compute
+### Déploiement distribué ➔ Autoscaler ➔ Calcul
 
 * [Mise à l'échelle automatique de la ressource de calcul d'un cluster MariaDB distribué](distributed/autoscaler/compute/cluster.md)
 * [Mise à l'échelle automatique des ressources de calcul MariaDB distribuées](distributed/autoscaler/compute/overview.md)
 
-### Distributed ➔ Autoscaler ➔ Storage
+### Déploiement distribué ➔ Autoscaler ➔ Stockage
 
 * [Mise à l'échelle automatique du stockage d'un cluster MariaDB distribué](distributed/autoscaler/storage/cluster.md)
 * [Mise à l'échelle automatique du stockage MariaDB distribué](distributed/autoscaler/storage/overview.md)
 
-### Distributed ➔ Opsrequest
+### Déploiement distribué ➔ OpsRequest
 
 * [MariaDB distribuée à l'échelle horizontale](distributed/opsrequest/horizontal_scale.md)
 
-### Failover
+### Basculement (Failover)
 
 * [Explorer la tolérance aux pannes dans MariaDB avec KubeDB](failover/guide.md)
 
-### Gitops
+### GitOps
 
 * [GitOps MariaDB utilisant l'opérateur KubeDB GitOps](gitops/gitops.md)
 * [Présentation de GitOps pour MariaDB](gitops/overview.md)
 
-### Initialization
+### Initialisation
 
 * [Initialisation MariaDB à partir d'un référentiel Git](initialization/git-sync.md)
 * [Initialiser MariaDB à l'aide d'un script](initialization/using-script.md)
@@ -124,72 +124,72 @@
 
 * [Migration de la base de données MariaDB](migration/databasemigration.md)
 
-### Monitoring
+### Supervision (Monitoring)
 
 * [Surveillance de MariaDB avec Prometheus intégré](monitoring/builtin-prometheus.md)
 * [Surveillance de MariaDB avec KubeDB](monitoring/overview.md)
 * [Surveillance de MariaDB à l'aide de l'opérateur Prometheus](monitoring/prometheus-operator.md)
 
-### Pitr
+### Récupération ponctuelle (PITR)
 
 * [KubeDB MariaDB - Archivage continu et récupération ponctuelle](pitr/nfs.md)
-* [KubeDB MariaDB - Continuous Archiving and Point-in-time Recovery](pitr/overview.md)
+* [KubeDB MariaDB - Archivage continu et récupération ponctuelle (PITR)](pitr/overview.md)
 
-### Private-Registry
+### Registre privé
 
 * [Déployer MariaDB à partir du registre Docker privé](private-registry/quickstart.md)
 
-### Quickstart
+### Démarrage rapide
 
 * [Démarrage rapide de MariaDB](quickstart/overview.md)
 
-### Recommendation
+### Recommandations
 
 * [Recommandation MariaDB](recommendation/recommendation.md)
 
-### Reconfigure
+### Reconfiguration
 
 * [Reconfigurer la base de données du cluster MariaDB](reconfigure/cluster.md)
 * [Reconfiguration de MariaDB](reconfigure/overview.md)
 * [Reconfigurer la base de données autonome MariaDB](reconfigure/standalone.md)
 
-### Reconfigure-Tls
+### Reconfiguration TLS
 
 * [Reconfigurer MariaDB TLS/SSL (chiffrement de transport)](reconfigure-tls/cluster.md)
 * [Reconfiguration de TLS de la base de données MariaDB](reconfigure-tls/overview.md)
 
-### Restart
+### Redémarrage
 
 * [Redémarrer MariaDB](restart/restart.md)
 
-### Rotate-Auth
+### Rotation des identifiants
 
 * [Rotation de l'authentification de MariaDB](rotate-auth/overview.md)
 * [Rotation de l'authentification de MariaDB](rotate-auth/rotateauth.md)
 
-### Scaling ➔ Horizontal-Scaling
+### Mise à l'échelle ➔ Horizontale
 
 * [MariaDB à échelle horizontale](scaling/horizontal-scaling/cluster.md)
 * [Échelle horizontale MaxScale](scaling/horizontal-scaling/maxscale.md)
 * [Mise à l'échelle horizontale de MariaDB](scaling/horizontal-scaling/overview.md)
 
-### Scaling ➔ Vertical-Scaling
+### Mise à l'échelle ➔ Verticale
 
 * [Cluster MariaDB à échelle verticale](scaling/vertical-scaling/cluster.md)
 * [Serveur MaxScale à échelle verticale](scaling/vertical-scaling/maxscale.md)
 * [Mise à l'échelle verticale de MariaDB](scaling/vertical-scaling/overview.md)
 
-### Tls
+### TLS / SSL
 
 * [Configurer TLS/SSL dans MariaDB](tls/configure.md)
-* [Cryptage MariaDB TLS/SSL](tls/overview.md)
+* [Chiffrement MariaDB TLS/SSL](tls/overview.md)
 
-### Update-Version
+### Mise à jour de version
 
-* [version de mise à jour du cluster MariaDB](update-version/cluster.md)
-* [mise à jour de la version de MariaDB](update-version/overview.md)
+* [Mettre à jour la version d'un cluster MariaDB](update-version/cluster.md)
+* [Aperçu de la mise à jour de version MariaDB](update-version/overview.md)
 
-### Volume-Expansion
+### Extension de volume
 
 * [Extension de volume MaxScale](volume-expansion/maxscale.md)
 * [Extension du volume MariaDB](volume-expansion/overview.md)

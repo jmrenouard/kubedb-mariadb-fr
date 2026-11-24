@@ -8,7 +8,7 @@ Ce guide donnera un aperçu de la façon dont KubeDB Ops Manager reconfigure la 
 
 * Vous devriez être familier avec ce qui suit `KubeDB` notions :
   + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsDemande](../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../concepts/opsrequest.md)
 
 ## Fonctionnement de la reconfiguration du processus de configuration MariaDB TLS
 

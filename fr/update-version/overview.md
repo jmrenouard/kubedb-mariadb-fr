@@ -8,7 +8,7 @@ Ce guide vous donnera un aperçu de la façon dont KubeDB Ops Manager met à jou
 
 * Vous devriez être familier avec ce qui suit `KubeDB` notions :
   + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsDemande](../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../concepts/opsrequest.md)
 
 ## Comment fonctionne le processus de mise à jour de la version
 

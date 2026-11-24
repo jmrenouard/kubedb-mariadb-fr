@@ -10,7 +10,7 @@
 * Vous devriez être familier avec ce qui suit `KubeDB` notions :
 
   + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsDemande](../concepts/mariadb.md)
+  + [MariaDBOpsRequest](../concepts/mariadb.md)
 * Dans un premier temps, vous devez disposer d'un cluster Kubernetes et l'outil de ligne de commande kubectl doit être configuré pour communiquer avec votre cluster. Si vous n'avez pas encore de cluster, vous pouvez en créer un en utilisant [gentil](https://kind.sigs.k8s.io/docs/user/quick-start/).
 * Maintenant, installez KubeDB cli sur votre poste de travail et l'opérateur KubeDB dans votre cluster en suivant les étapes [ici](https://kubedb.com/docs/v2026.7.10/setup/README).
 * Pour garder les choses isolées, ce didacticiel utilise un espace de noms distinct appelé `demo` tout au long de ce tutoriel.
@@ -76,6 +76,9 @@ Maintenant, vous pouvez exécuter dans le pod `sample-mariadb` et connectez-vous
 ```shell
 $ kubectl exec -it -n demo sample-mariadb-0 -- mariadb -u root --password='s)cJQ*iL8wHySpvT'
 Defaulted container "mariadb" out of: mariadb, mariadb-init (init)
+```
+
+```mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 207
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~ubu2004 mariadb.org binary distribution
@@ -117,8 +120,8 @@ Si vous pouvez accéder à la table de données et exécuter des requêtes, cela
 
 #### 1. Utilisation des informations d'identification générées par l'opérateur :
 
-Afin de faire pivoter l'authentification vers le `MariaDB` en utilisant l'opérateur généré, nous devons créer un
-`MariaDBOpsRequest` CRO avec `RotateAuth` taper. Vous trouverez ci-dessous le YAML du `MariaDBOpsRequest` CRO que nous
+Afin de faire pivoter l'authentification vers `MariaDB` en utilisant l'opérateur généré, nous devons créer un
+CR `MariaDBOpsRequest` de type `RotateAuth`. Vous trouverez ci-dessous le YAML du CR `MariaDBOpsRequest` que nous
 allons créer,
 
 ```yaml
@@ -275,9 +278,9 @@ $ kubectl create secret generic sample-mariadb-auth-user -n demo \
 secret/sample-mariadb-auth-user created
 ```
 
-Créez maintenant un `MariaDBOpsRequest` avec `RotateAuth` taper. Vous trouverez ci-dessous le YAML du `MariaDBOpsRequest` que nous allons créer,
+Créez maintenant un CR `MariaDBOpsRequest` de type `RotateAuth`. Vous trouverez ci-dessous le YAML du CR `MariaDBOpsRequest` que nous allons créer,
 
-```shell
+```yaml
 apiVersion: ops.kubedb.com/v1alpha1
 kind: MariaDBOpsRequest
 metadata:
@@ -441,4 +444,4 @@ secret "sample-mariadb-auth" deleted
 
 ## Prochaines étapes
 
-* Vous voulez pirater KubeDB ? Consultez notre [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
+* Vous souhaitez contribuer à KubeDB ? Consultez nos [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).

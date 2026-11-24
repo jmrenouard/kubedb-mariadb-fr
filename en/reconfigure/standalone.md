@@ -101,6 +101,9 @@ Now, we will check if the database has started with the custom configuration we 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
@@ -252,6 +255,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 21
@@ -320,6 +326,9 @@ Before applying this yaml we are going to check the existing value of our new fi
 
 ```bash
 $ kubectl exec -it sample-mariadb-0 -n demo -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 21
@@ -430,6 +439,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 24
@@ -520,6 +532,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 8

@@ -57,8 +57,11 @@ secret/md-configuration created
 
 Verify the Secret has the configuration file.
 
-```yaml
+```bash
 $ kubectl get secret -n demo md-configuration -o yaml
+```
+
+```text
 apiVersion: v1
 stringData:
   md-config.cnf: |
@@ -123,8 +126,11 @@ Now, we will check if the database has started with the custom configuration we 
 > Read the comment written for the following commands. They contain the instructions and explanations of the commands.
 
 ```bash
-# Connceting to the database
+# Connecting to the database
  $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23

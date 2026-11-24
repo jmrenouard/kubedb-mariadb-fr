@@ -35,8 +35,11 @@ default     prometheus             1          2m19s
 
 Voyons maintenant le YAML du serveur Prometheus disponible `prometheus` dans `default` espace de noms.
 
-```yaml
+```bash
 $ kubectl get prometheus -n default prometheus -o yaml
+```
+
+```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: Prometheus
 metadata:
@@ -146,8 +149,11 @@ Ici, `coreos-prom-md-stats` Le service a été créé à des fins de surveillanc
 
 Décrivons ce service de statistiques.
 
-```yaml
+```bash
 $ kubectl describe svc -n demo coreos-prom-md-stats
+```
+
+```text
 Name:              coreos-prom-md-stats
 Namespace:         demo
 Labels:            app.kubernetes.io/instance=coreos-prom-md
@@ -177,8 +183,11 @@ coreos-prom-md-stats   4m8s
 
 Vérifions que le `ServiceMonitor` porte l'étiquette que nous avions spécifiée dans `spec.monitor` section du crd MariaDB.
 
-```yaml
+```bash
 $ kubectl get servicemonitor -n demo coreos-prom-md-stats -o yaml
+```
+
+```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:

@@ -79,7 +79,9 @@ Next, we will connect to the MariaDB database and verify the data inserted from 
 ```bash
 kubectl exec -it -n demo sample-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, mariadb-init (init), git-sync (init)
+```
 
+```mysql
 mysql@sample-mariadb-0:/$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 6

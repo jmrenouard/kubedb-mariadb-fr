@@ -69,6 +69,9 @@ $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.password}'
 U6(h_pYrekLZ2OOd
 
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb  -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 108
@@ -206,10 +209,19 @@ Let’s exec into the pod to verify TLS/SSL configuration,
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
+```
+
+```bash
 root@sample-mariadb-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 58

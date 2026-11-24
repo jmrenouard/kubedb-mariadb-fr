@@ -80,7 +80,7 @@ spec:
   version: 10.5.23
 ```
 
-### métadonnées.nom
+### metadata.name
 
 `metadata.name` est un champ obligatoire qui spécifie le nom du `MariaDBVersion` crd. Vous devez préciser ce nom dans `spec.version` domaine de [MariaDB](mariadb.md) crd.
 
@@ -90,11 +90,11 @@ Nous suivons cette convention pour nommer MariaDBVersion crd :
 
 Nous modifions l'image Docker MariaDB d'origine pour prendre en charge des fonctionnalités supplémentaires. Une image avec une balise de modification plus élevée aura plus de fonctionnalités que les images avec une balise de modification inférieure. Par conséquent, il est recommandé d'utiliser MariaDBVersion crd avec la balise de modification la plus élevée pour profiter des dernières fonctionnalités.
 
-### spécification.version
+### spec.version
 
 `spec.version` est un champ obligatoire qui spécifie la version originale de la base de données MariaDB qui a été utilisée pour créer l'image Docker spécifiée dans `spec.db.image` champ.
 
-### spec.obsolète
+### spec.deprecated
 
 `spec.deprecated` est un champ facultatif qui spécifie si les images Docker spécifiées ici sont prises en charge par l'opérateur KubeDB actuel.
 

@@ -18,7 +18,7 @@ Ce guide vous montrera comment utiliser `KubeDB` Opérateur Opsrequest pour mett
 
   + [MariaDB](../../concepts/mariadb.md)
   + [Présentation de MariaDB distribuée](../overview.md)
-  + [MariaDBOpsDemande](../../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
   + [Présentation de la mise à l'échelle horizontale](../../scaling/horizontal-scaling/overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.
@@ -126,7 +126,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/mariadb created
 ```
 
-Maintenant, attends `mariadb` a un statut `Ready`:
+Attendez maintenant que la ressource `mariadb` passe au statut `Ready` :
 
 ```bash
 $ kubectl get mariadb -n demo --context demo-controller

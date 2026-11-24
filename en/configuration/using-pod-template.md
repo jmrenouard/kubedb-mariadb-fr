@@ -113,6 +113,9 @@ Now, we will check if the database has started with the custom configuration we 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 22

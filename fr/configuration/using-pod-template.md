@@ -23,21 +23,21 @@ KubeDB permet de fournir un modèle pour le pod de base de données via `spec.po
 
 KubeDB accepte les champs suivants à définir `spec.podTemplate:`
 
-* métadonnées :
-  + annotations (annotation du pod)
-* contrôleur:
-  + annotations (annotation de petset)
-* spécification :
-  + env
-  + ressources
-  + initConteneurs
-  + imagePullSecrets
-  + sélecteur de nœud
-  + Nom du planificateur
-  + tolérances
-  + nomClassePriorité
-  + priorité
-  + contexte de sécurité
+* `metadata` :
+  + `annotations` (annotation du pod)
+* `controller` :
+  + `annotations` (annotation de petset)
+* `spec` :
+  + `env`
+  + `resources`
+  + `initContainers`
+  + `imagePullSecrets`
+  + `nodeSelector`
+  + `schedulerName`
+  + `tolerations`
+  + `priorityClassName`
+  + `priority`
+  + `securityContext`
 
 Découvrez les champs en détail dans [Concept de modèle de pod](../concepts/mariadb.md#specpodtemplate),
 
@@ -113,6 +113,9 @@ Nous allons maintenant vérifier si la base de données a démarré avec la conf
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 22

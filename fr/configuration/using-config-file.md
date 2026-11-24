@@ -57,8 +57,11 @@ secret/md-configuration created
 
 Vérifiez que le secret contient le fichier de configuration.
 
-```yaml
+```bash
 $ kubectl get secret -n demo md-configuration -o yaml
+```
+
+```text
 apiVersion: v1
 stringData:
   md-config.cnf: |
@@ -123,8 +126,11 @@ Nous allons maintenant vérifier si la base de données a démarré avec la conf
 > Lisez le commentaire écrit pour les commandes suivantes. Ils contiennent les instructions et explications des commandes.
 
 ```bash
-# Connceting to the database
+# Connexion à la base de données
  $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23

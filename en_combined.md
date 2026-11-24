@@ -1,13 +1,6 @@
 # KubeDB MariaDB Documentation - Combined (EN)
 
-
-
 <!-- PAGE_START: README.md -->
-
----
-
-## Page: README
-
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 ## Supported MariaDB Features
@@ -32,25 +25,181 @@
 
 ## User Guide
 
-* [Quickstart MariaDB](quickstart/overview.md) with KubeDB Operator.
-* Detail concepts of [MariaDB object](concepts/mariadb.md).
-* Detail concepts of [MariaDBVersion object](concepts/mariadb-version.md).
-* Create [MariaDB Cluster](clustering/galera-cluster.md).
-* Create [MariaDB with Custom Configuration](configuration/using-config-file.md).
-* Use [Custom RBAC](custom-rbac/using-custom-rbac.md).
-* Use [private Docker registry](private-registry/quickstart.md) to deploy MySQL with KubeDB.
-* Initialize [MariaDB with Script](initialization/using-script.md).
-* Backup and Restore [MariaDB](backup/stash/overview.md).
+* [Quickstart MariaDB](en/quickstart/overview.md) with KubeDB Operator.
+* Detail concepts of [MariaDB object](en/concepts/mariadb.md).
+* Detail concepts of [MariaDBVersion object](en/concepts/mariadb-version.md).
+* Create [MariaDB Cluster](en/clustering/galera-cluster.md).
+* Create [MariaDB with Custom Configuration](en/configuration/using-config-file.md).
+* Use [Custom RBAC](en/custom-rbac/using-custom-rbac.md).
+* Use [private Docker registry](en/private-registry/quickstart.md) to deploy MariaDB with KubeDB.
+* Initialize [MariaDB with Script](en/initialization/using-script.md).
+* Backup and Restore [MariaDB](en/backup/stash/overview.md).
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: README.md -->
+
+## Complete Documentation Index
+
+### Autoscaler ➔ Compute
+
+* [Autoscaling the Compute Resource of a MariaDB Cluster Database](en/autoscaler/compute/cluster.md)
+* [MariaDB Compute Resource Autoscaling](en/autoscaler/compute/overview.md)
+
+### Autoscaler ➔ Storage
+
+* [Storage Autoscaling of a MariaDB Cluster](en/autoscaler/storage/cluster.md)
+* [MariaDB Vertical Autoscaling](en/autoscaler/storage/overview.md)
+
+### Backup ➔ Kubestash
+
+* [Application Level Backup and Restore MariaDB database using KubeStash](en/backup/kubestash/application-level.md)
+* [Backup MariaDB using KubeStash Auto-Backup](en/backup/kubestash/auto-backup.md)
+* [Customizing Backup and Restore Process](en/backup/kubestash/customization.md)
+* [Backup and Restore MariaDB database using KubeStash](en/backup/kubestash/logical.md)
+* [MariaDB Backup & Restore Overview](en/backup/kubestash/overview.md)
+
+### Backup ➔ Stash
+
+* [Backup MariaDB using Stash Auto-Backup](en/backup/stash/auto-backup.md)
+* [Customizing Backup and Restore Process](en/backup/stash/customization.md)
+* [MariaDB Backup & Restore Overview](en/backup/stash/overview.md)
+
+### Backup ➔ Stash ➔ Logical
+
+* [Backup KubeDB managed MariaDB Cluster using Stash](en/backup/stash/logical/cluster.md)
+* [Backup KubeDB managed standalone MariaDB using Stash](en/backup/stash/logical/standalone.md)
+
+### Clustering
+
+* [KubeDB - MariaDB Cluster](en/clustering/galera-cluster.md)
+* [KubeDB - MariaDB Cluster](en/clustering/mariadb-replication.md)
+* [MariaDB Clustering](en/clustering/overview.md)
+
+### Concepts
+
+* [AppBinding](en/concepts/appbinding.md)
+* [MariaDBAutoscaler](en/concepts/autoscaler.md)
+* [MariaDBVersion](en/concepts/mariadb-version.md)
+* [MariaDB](en/concepts/mariadb.md)
+* [MariaDBMigration](en/concepts/migrator.md)
+* [MariaDBOpsRequest](en/concepts/opsrequest.md)
+
+### Configuration
+
+* [Using Custom Configuration File](en/configuration/using-config-file.md)
+* [Run MariaDB with Custom PodTemplate](en/configuration/using-pod-template.md)
+
+### Custom-Rbac
+
+* [Using Custom RBAC resources](en/custom-rbac/using-custom-rbac.md)
+
+### Distributed
+
+* [Distributed MariaDB Galera Cluster Overview](en/distributed/overview.md)
+
+### Distributed ➔ Autoscaler ➔ Compute
+
+* [Autoscaling the Compute Resource of a Distributed MariaDB Cluster](en/distributed/autoscaler/compute/cluster.md)
+* [Distributed MariaDB Compute Resource Autoscaling](en/distributed/autoscaler/compute/overview.md)
+
+### Distributed ➔ Autoscaler ➔ Storage
+
+* [Storage Autoscaling of a Distributed MariaDB Cluster](en/distributed/autoscaler/storage/cluster.md)
+* [Distributed MariaDB Storage Autoscaling](en/distributed/autoscaler/storage/overview.md)
+
+### Distributed ➔ Opsrequest
+
+* [Horizontal Scale Distributed MariaDB](en/distributed/opsrequest/horizontal_scale.md)
+
+### Failover
+
+* [Exploring Fault Tolerance in MariaDB with KubeDB](en/failover/guide.md)
+
+### Gitops
+
+* [GitOps MariaDB using KubeDB GitOps Operator](en/gitops/gitops.md)
+* [GitOps Overview for MariaDB](en/gitops/overview.md)
+
+### Initialization
+
+* [Initialization MariaDB from a Git Repository](en/initialization/git-sync.md)
+* [Initialize MariaDB using Script](en/initialization/using-script.md)
+
+### Migration
+
+* [MariaDB Database Migration](en/migration/databasemigration.md)
+
+### Monitoring
+
+* [Monitoring MariaDB with builtin Prometheus](en/monitoring/builtin-prometheus.md)
+* [Monitoring MariaDB with KubeDB](en/monitoring/overview.md)
+* [Monitoring MariaDB Using Prometheus operator](en/monitoring/prometheus-operator.md)
+
+### Pitr
+
+* [KubeDB MariaDB - Continuous Archiving and Point-in-time Recovery](en/pitr/nfs.md)
+* [KubeDB MariaDB - Continuous Archiving and Point-in-time Recovery](en/pitr/overview.md)
+
+### Private-Registry
+
+* [Deploy MariaDB from private Docker registry](en/private-registry/quickstart.md)
+
+### Quickstart
+
+* [MariaDB QuickStart](en/quickstart/overview.md)
+
+### Recommendation
+
+* [MariaDB Recommendation](en/recommendation/recommendation.md)
+
+### Reconfigure
+
+* [Reconfigure MariaDB Cluster Database](en/reconfigure/cluster.md)
+* [Reconfiguring MariaDB](en/reconfigure/overview.md)
+* [Reconfigure MariaDB Standalone Database](en/reconfigure/standalone.md)
+
+### Reconfigure-Tls
+
+* [Reconfigure MariaDB TLS/SSL (Transport Encryption)](en/reconfigure-tls/cluster.md)
+* [Reconfiguring TLS of MariaDB Database](en/reconfigure-tls/overview.md)
+
+### Restart
+
+* [Restart MariaDB](en/restart/restart.md)
+
+### Rotate-Auth
+
+* [Rotate Authentication of MariaDB](en/rotate-auth/overview.md)
+* [Rotate Authentication of MariaDB](en/rotate-auth/rotateauth.md)
+
+### Scaling ➔ Horizontal-Scaling
+
+* [Horizontal Scale MariaDB](en/scaling/horizontal-scaling/cluster.md)
+* [Horizontal Scale MaxScale](en/scaling/horizontal-scaling/maxscale.md)
+* [MariaDB Horizontal Scaling](en/scaling/horizontal-scaling/overview.md)
+
+### Scaling ➔ Vertical-Scaling
+
+* [Vertical Scale MariaDB Cluster](en/scaling/vertical-scaling/cluster.md)
+* [Vertical Scale MaxScale Server](en/scaling/vertical-scaling/maxscale.md)
+* [MariaDB Vertical Scaling](en/scaling/vertical-scaling/overview.md)
+
+### Tls
+
+* [Configure TLS/SSL in MariaDB](en/tls/configure.md)
+* [MariaDB TLS/SSL Encryption](en/tls/overview.md)
+
+### Update-Version
+
+* [Update Version of MariaDB Cluster](en/update-version/cluster.md)
+* [Updating MariaDB Version Overview](en/update-version/overview.md)
+
+### Volume-Expansion
+
+* [MaxScale Volume Expansion](en/volume-expansion/maxscale.md)
+* [MariaDB Volume Expansion](en/volume-expansion/overview.md)
+* [MariaDB Volume Expansion](en/volume-expansion/volume-expansion.md)
 
 
-<!-- PAGE_START: clustering\galera-cluster.md -->
-
----
-
-## Page: CLUSTERING/GALERA-CLUSTER
-
+<!-- PAGE_START: clustering/galera-cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # KubeDB - MariaDB Cluster
@@ -61,7 +210,7 @@ This tutorial will show you how to use KubeDB to provision a MariaDB Galera Clus
 
 Before proceeding:
 
-* Read [mariadb galera cluster concept](overview.md) to learn about MariaDB Galera Cluster.
+* Read [mariadb galera cluster concept](en/clustering/overview.md) to learn about MariaDB Galera Cluster.
 * You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 * Now, install KubeDB operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial. Run the following command to prepare your cluster for this tutorial:
@@ -213,6 +362,9 @@ Once the database is in running state we can conncet to each of three nodes. We 
 ```bash
 # First Node
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -232,10 +384,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
-
+```bash
 # Second Node
 $ kubectl exec -it -n demo sample-mariadb-1 -- bash
+```
+
+```mysql
 root@sample-mariadb-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
@@ -255,10 +411,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
-
+```bash
 # Third Node
 $ kubectl exec -it -n demo sample-mariadb-2 -- bash
+```
+
+```mysql
 root@sample-mariadb-2:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 78
@@ -286,6 +446,9 @@ Now, we are ready to check newly created cluster status. Connect and run the fol
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 137
@@ -312,6 +475,9 @@ In a MariaDB Galera Cluster, Each member can read and write. In this section, we
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 202
@@ -343,9 +509,15 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 root@sample-mariadb-0:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-1 -- bash
+```
+
+```mysql
 root@sample-mariadb-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -380,9 +552,15 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 root@sample-mariadb-1:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-2 -- bash
+```
+
+```mysql
 root@sample-mariadb-2:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -409,6 +587,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit
 Bye
+```
+
+```bash
 root@sample-mariadb-2:/# exit
 exit
 ```
@@ -421,6 +602,9 @@ To test automatic failover, we will force the one of three pods to restart and c
 
 ```bash
 kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
@@ -443,6 +627,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 root@sample-mariadb-0:/ exit
 exit
 
@@ -452,6 +639,9 @@ pod "sample-mariadb-0" deleted
 
 # Wait for sample-mariadb-0 to restart
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 10
@@ -495,15 +685,8 @@ mariadb.kubedb.com "sample-mariadb" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: clustering\galera-cluster.md -->
 
-
-<!-- PAGE_START: clustering\mariadb-replication.md -->
-
----
-
-## Page: CLUSTERING/MARIADB-REPLICATION
-
+<!-- PAGE_START: clustering/mariadb-replication.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # KubeDB - MariaDB Cluster
@@ -514,7 +697,7 @@ This tutorial will show you how to use KubeDB to provision a MariaDB Standard Re
 
 Before proceeding:
 
-* Read [this](overview.md#mariadb-standard-replication) to learn about MariaDB Standard Replication.
+* Read [this](en/clustering/overview.md#mariadb-standard-replication) to learn about MariaDB Standard Replication.
 * You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 * Now, install KubeDB operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial. Run the following command to prepare your cluster for this tutorial:
@@ -770,6 +953,9 @@ Now, we are ready to check newly created cluster status. Connect to maxscale pod
 ```bash
 $ kubectl exec -it -n demo svc/sample-mariadb-mx -- bash
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬─────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID    │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼─────────┼────────────────────┤
@@ -824,6 +1010,9 @@ exit
 ```bash
 # Master Node
 $ kubectl exec -it -n demo svc/sample-mariadb -- bash
+```
+
+```mysql
 mysql@sample-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -843,9 +1032,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
+```bash
 # Slave Node
 $ kubectl exec -it -n demo svc/sample-mariadb-standby -- bash
+```
+
+```mysql
 mysql@sample-mariadb-1:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
@@ -880,6 +1074,9 @@ In a MariaDB Replication Cluster, Only master member can write, and slave member
 ```bash
 # master node
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 202
@@ -911,12 +1108,18 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 mysql@sample-mariadb-0:/ exit
 exit
 
 # check slave node data
 
 $ kubectl exec -it -n demo sample-mariadb-1 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-1:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -936,9 +1139,15 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 1 row in set (0.001 sec)
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 mysql@sample-mariadb-1:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-2 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-2:/  mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -959,6 +1168,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit
 Bye
+```
+
+```bash
 mysql@sample-mariadb-2:/# exit
 exit
 ```
@@ -979,6 +1191,9 @@ Now exec into maxscale server and run the following command to check the server 
 $ kubectl exec -it -n demo svc/sample-mariadb-mx -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬───────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID      │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
@@ -988,11 +1203,16 @@ bash-4.4$ maxctrl list servers
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
 │ server3 │ sample-mariadb-2.sample-mariadb-pods.demo.svc.cluster.local │ 3306 │ 0           │ Slave, Running  │ 0-1-14545 │ ReplicationMonitor │
 └─────────┴─────────────────────────────────────────────────────────────┴──────┴─────────────┴─────────────────┴───────────┴────────────────────┘
+```
 
+```bash
 # sample-mariadb-1 is new master.
 # Wait some time to up sample-mariadb-0 and check the server list again
 
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬───────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID      │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
@@ -1002,11 +1222,16 @@ bash-4.4$ maxctrl list servers
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
 │ server3 │ sample-mariadb-2.sample-mariadb-pods.demo.svc.cluster.local │ 3306 │ 0           │ Slave, Running  │ 0-2-14551 │ ReplicationMonitor │
 └─────────┴─────────────────────────────────────────────────────────────┴──────┴─────────────┴─────────────────┴───────────┴────────────────────┘
+```
 
+```bash
 All replicas up and srunning now.
 
 # Now check `sample-mariadb-0` data
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 10
@@ -1062,8 +1287,11 @@ spec:
 
 Let’s apply the yaml.
 
-```yaml
+```bash
 $ kubectl apply -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/mariadb/clustering/mariadb-replication/examples/ubuntu.yaml
+```
+
+```text
 deployment.apps/ubuntu created
 ```
 
@@ -1096,7 +1324,7 @@ MariaDB [(none)]>
 
 We have successfully connected as the `testuser` user. Let’s execute some read and write queries using this connection.
 
-```bash
+```mysql
 MariaDB [(none)]> show databases;
 +--------------------+
 | Database           |
@@ -1138,7 +1366,13 @@ MariaDB [playground]> select * from equipment;
 # Currently our server state is -
 ➤ kubectl exec -it -n demo pod/sample-mariadb-mx-0 -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
+```
+
+```bash
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬───────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID      │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
@@ -1148,9 +1382,13 @@ bash-4.4$ maxctrl list servers
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
 │ server3 │ sample-mariadb-2.sample-mariadb-pods.demo.svc.cluster.local │ 3306 │ 1           │ Slave, Running  │ 0-2-52054 │ ReplicationMonitor │
 └─────────┴─────────────────────────────────────────────────────────────┴──────┴─────────────┴─────────────────┴───────────┴────────────────────┘
+```
 
+```bash
 # Now lets check read-write split
+```
 
+```mysql
 MariaDB [playground]> SELECT NOW(),@@hostname;
 +---------------------+------------------+
 | NOW()               | @@hostname       |
@@ -1247,15 +1485,8 @@ deployment.apps "ubuntu" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: clustering\mariadb-replication.md -->
 
-
-<!-- PAGE_START: clustering\overview.md -->
-
----
-
-## Page: CLUSTERING/OVERVIEW
-
+<!-- PAGE_START: clustering/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Clustering
@@ -1301,6 +1532,18 @@ There are some limitations in MariaDB Galera Cluster that are listed [here](http
 
 ## MariaDB Standard Replication
 
+```mermaid
+flowchart LR
+  App["Client Application"] --> Proxy["MaxScale Service (:3306)"]
+  Proxy -->|Writes| Primary["ha-mariadb-0 (Primary / RW)"]
+  Proxy -->|Reads| Replica1["ha-mariadb-1 (Replica / RO)"]
+  Proxy -->|Reads| Replica2["ha-mariadb-2 (Replica / RO)"]
+  Primary -->|Async Binlog + GTID| Replica1
+  Primary -->|Async Binlog + GTID| Replica2
+  Monitor["ReplicationMonitor"] -.->|Detects Failure and Promotes| Replica1
+```
+
+
 MariaDB Standard Replication is a widely used mechanism for copying data from one MariaDB server (master) to one or more other MariaDB servers (slave). This replication mode ensures data redundancy, enhances availability, and supports read scalability by distributing read operations across multiple servers. It operates in a single-master and slave architecture, where the master server handles both read and write operations, while slave servers are limited to read operations.
 
 Ref: [About MariadDB Standard Replication](https://mariadb.com/kb/en/replication-overview/#standard-replication)
@@ -1343,16 +1586,9 @@ This process happens automatically, typically within seconds, ensuring minimal d
 
 # Next Steps
 
-* [Deploy MariaDB Galera Cluster](galera-cluster.md) using KubeDB.
-<!-- PAGE_END: clustering\overview.md -->
+* [Deploy MariaDB Galera Cluster](en/clustering/galera-cluster.md) using KubeDB.
 
-
-<!-- PAGE_START: concepts\appbinding.md -->
-
----
-
-## Page: CONCEPTS/APPBINDING
-
+<!-- PAGE_START: concepts/appbinding.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # AppBinding
@@ -1479,15 +1715,8 @@ You can configure following fields in `spec.clientConfig` section:
 * **spec.clientConfig.caBundle**
 
   `spec.clientConfig.caBundle` is a PEM encoded CA bundle which will be used to validate the serving certificate of the database.
-<!-- PAGE_END: concepts\appbinding.md -->
 
-
-<!-- PAGE_START: concepts\autoscaler.md -->
-
----
-
-## Page: CONCEPTS/AUTOSCALER
-
+<!-- PAGE_START: concepts/autoscaler.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDBAutoscaler
@@ -1538,9 +1767,9 @@ A `MariaDBAutoscaler` object has the following fields in the `spec` section.
 
 ### spec.databaseRef
 
-`spec.databaseRef` is a required field that point to the [MariaDB](mariadb.md) object for which the autoscaling will be performed. This field consists of the following sub-field:
+`spec.databaseRef` is a required field that point to the [MariaDB](en/concepts/mariadb.md) object for which the autoscaling will be performed. This field consists of the following sub-field:
 
-* **spec.databaseRef.name :** specifies the name of the [MariaDB](mariadb.md) object.
+* **spec.databaseRef.name :** specifies the name of the [MariaDB](en/concepts/mariadb.md) object.
 
 ### spec.compute
 
@@ -1571,15 +1800,8 @@ All of them has the following sub-fields:
 * `usageThreshold` indicates usage percentage threshold, if the current storage usage exceeds then storage autoscaling will be triggered.
 * `scalingThreshold` indicates the percentage of the current storage that will be scaled.
 * `expansionMode` specifies the mode of volume expansion when storage autoscaler performs volume expansion OpsRequest. Default value is `Online`.
-<!-- PAGE_END: concepts\autoscaler.md -->
 
-
-<!-- PAGE_START: concepts\mariadb-version.md -->
-
----
-
-## Page: CONCEPTS/MARIADB-VERSION
-
+<!-- PAGE_START: concepts/mariadb-version.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDBVersion
@@ -1588,7 +1810,7 @@ All of them has the following sub-fields:
 
 `MariaDBVersion` is a Kubernetes `Custom Resource Definitions` (CRD). It provides a declarative configuration to specify the docker images to be used for MariaDB database deployed with KubeDB in a Kubernetes native way.
 
-When you install KubeDB, a `MariaDBVersion` custom resource will be created automatically for every supported MariaDB versions. You have to specify the name of `MariaDBVersion` crd in `spec.version` field of [MariaDB](mariadb.md) crd. Then, KubeDB will use the docker images specified in the `MariaDBVersion` crd to create your expected database.
+When you install KubeDB, a `MariaDBVersion` custom resource will be created automatically for every supported MariaDB versions. You have to specify the name of `MariaDBVersion` crd in `spec.version` field of [MariaDB](en/concepts/mariadb.md) crd. Then, KubeDB will use the docker images specified in the `MariaDBVersion` crd to create your expected database.
 
 Using a separate crd for specifying respective docker images, and pod security policy names allow us to modify the images, and policies independent of KubeDB operator. This will also allow the users to use a custom image for the database.
 
@@ -1664,7 +1886,7 @@ spec:
 
 ### metadata.name
 
-`metadata.name` is a required field that specifies the name of the `MariaDBVersion` crd. You have to specify this name in `spec.version` field of [MariaDB](mariadb.md) crd.
+`metadata.name` is a required field that specifies the name of the `MariaDBVersion` crd. You have to specify this name in `spec.version` field of [MariaDB](en/concepts/mariadb.md) crd.
 
 We follow this convention for naming MariaDBVersion crd:
 
@@ -1701,15 +1923,8 @@ The default value of this field is `false`. If `spec.deprecated` is set `true`, 
 ### spec.stash
 
 `spec.stash` is an optional field that specifies the name of the task for stash backup and restore. Learn more about [Stash MariaDB addon](https://stash.run/)
-<!-- PAGE_END: concepts\mariadb-version.md -->
 
-
-<!-- PAGE_START: concepts\mariadb.md -->
-
----
-
-## Page: CONCEPTS/MARIADB
-
+<!-- PAGE_START: concepts/mariadb.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB
@@ -1791,7 +2006,7 @@ spec:
 
 ### spec.version
 
-`spec.version` is a required field specifying the name of the [MariaDBVersion](mariadb-version.md) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `MariaDBVersion` resources,
+`spec.version` is a required field specifying the name of the [MariaDBVersion](en/concepts/mariadb-version.md) crd where the docker images are specified. Currently, when you install KubeDB, it creates the following `MariaDBVersion` resources,
 
 * `12.1.2`, `10.4.32`
 
@@ -1922,7 +2137,9 @@ The following fields are configurable in the `spec.tls` section:
 `spec.configuration` is an optional field that specifies custom configuration for Mariadb cluster. It has the following fields:
 
 * `configuration.inline` is an optional field that allows you to provide custom configuration directly in the Mariadb object.
-  + ```yaml
+  + Configuration snippet:
+
+    ```yaml
     configuration:
          inline:
            md.cnf: |
@@ -2000,7 +2217,7 @@ The `spec.podTemplate.spec.containers[].name` field used to specify the name of 
 
 Note that, KubeDB does not allow `MYSQL_ROOT_PASSWORD`, `MYSQL_ALLOW_EMPTY_PASSWORD`, `MYSQL_RANDOM_ROOT_PASSWORD`, and `MYSQL_ONETIME_PASSWORD` environment variables to set in `spec.env`. If you want to set the root password, please use `spec.authSecret` instead described earlier.
 
-If you try to set any of the forbidden environment variables i.e. `MYSQL_ROOT_PASSWORD` in MariaDB crd, Kubed operator will reject the request with the following error,
+If you try to set any of the forbidden environment variables i.e. `MYSQL_ROOT_PASSWORD` in the MariaDB CRD, KubeDB operator will reject the request with the following error,
 
 ```bash
 Error from server (Forbidden): error when creating "./mariadb.yaml": admission webhook "mariadb.validators.kubedb.com" denied the request: environment variable MYSQL_ROOT_PASSWORD is forbidden to use in MariaDB spec
@@ -2062,7 +2279,7 @@ KubeDB allows following fields to set in `spec.serviceTemplates`:
   + healthCheckNodePort
   + sessionAffinityConfig
 
-```bash
+```yaml
 spec:
   version: "12.1.2"
   serviceTemplates:
@@ -2107,15 +2324,8 @@ Following table show what KubeDB does when you delete MariaDB crd for different 
 If you don’t specify `spec.deletionPolicy` KubeDB uses `Delete` termination policy by default.
 
 > For more details you can visit [here](https://appscode.com/blog/post/deletion-policy/)
-<!-- PAGE_END: concepts\mariadb.md -->
 
-
-<!-- PAGE_START: concepts\migrator.md -->
-
----
-
-## Page: CONCEPTS/MIGRATOR
-
+<!-- PAGE_START: concepts/migrator.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDBMigration
@@ -2220,7 +2430,7 @@ instance. There are two ways to provide the connection details — set **either*
   + `serverName` — overrides the hostname used for TLS SNI and certificate verification.
 
 > For a `KubeDB`-managed database, an `AppBinding` is created by default, so you usually only need to
-> create one for the source. Learn more about [AppBinding](appbinding.md).
+> create one for the source. Learn more about [AppBinding](en/concepts/appbinding.md).
 
 ### spec.source.schema
 
@@ -2288,23 +2498,27 @@ to the target.
 
 ## Next Steps
 
-* Migrate a MariaDB database step by step with the [MariaDB Database Migration](../migration/databasemigration.md) guide.
-* Learn about the [AppBinding](appbinding.md) concept.
-* Learn about the MariaDB CRD [here](mariadb.md).
-<!-- PAGE_END: concepts\migrator.md -->
+* Migrate a MariaDB database step by step with the [MariaDB Database Migration](en/migration/databasemigration.md) guide.
+* Learn about the [AppBinding](en/concepts/appbinding.md) concept.
+* Learn about the MariaDB CRD [here](en/concepts/mariadb.md).
 
-
-<!-- PAGE_START: concepts\opsrequest.md -->
-
----
-
-## Page: CONCEPTS/OPSREQUEST
-
+<!-- PAGE_START: concepts/opsrequest.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDBOpsRequest
 
 ## What is MariaDBOpsRequest
+
+```mermaid
+stateDiagram-v2
+  [*] --> Pending: Apply MariaDBOpsRequest CR
+  Pending --> Progressing: Ops-Manager validates and acquires lock
+  Progressing --> Successful: Rolling PetSet and Pod update complete
+  Progressing --> Failed: Precondition or validation fails
+  Successful --> [*]
+  Failed --> [*]
+```
+
 
 `MariaDBOpsRequest` is a Kubernetes `Custom Resource Definitions` (CRD). It provides a declarative configuration for MariaDB administrative operations like database version updating, horizontal scaling, vertical scaling etc. in a Kubernetes native way.
 
@@ -2506,9 +2720,9 @@ A `MariaDBOpsRequest` object has the following fields in the `spec` section.
 
 ### spec.databaseRef
 
-`spec.databaseRef` is a required field that point to the [MariaDB](mariadb.md) object for which the administrative operations will be performed. This field consists of the following sub-field:
+`spec.databaseRef` is a required field that point to the [MariaDB](en/concepts/mariadb.md) object for which the administrative operations will be performed. This field consists of the following sub-field:
 
-* **spec.databaseRef.name :** specifies the name of the [MariaDB](mariadb.md) object.
+* **spec.databaseRef.name :** specifies the name of the [MariaDB](en/concepts/mariadb.md) object.
 
 ### spec.type
 
@@ -2528,7 +2742,7 @@ A `MariaDBOpsRequest` object has the following fields in the `spec` section.
 
 If you want to update your MariaDB version, you have to specify the `spec.updateVersion` section that specifies the desired version information. This field consists of the following sub-field:
 
-* `spec.updateVersion.targetVersion` refers to a [MariaDBVersion](mariadb-version.md) CR that contains the MariaDB version information where you want to update.
+* `spec.updateVersion.targetVersion` refers to a [MariaDBVersion](en/concepts/mariadb-version.md) CR that contains the MariaDB version information where you want to update.
 
 > You can only update between MariaDB versions. KubeDB does not support downgrade for MariaDB.
 
@@ -2598,7 +2812,7 @@ If you want to reconfigure your Running MariaDB cluster with new custom configur
 If you want to reconfigure the TLS configuration of your database i.e. add TLS, remove TLS, update issuer/cluster issuer or Certificates and rotate the certificates, you have to specify `spec.tls` section. This field consists of the following sub-field:
 
 * `spec.tls.issuerRef` specifies the issuer name, kind and api group.
-* `spec.tls.certificates` specifies the certificates. You can learn more about this field from [here](mariadb.md#spectls).
+* `spec.tls.certificates` specifies the certificates. You can learn more about this field from [here](en/concepts/mariadb.md#spectls).
 * `spec.tls.rotateCertificates` specifies that we want to rotate the certificate of this database.
 * `spec.tls.remove` specifies that we want to remove tls from this database.
 
@@ -2644,15 +2858,8 @@ If you want to reconfigure the TLS configuration of your database i.e. add TLS, 
 * The `reason` field is a unique, one-word, CamelCase reason for the condition’s last transition.
 * The `lastTransitionTime` field provides a timestamp for when the operation last transitioned from one state to another.
 * The `observedGeneration` shows the most recent condition transition generation observed by the controller.
-<!-- PAGE_END: concepts\opsrequest.md -->
 
-
-<!-- PAGE_START: configuration\using-config-file.md -->
-
----
-
-## Page: CONFIGURATION/USING-CONFIG-FILE
-
+<!-- PAGE_START: configuration/using-config-file.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Using Custom Configuration File
@@ -2712,8 +2919,11 @@ secret/md-configuration created
 
 Verify the Secret has the configuration file.
 
-```yaml
+```bash
 $ kubectl get secret -n demo md-configuration -o yaml
+```
+
+```text
 apiVersion: v1
 stringData:
   md-config.cnf: |
@@ -2778,8 +2988,11 @@ Now, we will check if the database has started with the custom configuration we 
 > Read the comment written for the following commands. They contain the instructions and explanations of the commands.
 
 ```bash
-# Connceting to the database
+# Connecting to the database
  $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -2821,20 +3034,13 @@ mariadb.kubedb.com "sample-mariadb" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: configuration\using-config-file.md -->
 
-
-<!-- PAGE_START: configuration\using-pod-template.md -->
-
----
-
-## Page: CONFIGURATION/USING-POD-TEMPLATE
-
+<!-- PAGE_START: configuration/using-pod-template.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Run MariaDB with Custom PodTemplate
 
-KubeDB supports providing custom configuration for MariaDB via [PodTemplate](../concepts/mariadb.md#specpodtemplate). This tutorial will show you how to use KubeDB to run a MariaDB database with custom configuration using PodTemplate.
+KubeDB supports providing custom configuration for MariaDB via [PodTemplate](en/concepts/mariadb.md#specpodtemplate). This tutorial will show you how to use KubeDB to run a MariaDB database with custom configuration using PodTemplate.
 
 ## Before You Begin
 
@@ -2871,11 +3077,11 @@ KubeDB accept following fields to set in `spec.podTemplate:`
   + priority
   + securityContext
 
-Read about the fields in details in [PodTemplate concept](../concepts/mariadb.md#specpodtemplate),
+Read about the fields in details in [PodTemplate concept](en/concepts/mariadb.md#specpodtemplate),
 
 ## CRD Configuration
 
-Below is the YAML for the MariaDB created in this example. Here, [`spec.podTemplate.spec.env`](../concepts/mariadb.md#specpodtemplatespecenv) specifies environment variables and [`spec.podTemplate.spec.args`](../concepts/mariadb.md#specpodtemplatespecargs) provides extra arguments for [MariaDB Docker Image](https://hub.docker.com/_/mariadb/).
+Below is the YAML for the MariaDB created in this example. Here, [`spec.podTemplate.spec.env`](en/concepts/mariadb.md#specpodtemplatespecenv) specifies environment variables and [`spec.podTemplate.spec.args`](en/concepts/mariadb.md#specpodtemplatespecargs) provides extra arguments for [MariaDB Docker Image](https://hub.docker.com/_/mariadb/).
 
 In this tutorial, an initial database `mdDB` will be created by providing `env` `MYSQL_DATABASE` while the server character set will be set to `utf8mb4` by adding extra `args`.
 
@@ -2945,6 +3151,9 @@ Now, we will check if the database has started with the custom configuration we 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 22
@@ -2996,15 +3205,8 @@ mariadb.kubedb.com "sample-mariadb" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: configuration\using-pod-template.md -->
 
-
-<!-- PAGE_START: custom-rbac\using-custom-rbac.md -->
-
----
-
-## Page: CUSTOM-RBAC/USING-CUSTOM-RBAC
-
+<!-- PAGE_START: custom-rbac/using-custom-rbac.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Using Custom RBAC resources
@@ -3047,8 +3249,11 @@ serviceaccount/md-custom-serviceaccount created
 
 It should create a service account.
 
-```yaml
+```bash
 $ kubectl get serviceaccount -n demo md-custom-serviceaccount -o yaml
+```
+
+```yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -3251,15 +3456,8 @@ serviceaccount "md-custom-serviceaccount" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: custom-rbac\using-custom-rbac.md -->
 
-
-<!-- PAGE_START: distributed\overview.md -->
-
----
-
-## Page: DISTRIBUTED/OVERVIEW
-
+<!-- PAGE_START: distributed/overview.md -->
 # Distributed MariaDB Galera Cluster Overview
 
 ## Introduction
@@ -4086,15 +4284,8 @@ SHOW STATUS LIKE 'wsrep%';
 * **Accessing the Database**: Use the `mariadb-auth` secret to retrieve credentials and connect to the MariaDB instance.
 * **Scaling**: Adjust the `PlacementPolicy` to add or remove replicas across clusters.
 * **Monitoring**: Integrate KubeDB with monitoring tools like Prometheus for cluster health insights.
-<!-- PAGE_END: distributed\overview.md -->
 
-
-<!-- PAGE_START: failover\guide.md -->
-
----
-
-## Page: FAILOVER/GUIDE
-
+<!-- PAGE_START: failover/guide.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Exploring Fault Tolerance in MariaDB with KubeDB
@@ -4132,7 +4323,7 @@ Before proceeding:
   communicate with your cluster. If you do not already have a cluster, you can create one by
   using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 * Now, install KubeDB operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
-* Read [mariadb cluster concept](../clustering/overview.md) to learn about MariaDB
+* Read [mariadb cluster concept](en/clustering/overview.md) to learn about MariaDB
   Cluster.
 * To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial.
   Run the following command to prepare your cluster for this tutorial:
@@ -4237,6 +4428,9 @@ You can also check it on the cluster status:
 $ kubectl exec -it -n demo svc/ha-mariadb-mx -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬─────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID    │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼─────────┼────────────────────┤
@@ -4291,6 +4485,9 @@ exit
 ```bash
 # Master Node
 $ kubectl exec -it -n demo svc/ha-mariadb -- bash
+```
+
+```mysql
 mysql@ha-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -4310,9 +4507,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
+```bash
 # Slave Node
 $ kubectl exec -it -n demo svc/ha-mariadb-standby -- bash
+```
+
+```mysql
 mysql@ha-mariadb-1:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
@@ -4352,6 +4554,9 @@ let’s insert data in the master node
 ```bash
 $ kubectl exec -it -n demo ha-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-0:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 3459
@@ -4380,6 +4585,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> exit
 Bye
+```
+
+```bash
 mysql@ha-mariadb-0:/$ exit
 exit
 ```
@@ -4389,6 +4597,9 @@ You can read data from the slave nodes
 ```shell
 kubectl exec -it -n demo ha-mariadb-1 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-1:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 2304
@@ -4408,6 +4619,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> exit
 Bye
+```
+
+```shell
 mysql@ha-mariadb-1:/$ exit
 exit
 ```
@@ -4482,6 +4696,9 @@ Now we know how failover is done, let’s check if the new `Master` is working.
 ```shell
 $ kubectl exec -it -n demo ha-mariadb-1 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-1:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 652
@@ -4508,6 +4725,9 @@ MariaDB [(none)]> CREATE DATABASE playground2;
 Query OK, 1 row affected (0.000 sec)
 MariaDB [(none)]> exit
 Bye
+```
+
+```shell
 mysql@ha-mariadb-1:/$ exit
 exit
 ```
@@ -4517,6 +4737,9 @@ Lets check if the new Slave(`ha-mariadb-0`) got the updated data from new `Maste
 ```shell
 $  kubectl exec -it -n demo ha-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-0:/$ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 340
@@ -4542,6 +4765,9 @@ MariaDB [(none)]> SHOW DATABASES;
 
 MariaDB [(none)]> exit 
 Bye
+```
+
+```shell
 mysql@ha-mariadb-0:/$ exit
 exit
 ```
@@ -4581,6 +4807,9 @@ Lets validate the cluster state from new `Master`(`ha-mariadb-0`).
 ```shell
 $ kubectl exec -it -n demo ha-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-0:/$ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 377
@@ -4609,6 +4838,9 @@ Query OK, 1 row affected (0.000 sec)
 
 MariaDB [(none)]> exit
 Bye
+```
+
+```shell
 mysql@ha-mariadb-0:/$ exit
 exit
 ```
@@ -4618,6 +4850,9 @@ Let’s check whether the Slave nodes, `ha-mariadb-2` gets all the previous data
 ```shell
 kubectl exec -it -n demo ha-mariadb-2 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-2:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 47
@@ -4710,6 +4945,9 @@ Lets verify the cluster state now.
 $ kubectl exec -it -n demo svc/ha-mariadb-mx -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬──────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID     │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼──────────┼────────────────────┤
@@ -4734,21 +4972,14 @@ namespace "demo" deleted
 
 ## Next Steps
 
-* Learn about [backup and restore](../backup/stash/overview.md) MariaDB database using Stash.
-* Want to setup MariaDB cluster? Check how to [configure Highly Available MariaDB Cluster](../clustering/galera-cluster.md)
-* Monitor your MariaDB database with KubeDB using [built-in Prometheus](../monitoring/prometheus-operator.md).
-* Detail concepts of [MariaDB object](../concepts/mariadb.md).
-* Use [private Docker registry](../private-registry/quickstart.md) to deploy MariaDB with KubeDB.
+* Learn about [backup and restore](en/backup/stash/overview.md) MariaDB database using Stash.
+* Want to setup MariaDB cluster? Check how to [configure Highly Available MariaDB Cluster](en/clustering/galera-cluster.md)
+* Monitor your MariaDB database with KubeDB using [built-in Prometheus](en/monitoring/prometheus-operator.md).
+* Detail concepts of [MariaDB object](en/concepts/mariadb.md).
+* Use [private Docker registry](en/private-registry/quickstart.md) to deploy MariaDB with KubeDB.
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: failover\guide.md -->
 
-
-<!-- PAGE_START: gitops\gitops.md -->
-
----
-
-## Page: GITOPS/GITOPS
-
+<!-- PAGE_START: gitops/gitops.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # GitOps MariaDB using KubeDB GitOps Operator
@@ -5085,7 +5316,7 @@ data-mariadb-gitops-4   Bound    pvc-dee1c10d-0456-4935-9306-0d86c3db54d0   2Gi 
 ## Reconfigure MariaDB
 
 At first, we will create a secret containing `user.conf` file with required configuration settings.
-To know more about this configuration file, check [here](../reconfigure/overview.md)
+To know more about this configuration file, check [here](en/reconfigure/overview.md)
 
 ```yaml
 apiVersion: v1
@@ -5379,7 +5610,7 @@ mariadbopsrequest.ops.kubedb.com/mariadb-gitops-volumeexpansion-01m39b     Volum
 
 ### Update Version
 
-List MariaDB versions using `kubectl get MariaDBversion` and choose desired version that is compatible for upgrade from current version. Check the version constraints and ops request [here](../update-version/overview.md).
+List MariaDB versions using `kubectl get MariaDBversion` and choose desired version that is compatible for upgrade from current version. Check the version constraints and ops request [here](en/update-version/overview.md).
 
 Let’s choose `12.1.2` in this example.
 
@@ -5555,20 +5786,13 @@ Verify the monitoring is enabled by checking the prometheus targets.
 ## Next Steps
 
 * Learn MariaDB Scaling
-  + [Horizontal Scaling](../scaling/horizontal-scaling/overview.md)
-  + [Vertical Scaling](../scaling/vertical-scaling/overview.md)
-* Learn Version Update Ops Request and Constraints [here](../update-version/overview.md)
-* Monitor your MariaDBQL database with KubeDB using [built-in Prometheus](../monitoring/prometheus-operator.md).
+  + [Horizontal Scaling](en/scaling/horizontal-scaling/overview.md)
+  + [Vertical Scaling](en/scaling/vertical-scaling/overview.md)
+* Learn Version Update Ops Request and Constraints [here](en/update-version/overview.md)
+* Monitor your MariaDBQL database with KubeDB using [built-in Prometheus](en/monitoring/prometheus-operator.md).
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: gitops\gitops.md -->
 
-
-<!-- PAGE_START: gitops\overview.md -->
-
----
-
-## Page: GITOPS/OVERVIEW
-
+<!-- PAGE_START: gitops/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # GitOps Overview for MariaDB
@@ -5579,8 +5803,8 @@ managing MariaDB databases in Kubernetes.
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## Workflow GitOps with MariaDB
 
@@ -5599,15 +5823,8 @@ Fig: GitOps process of MariaDB
 This flow makes managing MariaDB databases efficient, reliable, and fully integrated with GitOps practices.
 
 In the next doc, we are going to show a step by step guide on running MariaDB using GitOps.
-<!-- PAGE_END: gitops\overview.md -->
 
-
-<!-- PAGE_START: initialization\git-sync.md -->
-
----
-
-## Page: INITIALIZATION/GIT-SYNC
-
+<!-- PAGE_START: initialization/git-sync.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Initialization MariaDB from a Git Repository
@@ -5689,7 +5906,9 @@ Next, we will connect to the MariaDB database and verify the data inserted from 
 ```bash
 kubectl exec -it -n demo sample-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, mariadb-init (init), git-sync (init)
+```
 
+```mysql
 mysql@sample-mariadb-0:/$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 6
@@ -5853,15 +6072,8 @@ $ kubectl delete mariadb -n demo sample-mariadb
 $ kubectl delete secret -n demo git-pat git-creds
 $ kubectl delete ns demo
 ```
-<!-- PAGE_END: initialization\git-sync.md -->
 
-
-<!-- PAGE_START: initialization\using-script.md -->
-
----
-
-## Page: INITIALIZATION/USING-SCRIPT
-
+<!-- PAGE_START: initialization/using-script.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Initialize MariaDB using Script
@@ -5935,8 +6147,11 @@ Here,
 
 KubeDB operator watches for `MariaDB` objects using Kubernetes api. When a `MariaDB` object is created, KubeDB operator will create a new PetSet and a Service with the matching MariaDB object name. KubeDB operator will also create a governing service for PetSets with the name `kubedb`, if one is not already present. No MariaDB specific RBAC roles are required for [RBAC enabled clusters](https://kubedb.com/docs/v2026.7.10/setup/README#using-yaml).
 
-```yaml
+```bash
 $ kubectl get mariadb -n demo sample-mariadb -oyaml
+```
+
+```text
 apiVersion: kubedb.com/v1
 kind: MariaDB
 metadata:
@@ -5976,6 +6191,9 @@ Now, we will connect to this database and check the data inserted by the initliz
 ```bash
 # Connecting to the database
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 40
@@ -6015,15 +6233,8 @@ mariadb.kubedb.com "sample-mariadb" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: initialization\using-script.md -->
 
-
-<!-- PAGE_START: migration\databasemigration.md -->
-
----
-
-## Page: MIGRATION/DATABASEMIGRATION
-
+<!-- PAGE_START: migration/databasemigration.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Database Migration
@@ -6038,9 +6249,9 @@ This guide will show you how to use `KubeDB` Migration to migrate an existing `M
 * The source `MariaDB` instance must have binary logging enabled with `binlog_format=ROW` and `binlog_row_image=FULL`. The database user provided for migration must have replication privileges.
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [AppBinding](../concepts/appbinding.md)
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBMigration](../concepts/migrator.md)
+  + [AppBinding](en/concepts/appbinding.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBMigration](en/concepts/migrator.md)
   + [Migration](https://kubedb.com/docs/v2026.7.10/operatormanual/migration/)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
@@ -6297,7 +6508,7 @@ $ kubectl apply -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/examples/m
 mariadbmigration.courier.kubedb.com/mariadb-migrate created
 ```
 
-Here we scope the migration to the `shop` database (`schema.database: [shop]`), enable both the bulk snapshot and CDC streaming phases, and cap connections at 100 on each side. For a full description of every field, see the [MariaDBMigration CRD reference](../concepts/migrator.md).
+Here we scope the migration to the `shop` database (`schema.database: [shop]`), enable both the bulk snapshot and CDC streaming phases, and cap connections at 100 on each side. For a full description of every field, see the [MariaDBMigration CRD reference](en/concepts/migrator.md).
 
 ## Watch Migration Progress
 
@@ -6380,15 +6591,8 @@ mariadbmigration.courier.kubedb.com "mariadb-migrate" deleted
 ```
 
 Finally, update your application’s connection string to point to the target KubeDB-managed `MariaDB` database. The migration is complete.
-<!-- PAGE_END: migration\databasemigration.md -->
 
-
-<!-- PAGE_START: monitoring\builtin-prometheus.md -->
-
----
-
-## Page: MONITORING/BUILTIN-PROMETHEUS
-
+<!-- PAGE_START: monitoring/builtin-prometheus.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Monitoring MariaDB with builtin Prometheus
@@ -6400,7 +6604,7 @@ This tutorial will show you how to monitor MariaDB database using builtin [Prome
 * At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 * Install KubeDB operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * If you are not familiar with how to configure Prometheus to scrape metrics from various Kubernetes resources, please read the tutorial from [here](https://github.com/appscode/third-party-tools/tree/master/monitoring/prometheus/builtin).
-* To learn how Prometheus monitoring works with KubeDB in general, please visit [here](overview.md).
+* To learn how Prometheus monitoring works with KubeDB in general, please visit [here](en/monitoring/overview.md).
 * To keep Prometheus resources isolated, we are going to use a separate namespace called `monitoring` to deploy respective monitoring resources. We are going to deploy database in `demo` namespace.
 
   ```bash
@@ -6576,7 +6780,7 @@ If you don’t have any existing Prometheus server running, you have to deploy o
 
 **Create ConfigMap:**
 
-At first, create a ConfigMap with the scraping configuration. Bellow, the YAML of ConfigMap that we are going to create in this tutorial.
+At first, create a ConfigMap with the scraping configuration. Below, the YAML of the ConfigMap that we are going to create in this tutorial.
 
 ```yaml
 apiVersion: v1
@@ -6724,15 +6928,8 @@ kubectl delete -n monitoring clusterrolebinding.rbac.authorization.k8s.io/promet
 kubectl delete ns demo
 kubectl delete ns monitoring
 ```
-<!-- PAGE_END: monitoring\builtin-prometheus.md -->
 
-
-<!-- PAGE_START: monitoring\overview.md -->
-
----
-
-## Page: MONITORING/OVERVIEW
-
+<!-- PAGE_START: monitoring/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Monitoring MariaDB with KubeDB
@@ -6796,22 +6993,15 @@ Here, we have specified that we are going to monitor this server using Prometheu
 
 ## Next Steps
 
-* Learn how to monitor `MariaDB` database with KubeDB using [builtin-Prometheus](builtin-prometheus.md) and using [Prometheus operator](prometheus-operator.md).
-* Learn how to monitor `MariaDB` database with KubeDB using [builtin-Prometheus](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-builtin-prometheus) and using [Prometheus operator](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-prometheus-operator).
+* Learn how to monitor `MariaDB` database with KubeDB using [builtin-Prometheus](en/monitoring/builtin-prometheus.md) and using [Prometheus operator](en/monitoring/prometheus-operator.md).
+* Learn how to monitor `Elasticsearch` database with KubeDB using [builtin-Prometheus](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-builtin-prometheus) and using [Prometheus operator](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-prometheus-operator).
 * Learn how to monitor `PostgreSQL` database with KubeDB using [builtin-Prometheus](https://kubedb.com/docs/v2026.7.10/guides/postgres/monitoring/using-builtin-prometheus) and using [Prometheus operator](https://kubedb.com/docs/v2026.7.10/guides/postgres/monitoring/using-prometheus-operator).
 * Learn how to monitor `MySQL` database with KubeDB using [builtin-Prometheus](https://kubedb.com/docs/v2026.7.10/guides/mysql/monitoring/builtin-prometheus/) and using [Prometheus operator](https://kubedb.com/docs/v2026.7.10/guides/mysql/monitoring/prometheus-operator/).
 * Learn how to monitor `MongoDB` database with KubeDB using [builtin-Prometheus](https://kubedb.com/docs/v2026.7.10/guides/mongodb/monitoring/using-builtin-prometheus) and using [Prometheus operator](https://kubedb.com/docs/v2026.7.10/guides/mongodb/monitoring/using-prometheus-operator).
 * Learn how to monitor `Redis` server with KubeDB using [builtin-Prometheus](https://kubedb.com/docs/v2026.7.10/guides/redis/monitoring/using-builtin-prometheus) and using [Prometheus operator](https://kubedb.com/docs/v2026.7.10/guides/redis/monitoring/using-prometheus-operator).
 * Learn how to monitor `Memcached` server with KubeDB using [builtin-Prometheus](https://kubedb.com/docs/v2026.7.10/guides/memcached/monitoring/using-builtin-prometheus) and using [Prometheus operator](https://kubedb.com/docs/v2026.7.10/guides/memcached/monitoring/using-prometheus-operator).
-<!-- PAGE_END: monitoring\overview.md -->
 
-
-<!-- PAGE_START: monitoring\prometheus-operator.md -->
-
----
-
-## Page: MONITORING/PROMETHEUS-OPERATOR
-
+<!-- PAGE_START: monitoring/prometheus-operator.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Monitoring MariaDB Using Prometheus operator
@@ -6821,7 +7011,7 @@ Here, we have specified that we are going to monitor this server using Prometheu
 ## Before You Begin
 
 * At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
-* To learn how Prometheus monitoring works with KubeDB in general, please visit [here](overview.md).
+* To learn how Prometheus monitoring works with KubeDB in general, please visit [here](en/monitoring/overview.md).
 * To keep database resources isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial. Run the following command to prepare your cluster:
 
   ```bash
@@ -6849,8 +7039,11 @@ default     prometheus             1          2m19s
 
 Now, let’s view the YAML of the available Prometheus server `prometheus` in `default` namespace.
 
-```yaml
+```bash
 $ kubectl get prometheus -n default prometheus -o yaml
+```
+
+```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: Prometheus
 metadata:
@@ -6960,8 +7153,11 @@ Here, `coreos-prom-md-stats` service has been created for monitoring purpose.
 
 Let’s describe this stats service.
 
-```yaml
+```bash
 $ kubectl describe svc -n demo coreos-prom-md-stats
+```
+
+```text
 Name:              coreos-prom-md-stats
 Namespace:         demo
 Labels:            app.kubernetes.io/instance=coreos-prom-md
@@ -6991,8 +7187,11 @@ coreos-prom-md-stats   4m8s
 
 Let’s verify that the `ServiceMonitor` has the label that we had specified in `spec.monitor` section of MariaDB crd.
 
-```yaml
+```bash
 $ kubectl get servicemonitor -n demo coreos-prom-md-stats -o yaml
+```
+
+```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -7114,15 +7313,8 @@ kubectl delete -f https://raw.githubusercontent.com/prometheus-operator/promethe
 # delete namespace
 kubectl delete ns demo
 ```
-<!-- PAGE_END: monitoring\prometheus-operator.md -->
 
-
-<!-- PAGE_START: pitr\nfs.md -->
-
----
-
-## Page: PITR/NFS
-
+<!-- PAGE_START: pitr/nfs.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # KubeDB MariaDB - Continuous Archiving and Point-in-time Recovery
@@ -7547,7 +7739,9 @@ After each and every binlog switch the binlog files will be uploaded to backup s
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -7579,7 +7773,6 @@ MariaDB [hello]> select now();
 +---------------------+
 | 2024-09-17 05:28:26 |
 +---------------------+
-+---------------------+
 
 MariaDB [hello]> select count(*) from demo_table;
 +----------+
@@ -7608,7 +7801,7 @@ We can’t restore from a full backup since at this point no full backup was per
 
 For the demo I will use the previous time we get form `select now()`
 
-```bash
+```mysql
 MariaDB [hello]> select now();
 +---------------------+
 | now()               |
@@ -7683,6 +7876,9 @@ restore-mariadb   11.1.3    Ready    5m37s
 
 ```bash
 $ kubectl exec -it -n demo restore-mariadb-0 -- bash
+```
+
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 mariadb> use hello
@@ -7712,23 +7908,16 @@ $ kubectl delete ns demo
 
 ## Next Steps
 
-* Learn about [backup and restore](../backup/kubestash/overview.md) MariaDB database using KubeStash.
-* Learn about initializing [MariaDB with Script](../initialization/using-script.md).
-* Want to setup MariaDB cluster? Check how to [configure Highly Available MariaDB Cluster](../clustering/galera-cluster.md)
-* Monitor your MariaDB database with KubeDB using [built-in Prometheus](../monitoring/builtin-prometheus.md).
-* Monitor your MariaDB database with KubeDB using [Prometheus operator](../monitoring/prometheus-operator.md).
-* Detail concepts of [MariaDB object](../concepts/mariadb.md).
-* Use [private Docker registry](../private-registry/quickstart.md) to deploy MariaDB with KubeDB.
+* Learn about [backup and restore](en/backup/kubestash/overview.md) MariaDB database using KubeStash.
+* Learn about initializing [MariaDB with Script](en/initialization/using-script.md).
+* Want to setup MariaDB cluster? Check how to [configure Highly Available MariaDB Cluster](en/clustering/galera-cluster.md)
+* Monitor your MariaDB database with KubeDB using [built-in Prometheus](en/monitoring/builtin-prometheus.md).
+* Monitor your MariaDB database with KubeDB using [Prometheus operator](en/monitoring/prometheus-operator.md).
+* Detail concepts of [MariaDB object](en/concepts/mariadb.md).
+* Use [private Docker registry](en/private-registry/quickstart.md) to deploy MariaDB with KubeDB.
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: pitr\nfs.md -->
 
-
-<!-- PAGE_START: pitr\overview.md -->
-
----
-
-## Page: PITR/OVERVIEW
-
+<!-- PAGE_START: pitr/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # KubeDB MariaDB - Continuous Archiving and Point-in-time Recovery
@@ -7754,7 +7943,16 @@ namespace/demo created
 
 > Note: The yaml files used in this tutorial are stored in [docs/guides/mariadb/pitr/overview/yamls](https://github.com/kubedb/docs/tree/v2026.7.10/docs/guides/mariadb/remote-replica/yamls) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
 
-## continuous archiving
+## Continuous Archiving
+
+```mermaid
+flowchart LR
+  DB["MariaDB Cluster Pods"] -->|Write Binlogs| Archiver["MariaDBArchiver + Sidekick"]
+  Archiver -->|Upload Binlogs| Store["BackupStorage Repository"]
+  Snap["VolumeSnapshot (Full Backup)"] --> Restorer["Restore MariaDB CR (recoveryTimestamp)"]
+  Store -->|Replay Binlogs| Restorer
+  Restorer --> Target["Recovered MariaDB Cluster"]
+```
 
 Continuous archiving involves making regular copies (or “archives”) of the MariaDB transaction log files.To ensure continuous archiving to a remote location we need prepare `BackupStorage`,`RetentionPolicy`,`MariaDBArchiver` for the KubeDB Managed MariaDB Databases.
 
@@ -8010,7 +8208,9 @@ After each and every binlog switch the binlog files will be uploaded to backup s
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -8042,7 +8242,6 @@ MariaDB [hello]> select now();
 +---------------------+
 | 2024-09-17 05:28:26 |
 +---------------------+
-+---------------------+
 
 MariaDB [hello]> select count(*) from demo_table;
 +----------+
@@ -8071,7 +8270,7 @@ We can’t restore from a full backup since at this point no full backup was per
 
 For the demo I will use the previous time we get form `select now()`
 
-```bash
+```mysql
 MariaDB [hello]> select now();
 +---------------------+
 | now()               |
@@ -8146,6 +8345,9 @@ restore-mariadb   11.1.3    Ready    5m37s
 
 ```bash
 $ kubectl exec -it -n demo restore-mariadb-0 -- bash
+```
+
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 mariadb> use hello
@@ -8175,23 +8377,16 @@ $ kubectl delete ns demo
 
 ## Next Steps
 
-* Learn about [backup and restore](../backup/kubestash/overview.md) MariaDB database using KubeStash.
-* Learn about initializing [MariaDB with Script](../initialization/using-script.md).
-* Want to setup MariaDB cluster? Check how to [configure Highly Available MariaDB Cluster](../clustering/galera-cluster.md)
-* Monitor your MariaDB database with KubeDB using [built-in Prometheus](../monitoring/builtin-prometheus.md).
-* Monitor your MariaDB database with KubeDB using [Prometheus operator](../monitoring/prometheus-operator.md).
-* Detail concepts of [MariaDB object](../concepts/mariadb.md).
-* Use [private Docker registry](../private-registry/quickstart.md) to deploy MariaDB with KubeDB.
+* Learn about [backup and restore](en/backup/kubestash/overview.md) MariaDB database using KubeStash.
+* Learn about initializing [MariaDB with Script](en/initialization/using-script.md).
+* Want to setup MariaDB cluster? Check how to [configure Highly Available MariaDB Cluster](en/clustering/galera-cluster.md)
+* Monitor your MariaDB database with KubeDB using [built-in Prometheus](en/monitoring/builtin-prometheus.md).
+* Monitor your MariaDB database with KubeDB using [Prometheus operator](en/monitoring/prometheus-operator.md).
+* Detail concepts of [MariaDB object](en/concepts/mariadb.md).
+* Use [private Docker registry](en/private-registry/quickstart.md) to deploy MariaDB with KubeDB.
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: pitr\overview.md -->
 
-
-<!-- PAGE_START: private-registry\quickstart.md -->
-
----
-
-## Page: PRIVATE-REGISTRY/QUICKSTART
-
+<!-- PAGE_START: private-registry/quickstart.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Deploy MariaDB from private Docker registry
@@ -8200,7 +8395,7 @@ KubeDB operator supports using private Docker registry. This tutorial will show 
 
 ## Before You Begin
 
-* Read [concept of MariaDB Version Catalog](../concepts/mariadb-version.md) to learn detail concepts of `MariaDBVersion` object.
+* Read [concept of MariaDB Version Catalog](en/concepts/mariadb-version.md) to learn detail concepts of `MariaDBVersion` object.
 * You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 * You will also need a docker private [registry](https://docs.docker.com/registry/) or [private repository](https://docs.docker.com/docker-hub/repos/#private-repositories). In this tutorial we will use private repository of [docker hub](https://hub.docker.com/).
 * You have to push the required images from KubeDB’s [Docker hub account](https://hub.docker.com/u/kubedb) into your private registry. For mariadb, push `DB_IMAGE`, `EXPORTER_IMAGE`, `INITCONTAINER_IMAGE` of following MariaDBVersions, where `deprecated` is not true, to your private registry.
@@ -8336,15 +8531,8 @@ mariadb.kubedb.com "md-pvt-reg" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: private-registry\quickstart.md -->
 
-
-<!-- PAGE_START: quickstart\overview.md -->
-
----
-
-## Page: QUICKSTART/OVERVIEW
-
+<!-- PAGE_START: quickstart/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB QuickStart
@@ -8394,7 +8582,8 @@ NAME      VERSION   DB_IMAGE                                        DEPRECATED  
 11.5.2    11.5.2    ghcr.io/appscode-images/mariadb:11.5.2-noble                 12d
 11.6.2    11.6.2    ghcr.io/appscode-images/mariadb:11.6.2-noble                 12d
 11.8.5    11.8.5    ghcr.io/appscode-images/mariadb:11.8.5-noble                 12d
-12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d```
+12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d
+```
 
 ## Create a MariaDB database
 
@@ -8557,8 +8746,11 @@ sample-mariadb-pods   ClusterIP   None             <none>        3306/TCP   28m
 
 KubeDB operator sets the `status.phase` to `Running` once the database is successfully created. Run the following command to see the modified MariaDB object:
 
-```yaml
+```bash
 $ kubectl get mariadb -n demo sample-mariadb -o yaml
+```
+
+```text
 apiVersion: kubedb.com/v1
 kind: MariaDB
 metadata:
@@ -8601,7 +8793,7 @@ KubeDB operator has created a new Secret called `mariadb-quickstart-auth` *(form
 
 If you want to use an existing secret please specify that when creating the MariaDB object using `spec.authSecret.name`. While creating this secret manually, make sure the secret contains these two keys containing data `username` and `password` and also make sure of using `root` as value of `username`.
 
-Now, we need `username` and `password` to connect to this database from `kubeclt exec` command. In this example, `sample-mariadb-auth` secret holds username and password.
+Now, we need `username` and `password` to connect to this database from `kubectl exec` command. In this example, `sample-mariadb-auth` secret holds username and password.
 
 ```bash
 $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
@@ -8615,6 +8807,9 @@ We will exec into the pod `sample-mariadb-0` and conncet to the database using `
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- mariadb -u root --password='w*yOU$b53dTbjsjJ'
+```
+
+```mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 335
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -8708,8 +8903,11 @@ You can totally delete the `MariaDB` database and relevant resources without any
 
 Suppose, we have a database with `deletionPolicy` set to `WipeOut`. Now, are going to delete the database using the following command:
 
-```yaml
+```bash
 $ kubectl delete mariadb sample-mariadb -n demo
+```
+
+```text
 mariadb.kubedb.com "sample-mariadb" deleted
 ```
 
@@ -8769,15 +8967,8 @@ If you are just testing some basic functionalities, you might want to avoid addi
 ## Next Steps
 
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: quickstart\overview.md -->
 
-
-<!-- PAGE_START: recommendation\recommendation.md -->
-
----
-
-## Page: RECOMMENDATION/RECOMMENDATION
-
+<!-- PAGE_START: recommendation/recommendation.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Recommendation
@@ -8799,10 +8990,10 @@ This page is the **MariaDB-specific intro**: which recommendations apply to Mari
 
 ## Relevant KubeDB concepts
 
-* [MariaDBOpsRequest](../concepts/opsrequest.md)
-* [MariaDBRotateAuth](../rotate-auth/overview.md)
-* [MariaDBReconfigureTLS](../tls/overview.md)
-* [MariaDBUpdateVersion](../update-version/overview.md)
+* [MariaDBOpsRequest](en/concepts/opsrequest.md)
+* [MariaDBRotateAuth](en/rotate-auth/overview.md)
+* [MariaDBReconfigureTLS](en/tls/overview.md)
+* [MariaDBUpdateVersion](en/update-version/overview.md)
 
 ---
 
@@ -8949,15 +9140,8 @@ Once approved, KubeDB creates an opsrequest to update the running workload autom
 ---
 
 For prerequisites, Helm configuration flags, and the full cross-database Recommendation lifecycle, see the [Recommendation Configuration](https://kubedb.com/docs/v2026.7.10/operatormanual/recommendation/configuration) and [Recommendation Overview](https://kubedb.com/docs/v2026.7.10/operatormanual/recommendation) in the operator manual.
-<!-- PAGE_END: recommendation\recommendation.md -->
 
-
-<!-- PAGE_START: reconfigure-tls\cluster.md -->
-
----
-
-## Page: RECONFIGURE-TLS/CLUSTER
-
+<!-- PAGE_START: reconfigure-tls/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Reconfigure MariaDB TLS/SSL (Transport Encryption)
@@ -9029,6 +9213,9 @@ $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.password}'
 U6(h_pYrekLZ2OOd
 
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb  -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 108
@@ -9139,7 +9326,7 @@ Here,
 * `spec.type` specifies that we are performing `ReconfigureTLS` on our database.
 * `spec.tls.issuerRef` specifies the issuer name, kind and api group.
 * `requireSSL` specifies that the clients connecting to the server are required to use secured connection.
-* `spec.tls.certificates` specifies the certificates. You can learn more about this field from [here](../concepts/mariadb.md#spectls).
+* `spec.tls.certificates` specifies the certificates. You can learn more about this field from [here](en/concepts/mariadb.md#spectls).
 
 Let’s create the `MariaDBOpsRequest` CR we have shown above,
 
@@ -9166,10 +9353,19 @@ Let’s exec into the pod to verify TLS/SSL configuration,
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
+```
+
+```bash
 root@sample-mariadb-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 58
@@ -9514,15 +9710,8 @@ $ kubectl delete issuer -n demo --all
 $ kubectl delete mariadbopsrequest -n demo --all
 $ kubectl delete ns demo
 ```
-<!-- PAGE_END: reconfigure-tls\cluster.md -->
 
-
-<!-- PAGE_START: reconfigure-tls\overview.md -->
-
----
-
-## Page: RECONFIGURE-TLS/OVERVIEW
-
+<!-- PAGE_START: reconfigure-tls/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Reconfiguring TLS of MariaDB Database
@@ -9532,8 +9721,8 @@ This guide will give an overview on how KubeDB Ops Manager reconfigures TLS conf
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Reconfiguring MariaDB TLS Configuration Process Works
 
@@ -9556,15 +9745,8 @@ The Reconfiguring MariaDB TLS process consists of the following steps:
 9. After the successful reconfiguring of the `MariaDB` TLS, the `KubeDB` Enterprise operator resumes the `MariaDB` object so that the `KubeDB` Community operator resumes its usual operations.
 
 In the next docs, we are going to show a step by step guide on reconfiguring TLS configuration of a MariaDB database using `MariaDBOpsRequest` CRD.
-<!-- PAGE_END: reconfigure-tls\overview.md -->
 
-
-<!-- PAGE_START: reconfigure\cluster.md -->
-
----
-
-## Page: RECONFIGURE/CLUSTER
-
+<!-- PAGE_START: reconfigure/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Reconfigure MariaDB Cluster Database
@@ -9577,10 +9759,10 @@ This guide will show you how to use `KubeDB` Enterprise operator to reconfigure 
 * Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDB Cluster](../clustering/galera-cluster.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
-  + [Reconfigure Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDB Cluster](en/clustering/galera-cluster.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Reconfigure Overview](en/reconfigure/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -9670,6 +9852,9 @@ Now, we will check if the database has started with the custom configuration we 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -9823,6 +10008,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -9893,6 +10081,9 @@ Before applying this yaml we are going to check the existing value of our new fi
 
 ```bash
 $ kubectl exec -it sample-mariadb-0 -n demo -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -10003,6 +10194,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -10096,6 +10290,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -10147,15 +10344,8 @@ $ kubectl delete mariadb -n demo sample-mariadb
 $ kubectl delete mariadbopsrequest -n demo mdops-reconfigure-config mdops-reconfigure-apply-config mdops-reconfigure-remove
 $ kubectl delete ns demo
 ```
-<!-- PAGE_END: reconfigure\cluster.md -->
 
-
-<!-- PAGE_START: reconfigure\overview.md -->
-
----
-
-## Page: RECONFIGURE/OVERVIEW
-
+<!-- PAGE_START: reconfigure/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Reconfiguring MariaDB
@@ -10165,8 +10355,8 @@ This guide will give an overview on how KubeDB Ops Manger reconfigures `MariaDB`
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Reconfiguring MariaDB Process Works
 
@@ -10189,15 +10379,8 @@ The Reconfiguring MariaDB process consists of the following steps:
 9. After the successful reconfiguring of the `MariaDB`, the `KubeDB` Enterprise operator resumes the `MariaDB` object so that the `KubeDB` Community operator resumes its usual operations.
 
 In the next docs, we are going to show a step by step guide on reconfiguring MariaDB database components using `MariaDBOpsRequest` CRD.
-<!-- PAGE_END: reconfigure\overview.md -->
 
-
-<!-- PAGE_START: reconfigure\standalone.md -->
-
----
-
-## Page: RECONFIGURE/STANDALONE
-
+<!-- PAGE_START: reconfigure/standalone.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Reconfigure MariaDB Standalone Database
@@ -10210,9 +10393,9 @@ This guide will show you how to use `KubeDB` Enterprise operator to reconfigure 
 * Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
-  + [Reconfigure Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Reconfigure Overview](en/reconfigure/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -10301,6 +10484,9 @@ Now, we will check if the database has started with the custom configuration we 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
@@ -10452,6 +10638,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 21
@@ -10520,6 +10709,9 @@ Before applying this yaml we are going to check the existing value of our new fi
 
 ```bash
 $ kubectl exec -it sample-mariadb-0 -n demo -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 21
@@ -10630,6 +10822,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 24
@@ -10720,6 +10915,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 8
@@ -10771,15 +10969,8 @@ $ kubectl delete mariadb -n demo sample-mariadb
 $ kubectl delete mariadbopsrequest -n demo mdops-reconfigure-config mdops-reconfigure-apply-config mdops-reconfigure-remove
 $ kubectl delete ns demo
 ```
-<!-- PAGE_END: reconfigure\standalone.md -->
 
-
-<!-- PAGE_START: restart\restart.md -->
-
----
-
-## Page: RESTART/RESTART
-
+<!-- PAGE_START: restart/restart.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Restart MariaDB
@@ -10953,19 +11144,12 @@ kubectl delete ns demo
 
 ## Next Steps
 
-* Learn about [backup and restore](../backup/kubestash/overview.md) MariaDBQL database using Stash.
-* Learn about initializing [MariaDBQL with Script](../initialization/using-script.md)
-* Detail concepts of [MariaDB object](../concepts/mariadb.md).
+* Learn about [backup and restore](en/backup/kubestash/overview.md) MariaDBQL database using Stash.
+* Learn about initializing [MariaDBQL with Script](en/initialization/using-script.md)
+* Detail concepts of [MariaDB object](en/concepts/mariadb.md).
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: restart\restart.md -->
 
-
-<!-- PAGE_START: rotate-auth\overview.md -->
-
----
-
-## Page: ROTATE-AUTH/OVERVIEW
-
+<!-- PAGE_START: rotate-auth/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Rotate Authentication of MariaDB
@@ -10975,8 +11159,8 @@ This guide will give an overview on how KubeDB Ops-manager operator Rotate Authe
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Rotate MariaDB Authentication Configuration Process Works
 
@@ -10994,15 +11178,8 @@ The authentication rotation process for MariaDB using KubeDB involves the follow
 9. Once the authentication rotation is completed successfully, the operator resumes the `MariaDB` object, allowing the Provisioner operator to continue its usual operations.
 
 In the next section, we will walk you through a step-by-step guide to rotating MariaDB authentication using the `MariaDBOpsRequest` CRD.
-<!-- PAGE_END: rotate-auth\overview.md -->
 
-
-<!-- PAGE_START: rotate-auth\rotateauth.md -->
-
----
-
-## Page: ROTATE-AUTH/ROTATEAUTH
-
+<!-- PAGE_START: rotate-auth/rotateauth.md -->
 # Rotate Authentication of MariaDB
 
 **Rotate Authentication** is a feature of the KubeDB Ops-Manager that allows you to rotate a `MariaDB` user’s authentication credentials using a `MariaDBOpsRequest`. There are two ways to perform this rotation.
@@ -11014,8 +11191,8 @@ In the next section, we will walk you through a step-by-step guide to rotating M
 
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/mariadb.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/mariadb.md)
 * At first, you need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 * Now, install KubeDB cli on your workstation and KubeDB operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial.
@@ -11081,6 +11258,9 @@ Now, you can exec into the pod `sample-mariadb` and connect to database using `u
 ```shell
 $ kubectl exec -it -n demo sample-mariadb-0 -- mariadb -u root --password='s)cJQ*iL8wHySpvT'
 Defaulted container "mariadb" out of: mariadb, mariadb-init (init)
+```
+
+```mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 207
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~ubu2004 mariadb.org binary distribution
@@ -11447,15 +11627,8 @@ secret "sample-mariadb-auth" deleted
 ## Next Steps
 
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
-<!-- PAGE_END: rotate-auth\rotateauth.md -->
 
-
-<!-- PAGE_START: tls\configure.md -->
-
----
-
-## Page: TLS/CONFIGURE
-
+<!-- PAGE_START: tls/configure.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Configure TLS/SSL in MariaDB
@@ -11567,7 +11740,7 @@ Here,
 * `spec.requireSSL` specifies the SSL/TLS client connection to the server is required.
 * `spec.tls.issuerRef` refers to the `md-issuer` issuer.
 * `spec.tls.certificates` gives you a lot of options to configure so that the certificate will be renewed and kept up to date.
-  You can found more details from [here](../concepts/mariadb.md#spectls)
+  You can found more details from [here](en/concepts/mariadb.md#spectls)
 
 **Deploy MariaDB Standalone:**
 
@@ -11623,7 +11796,9 @@ root@md-standalone-tls-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-standalone-tls-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
 
+```mysql
 root@md-standalone-tls-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 64
@@ -11802,7 +11977,9 @@ root@md-cluster-tls-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-cluster-tls-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
 
+```mysql
 root@md-cluster-tls-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 64
@@ -11849,6 +12026,9 @@ root@md-cluster-tls-1:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-cluster-tls-1:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
+
+```mysql
 root@md-cluster-tls-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 34
@@ -11947,15 +12127,8 @@ mariadb.kubedb.com "md-cluster-tls" deleted
 $ kubectl delete ns demo
 namespace "demo" deleted
 ```
-<!-- PAGE_END: tls\configure.md -->
 
-
-<!-- PAGE_START: tls\overview.md -->
-
----
-
-## Page: TLS/OVERVIEW
-
+<!-- PAGE_START: tls/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB TLS/SSL Encryption
@@ -11977,7 +12150,7 @@ KubeDB uses the following cr fields to enable SSL/TLS encryption in `MariaDB`.
     - `issuerRef`
     - `certificates`
 
-Read about the fields in details from [mariadb concept](../concepts/mariadb.md#spectls),
+Read about the fields in details from [mariadb concept](en/concepts/mariadb.md#spectls),
 
 When, `requireSSL` is set, the users must specify the `tls.issuerRef` field. `KubeDB` uses the `issuer` or `clusterIssuer` referenced in the `tls.issuerRef` field, and the certificate specs provided in `tls.certificate` to generate certificate secrets using `Issuer/ClusterIssuers` specification. These certificates secrets including `ca.crt`, `tls.crt` and `tls.key` etc. are used to configure `MariaDB` server, exporter etc. respectively.
 
@@ -12003,15 +12176,8 @@ Deploying MariaDB with TLS/SSL configuration process consists of the following s
 10. When it finds all the tls-secret, it creates a `PetSet` so that MariaDB server is configured with TLS/SSL.
 
 In the next doc, we are going to show a step by step guide on how to configure a `MariaDB` database with TLS/SSL.
-<!-- PAGE_END: tls\overview.md -->
 
-
-<!-- PAGE_START: update-version\cluster.md -->
-
----
-
-## Page: UPDATE-VERSION/CLUSTER
-
+<!-- PAGE_START: update-version/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # update version of MariaDB Cluster
@@ -12024,10 +12190,10 @@ This guide will show you how to use `KubeDB` Enterprise operator to update the v
 * Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../concepts/mariadb.md)
-  + [Cluster](../clustering/overview.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
-  + [Updating Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [Cluster](en/clustering/overview.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Updating Overview](en/update-version/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -12156,15 +12322,8 @@ To clean up the Kubernetes resources created by this tutorial, run:
 $ kubectl delete mariadb -n demo sample-mariadb
 $ kubectl delete mariadbopsrequest -n demo mdops-update
 ```
-<!-- PAGE_END: update-version\cluster.md -->
 
-
-<!-- PAGE_START: update-version\overview.md -->
-
----
-
-## Page: UPDATE-VERSION/OVERVIEW
-
+<!-- PAGE_START: update-version/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # updating MariaDB version Overview
@@ -12174,8 +12333,8 @@ This guide will give you an overview on how KubeDB Ops Manager update the versio
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How update version Process Works
 
@@ -12198,15 +12357,8 @@ The updating process consists of the following steps:
 9. After successfully updating of `MariaDB` object, the `KubeDB` Enterprise operator resumes the `MariaDB` object so that the `KubeDB` Community operator can resume its usual operations.
 
 In the next doc, we are going to show a step by step guide on updating of a MariaDB database using update operation.
-<!-- PAGE_END: update-version\overview.md -->
 
-
-<!-- PAGE_START: volume-expansion\maxscale.md -->
-
----
-
-## Page: VOLUME-EXPANSION/MAXSCALE
-
+<!-- PAGE_START: volume-expansion/maxscale.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MaxScale Volume Expansion
@@ -12220,10 +12372,10 @@ This guide will show you how to use `KubeDB` Ops-manager operator to expand the 
 * Install `KubeDB` operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDB Replication](../clustering/mariadb-replication.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
-  + [Volume Expansion Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDB Replication](en/clustering/mariadb-replication.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Volume Expansion Overview](en/volume-expansion/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -12494,15 +12646,8 @@ $ kubectl delete mariadb -n demo md-replication
 $ kubectl delete mariadbopsrequest -n demo maxscale-volume-expansion
 $ kubectl delete ns demo
 ```
-<!-- PAGE_END: volume-expansion\maxscale.md -->
 
-
-<!-- PAGE_START: volume-expansion\overview.md -->
-
----
-
-## Page: VOLUME-EXPANSION/OVERVIEW
-
+<!-- PAGE_START: volume-expansion/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Volume Expansion
@@ -12512,8 +12657,8 @@ This guide will give an overview on how KubeDB Ops Manager expand the volume of 
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Volume Expansion Process Works
 
@@ -12537,15 +12682,8 @@ The Volume Expansion process consists of the following steps:
 10. After the successful Volume Expansion of the `MariaDB`, the `KubeDB` Enterprise operator resumes the `MariaDB` object so that the `KubeDB` Community operator resumes its usual operations.
 
 In the next docs, we are going to show a step by step guide on Volume Expansion of various MariaDB database using `MariaDBOpsRequest` CRD.
-<!-- PAGE_END: volume-expansion\overview.md -->
 
-
-<!-- PAGE_START: volume-expansion\volume-expansion.md -->
-
----
-
-## Page: VOLUME-EXPANSION/VOLUME-EXPANSION
-
+<!-- PAGE_START: volume-expansion/volume-expansion.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Volume Expansion
@@ -12559,9 +12697,9 @@ This guide will show you how to use `KubeDB` Enterprise operator to expand the v
 * Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../concepts/opsrequest.md)
-  + [Volume Expansion Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Volume Expansion Overview](en/volume-expansion/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -12773,15 +12911,8 @@ To clean up the Kubernetes resources created by this tutorial, run:
 $ kubectl delete mariadb -n demo sample-mariadb
 $ kubectl delete mariadbopsrequest -n demo md-online-volume-expansion
 ```
-<!-- PAGE_END: volume-expansion\volume-expansion.md -->
 
-
-<!-- PAGE_START: autoscaler\compute\cluster.md -->
-
----
-
-## Page: AUTOSCALER/COMPUTE/CLUSTER
-
+<!-- PAGE_START: autoscaler/compute/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Autoscaling the Compute Resource of a MariaDB Cluster Database
@@ -12795,10 +12926,10 @@ This guide will show you how to use `KubeDB` to autoscale compute resources i.e.
 * Install `Metrics Server` from [here](https://github.com/kubernetes-sigs/metrics-server#installation)
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
-  + [Compute Resource Autoscaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Compute Resource Autoscaling Overview](en/autoscaler/compute/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -13305,15 +13436,8 @@ kubectl delete mariadb -n demo sample-mariadb
 kubectl delete mariadbautoscaler -n demo md-as-compute
 kubectl delete ns demo
 ```
-<!-- PAGE_END: autoscaler\compute\cluster.md -->
 
-
-<!-- PAGE_START: autoscaler\compute\overview.md -->
-
----
-
-## Page: AUTOSCALER/COMPUTE/OVERVIEW
-
+<!-- PAGE_START: autoscaler/compute/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Compute Resource Autoscaling
@@ -13323,9 +13447,9 @@ This guide will give an overview on how KubeDB Autoscaler operator autoscales th
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Compute Autoscaling Works
 
@@ -13349,15 +13473,8 @@ The Auto Scaling process consists of the following steps:
 9. Lastly, the `KubeDB Ops-Manager operator` will scale the database component vertically as specified on the `MariaDBOpsRequest` CRO.
 
 In the next docs, we are going to show a step by step guide on Autoscaling of MariaDB database using `MariaDBAutoscaler` CRD.
-<!-- PAGE_END: autoscaler\compute\overview.md -->
 
-
-<!-- PAGE_START: autoscaler\storage\cluster.md -->
-
----
-
-## Page: AUTOSCALER/STORAGE/CLUSTER
-
+<!-- PAGE_START: autoscaler/storage/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Storage Autoscaling of a MariaDB Cluster
@@ -13373,10 +13490,10 @@ This guide will show you how to use `KubeDB` to autoscale the storage of a Maria
 * You must have a `StorageClass` that supports volume expansion.
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
-  + [Storage Autoscaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Storage Autoscaling Overview](en/autoscaler/storage/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -13660,15 +13777,8 @@ kubectl delete mariadb -n demo sample-mariadb
 kubectl delete mariadbautoscaler -n demo md-as-st
 kubectl delete ns demo
 ```
-<!-- PAGE_END: autoscaler\storage\cluster.md -->
 
-
-<!-- PAGE_START: autoscaler\storage\overview.md -->
-
----
-
-## Page: AUTOSCALER/STORAGE/OVERVIEW
-
+<!-- PAGE_START: autoscaler/storage/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Vertical Autoscaling
@@ -13678,9 +13788,9 @@ This guide will give an overview on how KubeDB Autoscaler operator autoscales th
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Storage Autoscaling Works
 
@@ -13704,15 +13814,8 @@ The Auto Scaling process consists of the following steps:
 10. Then the `KubeDB` Enterprise operator will expand the storage of the database component as specified on the `MariaDBOpsRequest` CRO.
 
 In the next docs, we are going to show a step by step guide on Autoscaling storage of various MariaDB database components using `MariaDBAutoscaler` CRD.
-<!-- PAGE_END: autoscaler\storage\overview.md -->
 
-
-<!-- PAGE_START: backup\kubestash\application-level.md -->
-
----
-
-## Page: BACKUP/KUBESTASH/APPLICATION-LEVEL
-
+<!-- PAGE_START: backup/kubestash/application-level.md -->
 # Application Level Backup and Restore MariaDB database using KubeStash
 
 KubeStash offers application-level backup and restore functionality for `MariaDB` databases. It captures both manifest and data backups of any `MariaDB` database in a single snapshot. During the restore process, KubeStash first applies the `MariaDB` manifest to the cluster and then restores the data into it.
@@ -13725,7 +13828,7 @@ This guide will give you an overview how you can take application-level backup a
 * Install `KubeDB` in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * Install `KubeStash` in your cluster following the steps [here](https://kubestash.com/docs/latest/setup/install/kubestash).
 * Install KubeStash `kubectl` plugin following the steps [here](https://kubestash.com/docs/latest/setup/install/kubectl-plugin/).
-* If you are not familiar with how KubeStash backup and restore MariaDB databases, please check the following guide [here](overview.md).
+* If you are not familiar with how KubeStash backup and restore MariaDB databases, please check the following guide [here](en/backup/kubestash/overview.md).
 
 You should be familiar with the following `KubeStash` concepts:
 
@@ -13809,7 +13912,7 @@ sample-mariadb        ClusterIP   10.128.92.155   <none>        3306/TCP        
 sample-mariadb-pods   ClusterIP   None            <none>        3306/TCP        62s
 ```
 
-Here, we have to use service `sample-mariadb` and secret `sample-mariadb-auth` to connect with the database. `KubeDB` creates an [AppBinding](../../concepts/appbinding.md) CR that holds the necessary information to connect with the database.
+Here, we have to use service `sample-mariadb` and secret `sample-mariadb-auth` to connect with the database. `KubeDB` creates an [AppBinding](en/concepts/appbinding.md) CR that holds the necessary information to connect with the database.
 
 **Verify AppBinding:**
 
@@ -13915,7 +14018,9 @@ Now, let’s exec into the pod and create a table,
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -14380,6 +14485,9 @@ Now, lets exec one of the Pod and verify restored data.
 
 ```bash
 $ kubectl exec -it -n dev sample-mariadb-0 -- bash
+```
+
+```mysql
 mysql@restored-mariadb-0:/$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> use hello;
@@ -14408,15 +14516,8 @@ kubectl delete secret -n demo encrypt-secret
 kubectl delete mariadb -n demo sample-mariadb
 kubectl delete mariadb -n dev sample-mariadb
 ```
-<!-- PAGE_END: backup\kubestash\application-level.md -->
 
-
-<!-- PAGE_START: backup\kubestash\auto-backup.md -->
-
----
-
-## Page: BACKUP/KUBESTASH/AUTO-BACKUP
-
+<!-- PAGE_START: backup/kubestash/auto-backup.md -->
 # Backup MariaDB using KubeStash Auto-Backup
 
 KubeStash can automatically be configured to backup any `MariaDB` databases in your cluster. KubeStash enables cluster administrators to deploy backup `blueprints` ahead of time so database owners can easily backup any `MariaDB` database with a few annotations.
@@ -14429,7 +14530,7 @@ In this tutorial, we are going to show how you can configure a backup blueprint 
 * Install `KubeDB` in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * Install `KubeStash` in your cluster following the steps [here](https://kubestash.com/docs/latest/setup/install/kubestash).
 * Install KubeStash `kubectl` plugin following the steps [here](https://kubestash.com/docs/latest/setup/install/kubectl-plugin/).
-* If you are not familiar with how KubeStash backup and restore `MariaDB` databases, please check the following guide [here](overview.md).
+* If you are not familiar with how KubeStash backup and restore `MariaDB` databases, please check the following guide [here](en/backup/kubestash/overview.md).
 
 You should be familiar with the following `KubeStash` concepts:
 
@@ -15255,15 +15356,8 @@ kubectl delete secret -n demo encrypt-secret
 kubectl delete mariadb -n demo sample-mariadb
 kubectl delete mariadb -n demo sample-mariadb-2
 ```
-<!-- PAGE_END: backup\kubestash\auto-backup.md -->
 
-
-<!-- PAGE_START: backup\kubestash\customization.md -->
-
----
-
-## Page: BACKUP/KUBESTASH/CUSTOMIZATION
-
+<!-- PAGE_START: backup/kubestash/customization.md -->
 # Customizing Backup and Restore Process
 
 KubeStash provides rich customization supports for the backup and restore process to meet the requirements of various cluster configurations. This guide will show you some examples of these customizations.
@@ -15561,7 +15655,7 @@ spec:
 
 ### Restore specific snapshot
 
-You can also restore a specific snapshot. At first, list the available snapshot as bellow,
+You can also restore a specific snapshot. At first, list the available snapshot as below,
 
 ```bash
 $ kubectl get snapshots.storage.kubestash.com -n demo -l=kubestash.com/repo-name=gcs-mariadb-repo
@@ -15669,15 +15763,8 @@ spec:
 ```
 
 > You can configure additional runtime settings for restore jobs within the `addon.jobTemplate.spec` sections. For further details, please refer to the [reference](https://kubestash.com/docs/latest/concepts/crds/restoresession/#podtemplate-spec).
-<!-- PAGE_END: backup\kubestash\customization.md -->
 
-
-<!-- PAGE_START: backup\kubestash\logical.md -->
-
----
-
-## Page: BACKUP/KUBESTASH/LOGICAL
-
+<!-- PAGE_START: backup/kubestash/logical.md -->
 # Backup and Restore MariaDB database using KubeStash
 
 KubeStash allows you to backup and restore `MariaDB` databases. It supports backups for `MariaDB` instances running in Standalone, and Galera cluster configurations. KubeStash makes managing your `MariaDB` backups and restorations more straightforward and efficient.
@@ -15690,7 +15777,7 @@ This guide will give you an overview how you can take backup and restore your `M
 * Install `KubeDB` in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * Install `KubeStash` in your cluster following the steps [here](https://kubestash.com/docs/latest/setup/install/kubestash).
 * Install KubeStash `kubectl` plugin following the steps [here](https://kubestash.com/docs/latest/setup/install/kubectl-plugin/).
-* If you are not familiar with how KubeStash backup and restore MariaDB databases, please check the following guide [here](overview.md).
+* If you are not familiar with how KubeStash backup and restore MariaDB databases, please check the following guide [here](en/backup/kubestash/overview.md).
 
 You should be familiar with the following `KubeStash` concepts:
 
@@ -15774,7 +15861,7 @@ sample-mariadb            ClusterIP   10.128.7.155   <none>        3306/TCP     
 sample-mariadb-pods       ClusterIP   None           <none>        3306/TCP                     6m28s
 ```
 
-Here, we have to use service `sample-mariadb` and secret `sample-mariadb-auth` to connect with the database. `KubeDB` creates an [AppBinding](../../concepts/appbinding.md) CR that holds the necessary information to connect with the database.
+Here, we have to use service `sample-mariadb` and secret `sample-mariadb-auth` to connect with the database. `KubeDB` creates an [AppBinding](en/concepts/appbinding.md) CR that holds the necessary information to connect with the database.
 
 **Verify AppBinding:**
 
@@ -15871,7 +15958,9 @@ Now, let’s exec into the pod and create a table,
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -16336,6 +16425,9 @@ Now, lets exec one of the `Pod` and verify restored data.
 
 ```bash
 $ kubectl exec -it -n demo restored-mariadb-0 -- bash
+```
+
+```mysql
 mysql@restored-mariadb-0:/$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> use hello;
@@ -16364,15 +16456,8 @@ kubectl delete secret -n demo encrypt-secret
 kubectl delete mariadb -n demo restored-mariadb
 kubectl delete mariadb -n demo sample-mariadb
 ```
-<!-- PAGE_END: backup\kubestash\logical.md -->
 
-
-<!-- PAGE_START: backup\kubestash\overview.md -->
-
----
-
-## Page: BACKUP/KUBESTASH/OVERVIEW
-
+<!-- PAGE_START: backup/kubestash/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 Please install [KubeStash](https://kubestash.com/docs/latest/setup/install/kubestash/) to try this feature. Database backup with KubeStash is already included in the KubeDB license. So, you don’t need a separate license for KubeStash.
@@ -16386,6 +16471,18 @@ KubeDB also uses [KubeStash](https://kubestash.com) to backup and restore databa
 Fig: Backup KubeDB Databases Using KubeStash
 
 ## How Backup Works
+
+```mermaid
+flowchart LR
+  User["Operator Applies BackupConfiguration"] --> KS["KubeStash Controller"]
+  KS --> Repo["Repository + BackupStorage + Secret"]
+  KS --> Cron["CronJob -> BackupSession -> Snapshot"]
+  Cron --> Job["Backup Job"]
+  AppBind["AppBinding (Host, Port, Auth Secret)"] --> Job
+  MariaDB["MariaDB Pod"] -->|Dump / Volume Stream| Job
+  Job -->|Restic Encrypted Upload| Backend["Cloud or On-Prem Storage"]
+```
+
 
 The following diagram shows how KubeStash takes backup of a `MariaDB` database. Open the image in a new tab to see the enlarged version.
 
@@ -16433,16 +16530,9 @@ The restore process consists of the following steps:
 
 ## Next Steps
 
-* Backup a `MariaDB` database using KubeStash by the following guides from [here](logical.md).
-<!-- PAGE_END: backup\kubestash\overview.md -->
+* Backup a `MariaDB` database using KubeStash by the following guides from [here](en/backup/kubestash/logical.md).
 
-
-<!-- PAGE_START: backup\stash\auto-backup.md -->
-
----
-
-## Page: BACKUP/STASH/AUTO-BACKUP
-
+<!-- PAGE_START: backup/stash/auto-backup.md -->
 # Backup MariaDB using Stash Auto-Backup
 
 Stash can be configured to automatically backup any MariaDB database in your cluster. Stash enables cluster administrators to deploy backup blueprints ahead of time so that the database owners can easily backup their database with just a few annotations.
@@ -16454,7 +16544,7 @@ In this tutorial, we are going to show how you can configure a backup blueprint 
 * At first, you need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
 * Install Stash in your cluster following the steps [here](https://stash.run/docs/latest/setup/install/stash/).
 * Install KubeDB in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
-* If you are not familiar with how Stash backup and restore MariaDB databases, please check the following guide [here](overview.md).
+* If you are not familiar with how Stash backup and restore MariaDB databases, please check the following guide [here](en/backup/stash/overview.md).
 * If you are not familiar with how auto-backup works in Stash, please check the following guide [here](https://stash.run/docs/latest/guides/auto-backup/overview/).
 * If you are not familiar with the available auto-backup options for databases in Stash, please check the following guide [here](https://stash.run/docs/latest/guides/auto-backup/database/).
 
@@ -16598,8 +16688,11 @@ app-sample-mariadb                                                              
 
 Now, let’s check the YAML of the `Repository`.
 
-```yaml
+```bash
 ❯ kubectl get repository -n demo app-sample-mariadb -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1alpha1
 kind: Repository
 metadata:
@@ -16628,8 +16721,11 @@ app-sample-mariadb   mariadb-backup-11.8.5   */5 * * * *            Ready   7m28
 
 Now, let’s check the YAML of the `BackupConfiguration`.
 
-```yaml
+```bash
 ❯ kubectl get backupconfiguration -n demo app-sample-mariadb -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1beta1
 kind: BackupConfiguration
 metadata:
@@ -16765,8 +16861,11 @@ app-sample-mariadb-2                                                            
 
 Now, let’s check the YAML of the `Repository`.
 
-```yaml
+```bash
 ❯ kubectl get repository -n demo-2 app-sample-mariadb-2  -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1alpha1
 kind: Repository
 metadata:
@@ -16795,9 +16894,11 @@ app-sample-mariadb-2   mariadb-backup-11.8.5   */3 * * * *            Ready   3m
 
 Now, let’s check the YAML of the `BackupConfiguration`.
 
-```yaml
+```bash
 ❯ kubectl get backupconfiguration -n demo-2 app-sample-mariadb-2 -o yaml
+```
 
+```text
 apiVersion: stash.appscode.com/v1beta1
 kind: BackupConfiguration
 metadata:
@@ -16945,8 +17046,11 @@ app-sample-mariadb-3                                                            
 
 Now, let’s check the YAML of the `Repository`.
 
-```yaml
+```bash
 ❯ kubectl get repository -n demo-3 app-sample-mariadb-3 -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1alpha1
 kind: Repository
 metadata:
@@ -16975,8 +17079,11 @@ app-sample-mariadb-3   mariadb-backup-11.8.5   */5 * * * *            Ready   10
 
 Now, let’s check the YAML of the `BackupConfiguration`.
 
-```yaml
+```bash
 ❯ kubectl get backupconfiguration -n demo-3 app-sample-mariadb-3 -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1beta1
 kind: BackupConfiguration
 metadata:
@@ -17068,15 +17175,8 @@ repository.stash.appscode.com "app-sample-mariadb-2" deleted
 ❯ kubectl delete repository -n demo-3 --all
 repository.stash.appscode.com "app-sample-mariadb-3" deleted
 ```
-<!-- PAGE_END: backup\stash\auto-backup.md -->
 
-
-<!-- PAGE_START: backup\stash\customization.md -->
-
----
-
-## Page: BACKUP/STASH/CUSTOMIZATION
-
+<!-- PAGE_START: backup/stash/customization.md -->
 # Customizing Backup and Restore Process
 
 Stash provides rich customization supports for the backup and restore process to meet the requirements of various cluster configurations. This guide will show you some examples of these customizations.
@@ -17245,7 +17345,7 @@ spec:
 
 ### Restore specific snapshot
 
-You can also restore a specific snapshot. At first, list the available snapshot as bellow,
+You can also restore a specific snapshot. At first, list the available snapshot as below,
 
 ```bash
 ❯ kubectl get snapshots -n demo
@@ -17339,15 +17439,8 @@ spec:
   rules:
   - snapshots: [latest]
 ```
-<!-- PAGE_END: backup\stash\customization.md -->
 
-
-<!-- PAGE_START: backup\stash\overview.md -->
-
----
-
-## Page: BACKUP/STASH/OVERVIEW
-
+<!-- PAGE_START: backup/stash/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 Please install [Stash](https://stash.run/docs/latest/setup/install/stash/) to try this feature. Database backup with Stash is already included in the KubeDB license. So, you don’t need a separate license for Stash.
@@ -17380,7 +17473,7 @@ The backup process consists of the following steps:
 
 1. At first, a user creates a secret with access credentials of the backend where the backed up data will be stored.
 2. Then, she creates a `Repository` crd that specifies the backend information along with the secret that holds the credentials to access the backend.
-3. Then, she creates a `BackupConfiguration` crd targeting the [AppBinding](../../concepts/appbinding.md) crd of the desired database. The `BackupConfiguration` object also specifies the `Task` to use to backup the database.
+3. Then, she creates a `BackupConfiguration` crd targeting the [AppBinding](en/concepts/appbinding.md) crd of the desired database. The `BackupConfiguration` object also specifies the `Task` to use to backup the database.
 4. Stash operator watches for `BackupConfiguration` crd.
 5. Once Stash operator finds a `BackupConfiguration` crd, it creates a CronJob with the schedule specified in `BackupConfiguration` object to trigger backup periodically.
 6. On the next scheduled slot, the CronJob triggers a backup by creating a `BackupSession` crd.
@@ -17411,19 +17504,12 @@ The restore process consists of the following steps:
 
 ## Next Steps
 
-* Backup a standalone MariaDB databases using Stash following the guide from [here](logical/standalone.md).
-* Backup a MariaDB cluster using Stash following the guide from [here](logical/cluster.md).
-* Configure a generic backup template for all the MariaDB databases of your cluster using Stash Auto-backup by following the guide from [here](auto-backup.md).
-* Customize the backup & restore process for your cluster by following the guides from [here](customization.md).
-<!-- PAGE_END: backup\stash\overview.md -->
+* Backup a standalone MariaDB databases using Stash following the guide from [here](en/backup/stash/logical/standalone.md).
+* Backup a MariaDB cluster using Stash following the guide from [here](en/backup/stash/logical/cluster.md).
+* Configure a generic backup template for all the MariaDB databases of your cluster using Stash Auto-backup by following the guide from [here](en/backup/stash/auto-backup.md).
+* Customize the backup & restore process for your cluster by following the guides from [here](en/backup/stash/customization.md).
 
-
-<!-- PAGE_START: distributed\opsrequest\horizontal_scale.md -->
-
----
-
-## Page: DISTRIBUTED/OPSREQUEST/HORIZONTAL_SCALE
-
+<!-- PAGE_START: distributed/opsrequest/horizontal_scale.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Horizontal Scale Distributed MariaDB
@@ -17434,7 +17520,7 @@ This guide will show you how to use `KubeDB` Opsrequest operator to horizontally
 
 ## Before You Begin
 
-* At first, you need to have a multi-cluster Kubernetes setup with OCM and KubeSlice configured. Follow the [Distributed MariaDB Overview](../overview.md) guide to set up the required infrastructure.
+* At first, you need to have a multi-cluster Kubernetes setup with OCM and KubeSlice configured. Follow the [Distributed MariaDB Overview](en/distributed/overview.md) guide to set up the required infrastructure.
 * Install `KubeDB` Community and Enterprise operator in your hub cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README). Make sure to enable OCM support:
 
   ```bash
@@ -17442,10 +17528,10 @@ This guide will show you how to use `KubeDB` Opsrequest operator to horizontally
   ```
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../concepts/mariadb.md)
-  + [Distributed MariaDB Overview](../overview.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
-  + [Horizontal Scaling Overview](../../scaling/horizontal-scaling/overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [Distributed MariaDB Overview](en/distributed/overview.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Horizontal Scaling Overview](en/scaling/horizontal-scaling/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -17734,15 +17820,8 @@ $ kubectl delete mariadb -n demo mariadb --context demo-controller
 $ kubectl delete mariadbopsrequest -n demo mdops-scale-horizontal-up mdops-scale-horizontal-down --context demo-controller
 $ kubectl delete placementpolicy distributed-mariadb --context demo-controller
 ```
-<!-- PAGE_END: distributed\opsrequest\horizontal_scale.md -->
 
-
-<!-- PAGE_START: scaling\horizontal-scaling\cluster.md -->
-
----
-
-## Page: SCALING/HORIZONTAL-SCALING/CLUSTER
-
+<!-- PAGE_START: scaling/horizontal-scaling/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Horizontal Scale MariaDB
@@ -17755,10 +17834,10 @@ This guide will show you how to use `KubeDB` Enterprise operator to scale the cl
 * Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDB Cluster](../../clustering/galera-cluster.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
-  + [Horizontal Scaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDB Cluster](en/clustering/galera-cluster.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Horizontal Scaling Overview](en/scaling/horizontal-scaling/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -17841,6 +17920,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $  kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
@@ -17914,6 +17996,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
@@ -17985,6 +18070,9 @@ Now let’s connect to a mariadb instance and run a mariadb internal command to 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
@@ -18003,15 +18091,8 @@ To clean up the Kubernetes resources created by this tutorial, run:
 $ kubectl delete mariadb -n demo sample-mariadb
 $ kubectl delete mariadbopsrequest -n demo  mdops-scale-horizontal-up mdops-scale-horizontal-down
 ```
-<!-- PAGE_END: scaling\horizontal-scaling\cluster.md -->
 
-
-<!-- PAGE_START: scaling\horizontal-scaling\maxscale.md -->
-
----
-
-## Page: SCALING/HORIZONTAL-SCALING/MAXSCALE
-
+<!-- PAGE_START: scaling/horizontal-scaling/maxscale.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Horizontal Scale MaxScale
@@ -18024,10 +18105,10 @@ This guide will show you how to use `KubeDB` Ops-manager operator to scale MaxSc
 * Install `KubeDB` operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDB Replication](../../clustering/mariadb-replication.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
-  + [Horizontal Scaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDB Replication](en/clustering/mariadb-replication.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Horizontal Scaling Overview](en/scaling/horizontal-scaling/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -18232,15 +18313,8 @@ $ kubectl delete mariadb -n demo md-replication
 $ kubectl delete mariadbopsrequest -n demo  maxscale-horizontal-scale-up maxscale-horizontal-scale-down
 $ kubectl delete ns demo
 ```
-<!-- PAGE_END: scaling\horizontal-scaling\maxscale.md -->
 
-
-<!-- PAGE_START: scaling\horizontal-scaling\overview.md -->
-
----
-
-## Page: SCALING/HORIZONTAL-SCALING/OVERVIEW
-
+<!-- PAGE_START: scaling/horizontal-scaling/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Horizontal Scaling
@@ -18250,8 +18324,8 @@ This guide will give an overview on how KubeDB Ops Manager scales up or down `Ma
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Horizontal Scaling Process Works
 
@@ -18274,15 +18348,8 @@ The Horizontal scaling process consists of the following steps:
 9. After the successful scaling of the `MariaDB` replicas, the `KubeDB` Enterprise operator resumes the `MariaDB` object so that the `KubeDB` Community operator resumes its usual operations.
 
 In the next docs, we are going to show a step by step guide on horizontal scaling of MariaDB database using `MariaDBOpsRequest` CRD.
-<!-- PAGE_END: scaling\horizontal-scaling\overview.md -->
 
-
-<!-- PAGE_START: scaling\vertical-scaling\cluster.md -->
-
----
-
-## Page: SCALING/VERTICAL-SCALING/CLUSTER
-
+<!-- PAGE_START: scaling/vertical-scaling/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Vertical Scale MariaDB Cluster
@@ -18295,10 +18362,10 @@ This guide will show you how to use `KubeDB` Enterprise operator to update the r
 * Install `KubeDB` Community and Enterprise operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../concepts/mariadb.md)
-  + [Clustering](../../clustering/galera-cluster.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
-  + [Vertical Scaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [Clustering](en/clustering/galera-cluster.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Vertical Scaling Overview](en/scaling/vertical-scaling/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -18410,7 +18477,7 @@ Here,
 * `spec.databaseRef.name` specifies that we are performing vertical scaling operation on `sample-mariadb` database.
 * `spec.type` specifies that we are performing `VerticalScaling` on our database.
 * `spec.VerticalScaling.mariadb` specifies the desired resources after scaling.
-* `spec.verticalScaling.mode` specifies how the scaling is actuated — `Restart` (default, restarts the Pods) or `InPlace` (resizes the running Pods without a restart, falling back to restart if a Node can’t fit the new resources). See [Vertical Scaling Modes](overview.md#vertical-scaling-modes).
+* `spec.verticalScaling.mode` specifies how the scaling is actuated — `Restart` (default, restarts the Pods) or `InPlace` (resizes the running Pods without a restart, falling back to restart if a Node can’t fit the new resources). See [Vertical Scaling Modes](en/scaling/vertical-scaling/overview.md#vertical-scaling-modes).
 
 Let’s create the `MariaDBOpsRequest` CR we have shown above,
 
@@ -18497,15 +18564,8 @@ To clean up the Kubernetes resources created by this tutorial, run:
 $ kubectl delete mariadb -n demo sample-mariadb
 $ kubectl delete mariadbopsrequest -n demo mdops-vscale
 ```
-<!-- PAGE_END: scaling\vertical-scaling\cluster.md -->
 
-
-<!-- PAGE_START: scaling\vertical-scaling\maxscale.md -->
-
----
-
-## Page: SCALING/VERTICAL-SCALING/MAXSCALE
-
+<!-- PAGE_START: scaling/vertical-scaling/maxscale.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Vertical Scale MaxScale Server
@@ -18518,10 +18578,10 @@ This guide will show you how to use `KubeDB` Ops-manager operator to update the 
 * Install `KubeDB` operator in your cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README).
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDB Replication](../../clustering/mariadb-replication.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
-  + [Vertical Scaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDB Replication](en/clustering/mariadb-replication.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Vertical Scaling Overview](en/scaling/vertical-scaling/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -18637,7 +18697,7 @@ Here,
 * `spec.type` specifies that we are performing `VerticalScaling` on our database.
 * `spec.databaseRef.name` specifies that we are performing vertical scaling operation on `md-replication` database.
 * `spec.VerticalScaling.maxscale` specifies the desired resources of maxscale server after scaling.
-* `spec.verticalScaling.mode` specifies how the scaling is actuated — `Restart` (default, restarts the Pods) or `InPlace` (resizes the running Pods without a restart, falling back to restart if a Node can’t fit the new resources). See [Vertical Scaling Modes](overview.md#vertical-scaling-modes).
+* `spec.verticalScaling.mode` specifies how the scaling is actuated — `Restart` (default, restarts the Pods) or `InPlace` (resizes the running Pods without a restart, falling back to restart if a Node can’t fit the new resources). See [Vertical Scaling Modes](en/scaling/vertical-scaling/overview.md#vertical-scaling-modes).
 
 Let’s create the `MariaDBOpsRequest` CR we have shown above,
 
@@ -18687,15 +18747,8 @@ $ kubectl delete mariadb -n demo md-replication
 $ kubectl delete mariadbopsrequest -n demo maxscale-vertical-scale
 $ kubectl delete ns demo
 ```
-<!-- PAGE_END: scaling\vertical-scaling\maxscale.md -->
 
-
-<!-- PAGE_START: scaling\vertical-scaling\overview.md -->
-
----
-
-## Page: SCALING/VERTICAL-SCALING/OVERVIEW
-
+<!-- PAGE_START: scaling/vertical-scaling/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # MariaDB Vertical Scaling
@@ -18705,8 +18758,8 @@ This guide will give an overview on how KubeDB Ops Manager vertically scales up 
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../../concepts/mariadb.md)
-  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
 
 ## How Vertical Scaling Process Works
 
@@ -18750,15 +18803,8 @@ If `spec.verticalScaling.mode` is omitted, it defaults to `Restart`.
 > use `Restart` mode.
 
 In the next docs, we are going to show a step by step guide on updating resources of MariaDB database using `MariaDBOpsRequest` CRD.
-<!-- PAGE_END: scaling\vertical-scaling\overview.md -->
 
-
-<!-- PAGE_START: backup\stash\logical\cluster.md -->
-
----
-
-## Page: BACKUP/STASH/LOGICAL/CLUSTER
-
+<!-- PAGE_START: backup/stash/logical/cluster.md -->
 # Backup KubeDB managed MariaDB Cluster using Stash
 
 Stash `v0.11.8+` supports backup and restoration of MariaDB databases. This guide will show you how you can take a logical backup of your MariaDB database cluster and restore them using Stash.
@@ -18769,11 +18815,11 @@ Stash `v0.11.8+` supports backup and restoration of MariaDB databases. This guid
 * Install KubeDB operator in your cluster from [here](https://kubedb.com/docs/latest/setup).
 * Install Stash in your cluster following the steps [here](https://stash.run/docs/latest/setup/install/stash/).
 * Install Stash `kubectl` plugin following the steps [here](https://stash.run/docs/latest/setup/install/kubectl-plugin/).
-* If you are not familiar with how Stash backup and restore MariaDB databases, please check the following guide [here](../overview.md).
+* If you are not familiar with how Stash backup and restore MariaDB databases, please check the following guide [here](en/backup/stash/overview.md).
 
 You have to be familiar with following custom resources:
 
-* [AppBinding](../../../concepts/appbinding.md)
+* [AppBinding](en/concepts/appbinding.md)
 * [Function](https://stash.run/docs/latest/concepts/crds/function/)
 * [Task](https://stash.run/docs/latest/concepts/crds/task/)
 * [BackupConfiguration](https://stash.run/docs/latest/concepts/crds/backupconfiguration/)
@@ -18855,6 +18901,9 @@ Once the database pod is in `Running` state, verify that all 3 nodes joined the 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -18886,6 +18935,9 @@ Here, we are going to use the root user (`MYSQL_ROOT_USERNAME`) credential `MYSQ
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -19171,6 +19223,9 @@ Now, let’s simulate an accidental deletion scenario. Here, we are going to exe
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -19265,6 +19320,9 @@ Now, let’s exec into the database pod and verify whether data actual data was 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -19368,16 +19426,9 @@ kubectl delete -n demo repository gcs-repo
 # delete the database resources
 kubectl delete ns demo
 ```
-<!-- PAGE_END: backup\stash\logical\cluster.md -->
 
-
-<!-- PAGE_START: backup\stash\logical\standalone.md -->
-
----
-
-## Page: BACKUP/STASH/LOGICAL/STANDALONE
-
-# Backup KubeDB managed stanadlone MariaDB using Stash
+<!-- PAGE_START: backup/stash/logical/standalone.md -->
+# Backup KubeDB Managed Standalone MariaDB using Stash
 
 Stash `v0.11.8+` supports backup and restoration of MariaDB databases. This guide will show you how you can take a logical backup of your MariaDB databases and restore them using Stash.
 
@@ -19387,7 +19438,7 @@ Stash `v0.11.8+` supports backup and restoration of MariaDB databases. This guid
 * Install KubeDB operator in your cluster from [here](https://kubedb.com/docs/latest/setup).
 * Install Stash in your cluster following the steps [here](https://stash.run/docs/latest/setup/install/stash/).
 * Install Stash `kubectl` plugin following the steps [here](https://stash.run/docs/latest/setup/install/kubectl-plugin/).
-* If you are not familiar with how Stash backup and restore MariaDB databases, please check the following guide [here](../overview.md).
+* If you are not familiar with how Stash backup and restore MariaDB databases, please check the following guide [here](en/backup/stash/overview.md).
 
 You have to be familiar with following custom resources:
 
@@ -19487,6 +19538,9 @@ Here, we are going to use the root user (`MYSQL_ROOT_USERNAME`) credential `MYSQ
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -19772,6 +19826,9 @@ Now, let’s simulate an accidental deletion scenario. Here, we are going to exe
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -19869,6 +19926,9 @@ Now, let’s exec into the database pod and verify whether data actual data was 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -19972,15 +20032,8 @@ kubectl delete -n demo repository gcs-repo
 # delete the database resources
 kubectl delete ns demo
 ```
-<!-- PAGE_END: backup\stash\logical\standalone.md -->
 
-
-<!-- PAGE_START: distributed\autoscaler\compute\cluster.md -->
-
----
-
-## Page: DISTRIBUTED/AUTOSCALER/COMPUTE/CLUSTER
-
+<!-- PAGE_START: distributed/autoscaler/compute/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Autoscaling the Compute Resource of a Distributed MariaDB Cluster
@@ -19989,7 +20042,7 @@ This guide will show you how to use `KubeDB` to autoscale compute resources i.e.
 
 ## Before You Begin
 
-* At first, you need to have a multi-cluster Kubernetes setup with OCM and KubeSlice configured. Follow the [Distributed MariaDB Overview](../../overview.md) guide to set up the required infrastructure.
+* At first, you need to have a multi-cluster Kubernetes setup with OCM and KubeSlice configured. Follow the [Distributed MariaDB Overview](en/distributed/overview.md) guide to set up the required infrastructure.
 * Install `KubeDB` Community, Ops-Manager and Autoscaler operator in your hub cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README). Make sure to enable OCM support:
 
   ```bash
@@ -19999,10 +20052,10 @@ This guide will show you how to use `KubeDB` to autoscale compute resources i.e.
 * Install Prometheus in each spoke cluster. The autoscaler queries the per-cluster Prometheus endpoint (configured in the `PlacementPolicy`) to collect resource usage metrics. You can install it from [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../../concepts/opsrequest.md)
-  + [Distributed MariaDB Compute Autoscaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Distributed MariaDB Compute Autoscaling Overview](en/distributed/autoscaler/compute/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -20433,15 +20486,8 @@ kubectl delete placementpolicy distributed-mariadb --context demo-controller
 kubectl delete ns demo --context demo-controller
 kubectl delete ns demo --context demo-worker
 ```
-<!-- PAGE_END: distributed\autoscaler\compute\cluster.md -->
 
-
-<!-- PAGE_START: distributed\autoscaler\compute\overview.md -->
-
----
-
-## Page: DISTRIBUTED/AUTOSCALER/COMPUTE/OVERVIEW
-
+<!-- PAGE_START: distributed/autoscaler/compute/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Distributed MariaDB Compute Resource Autoscaling
@@ -20451,10 +20497,10 @@ This guide will give an overview on how KubeDB Autoscaler operator autoscales th
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../../concepts/opsrequest.md)
-  + [Distributed MariaDB Overview](../../overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Distributed MariaDB Overview](en/distributed/overview.md)
 
 ## How Compute Autoscaling Works
 
@@ -20481,15 +20527,8 @@ The Auto Scaling process consists of the following steps:
 > **Key Difference from Non-Distributed Autoscaling**: For distributed MariaDB, the `PlacementPolicy` must include a `monitoring.prometheus.url` for each spoke cluster’s `distributionRules` entry. The autoscaler uses these Prometheus endpoints to collect resource metrics from pods running across multiple Kubernetes clusters.
 
 In the next docs, we are going to show a step by step guide on Autoscaling of Distributed MariaDB database using `MariaDBAutoscaler` CRD.
-<!-- PAGE_END: distributed\autoscaler\compute\overview.md -->
 
-
-<!-- PAGE_START: distributed\autoscaler\storage\cluster.md -->
-
----
-
-## Page: DISTRIBUTED/AUTOSCALER/STORAGE/CLUSTER
-
+<!-- PAGE_START: distributed/autoscaler/storage/cluster.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Storage Autoscaling of a Distributed MariaDB Cluster
@@ -20498,7 +20537,7 @@ This guide will show you how to use `KubeDB` to autoscale the storage of a distr
 
 ## Before You Begin
 
-* At first, you need to have a multi-cluster Kubernetes setup with OCM and KubeSlice configured. Follow the [Distributed MariaDB Overview](../../overview.md) guide to set up the required infrastructure.
+* At first, you need to have a multi-cluster Kubernetes setup with OCM and KubeSlice configured. Follow the [Distributed MariaDB Overview](en/distributed/overview.md) guide to set up the required infrastructure.
 * Install `KubeDB` Community, Enterprise and Autoscaler operator in your hub cluster following the steps [here](https://kubedb.com/docs/v2026.7.10/setup/README). Make sure to enable OCM support:
 
   ```bash
@@ -20509,10 +20548,10 @@ This guide will show you how to use `KubeDB` to autoscale the storage of a distr
 * You must have a `StorageClass` that supports volume expansion in each spoke cluster.
 * You should be familiar with the following `KubeDB` concepts:
 
-  + [MariaDB](../../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../../concepts/opsrequest.md)
-  + [Distributed MariaDB Storage Autoscaling Overview](overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Distributed MariaDB Storage Autoscaling Overview](en/distributed/autoscaler/storage/overview.md)
 
 To keep everything isolated, we are going to use a separate namespace called `demo` throughout this tutorial.
 
@@ -20836,15 +20875,8 @@ kubectl delete placementpolicy distributed-mariadb --context demo-controller
 kubectl delete ns demo --context demo-controller
 kubectl delete ns demo --context demo-worker
 ```
-<!-- PAGE_END: distributed\autoscaler\storage\cluster.md -->
 
-
-<!-- PAGE_START: distributed\autoscaler\storage\overview.md -->
-
----
-
-## Page: DISTRIBUTED/AUTOSCALER/STORAGE/OVERVIEW
-
+<!-- PAGE_START: distributed/autoscaler/storage/overview.md -->
 > New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
 
 # Distributed MariaDB Storage Autoscaling
@@ -20854,10 +20886,10 @@ This guide will give an overview on how KubeDB Autoscaler operator autoscales th
 ## Before You Begin
 
 * You should be familiar with the following `KubeDB` concepts:
-  + [MariaDB](../../../concepts/mariadb.md)
-  + [MariaDBAutoscaler](../../../concepts/autoscaler.md)
-  + [MariaDBOpsRequest](../../../concepts/opsrequest.md)
-  + [Distributed MariaDB Overview](../../overview.md)
+  + [MariaDB](en/concepts/mariadb.md)
+  + [MariaDBAutoscaler](en/concepts/autoscaler.md)
+  + [MariaDBOpsRequest](en/concepts/opsrequest.md)
+  + [Distributed MariaDB Overview](en/distributed/overview.md)
 
 ## How Storage Autoscaling Works
 
@@ -20884,4 +20916,3 @@ The Auto Scaling process consists of the following steps:
 > **Key Difference from Non-Distributed Autoscaling**: For distributed MariaDB, the `PlacementPolicy` must include a `monitoring.prometheus.url` for each spoke cluster’s `distributionRules` entry. The autoscaler uses these Prometheus endpoints to collect storage usage metrics from pods running across multiple Kubernetes clusters.
 
 In the next docs, we are going to show a step by step guide on Autoscaling storage of a Distributed MariaDB database using `MariaDBAutoscaler` CRD.
-<!-- PAGE_END: distributed\autoscaler\storage\overview.md -->

@@ -14,8 +14,8 @@ Ce guide vous donnera un aperçu de la façon dont vous pouvez effectuer une sau
 
 Vous devriez être familier avec ce qui suit `KubeStash` notions :
 
-* [SauvegardeStockage](https://kubestash.com/docs/latest/concepts/crds/backupstorage/)
-* [SauvegardeConfiguration](https://kubestash.com/docs/latest/concepts/crds/backupconfiguration/)
+* [BackupStorage](https://kubestash.com/docs/latest/concepts/crds/backupstorage/)
+* [BackupConfiguration](https://kubestash.com/docs/latest/concepts/crds/backupconfiguration/)
 * [Session de sauvegarde](https://kubestash.com/docs/latest/concepts/crds/backupsession/)
 * [Restaurer la session](https://kubestash.com/docs/latest/concepts/crds/restoresession/)
 * [Ajouter sur](https://kubestash.com/docs/latest/concepts/crds/addon/)
@@ -191,7 +191,9 @@ Maintenant, exécutons le pod et créons une table,
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -656,6 +658,9 @@ Maintenant, exécutons l'un des `Pod` et vérifiez les données restaurées.
 
 ```bash
 $ kubectl exec -it -n demo restored-mariadb-0 -- bash
+```
+
+```mysql
 mysql@restored-mariadb-0:/$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> use hello;

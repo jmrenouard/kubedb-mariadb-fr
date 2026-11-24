@@ -191,7 +191,9 @@ Now, let’s exec into the pod and create a table,
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -656,6 +658,9 @@ Now, lets exec one of the `Pod` and verify restored data.
 
 ```bash
 $ kubectl exec -it -n demo restored-mariadb-0 -- bash
+```
+
+```mysql
 mysql@restored-mariadb-0:/$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> use hello;

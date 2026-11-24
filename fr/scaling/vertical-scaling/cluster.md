@@ -12,7 +12,7 @@ Ce guide vous montrera comment utiliser `KubeDB` Opérateur d'entreprise pour me
 
   + [MariaDB](../../concepts/mariadb.md)
   + [Regroupement](../../clustering/galera-cluster.md)
-  + [MariaDBOpsDemande](../../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
   + [Présentation de la mise à l'échelle verticale](overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.
@@ -63,7 +63,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo

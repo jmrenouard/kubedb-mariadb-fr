@@ -12,6 +12,18 @@ Fig : Sauvegarder les bases de données KubeDB à l'aide de KubeStash
 
 ## Comment fonctionne la sauvegarde
 
+```mermaid
+flowchart LR
+  User["Appliquer BackupConfiguration"] --> KS["Contrôleur KubeStash"]
+  KS --> Repo["Repository + BackupStorage + Secret"]
+  KS --> Cron["CronJob -> BackupSession -> Snapshot"]
+  Cron --> Job["Job de sauvegarde"]
+  AppBind["AppBinding (Hôte, Port, Secret Auth)"] --> Job
+  MariaDB["Pod MariaDB"] -->|Flux Dump / Volume| Job
+  Job -->|Téléversement Restic chiffré| Backend["Stockage S3 / GCS / NFS"]
+```
+
+
 Le diagramme suivant montre comment KubeStash effectue la sauvegarde d'un `MariaDB` base de données. Ouvrez l'image dans un nouvel onglet pour voir la version agrandie.
 
   ![MariaDB Backup Overview](../../../images/backup_kubestash_overview_backup_overview.svg)

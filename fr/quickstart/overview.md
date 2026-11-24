@@ -47,13 +47,14 @@ NAME      VERSION   DB_IMAGE                                        DEPRECATED  
 11.5.2    11.5.2    ghcr.io/appscode-images/mariadb:11.5.2-noble                 12d
 11.6.2    11.6.2    ghcr.io/appscode-images/mariadb:11.6.2-noble                 12d
 11.8.5    11.8.5    ghcr.io/appscode-images/mariadb:11.8.5-noble                 12d
-12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d```
+12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d
+```
 
-## Create a MariaDB database
+## Créer une base de données MariaDB
 
-KubeDB implements a `MariaDB` CRD to define the specification of a MariaDB database. Below is the `MariaDB` object created in this tutorial.
+KubeDB implémente un CRD `MariaDB` pour définir la spécification d'une base de données MariaDB. Vous trouverez ci-dessous l'objet `MariaDB` créé dans ce tutoriel.
 
-`Note`: If your `KubeDB version` is less or equal to `v2024.6.4`, You have to use `v1alpha2` apiVersion.
+`Note` : Si votre version de `KubeDB` est inférieure ou égale à `v2024.6.4`, utilisez la version d'API `v1alpha2`.
 
 ```yaml
 apiVersion: kubedb.com/v1
@@ -210,8 +211,11 @@ sample-mariadb-pods   ClusterIP   None             <none>        3306/TCP   28m
 
 L'opérateur KubeDB définit le `status.phase` à `Running` une fois la base de données créée avec succès. Exécutez la commande suivante pour voir l'objet MariaDB modifié :
 
-```yaml
+```bash
 $ kubectl get mariadb -n demo sample-mariadb -o yaml
+```
+
+```text
 apiVersion: kubedb.com/v1
 kind: MariaDB
 metadata:
@@ -254,7 +258,7 @@ L'opérateur KubeDB a créé un nouveau secret appelé `mariadb-quickstart-auth`
 
 Si vous souhaitez utiliser un secret existant, veuillez le préciser lors de la création de l'objet MariaDB à l'aide de `spec.authSecret.name`. Lors de la création manuelle de ce secret, assurez-vous que le secret contient ces deux clés contenant des données `username` et `password` et assurez-vous également d'utiliser `root` comme valeur de `username`.
 
-Maintenant, nous avons besoin `username` et `password` pour se connecter à cette base de données depuis `kubeclt exec` commande. Dans cet exemple, `sample-mariadb-auth` secret contient le nom d'utilisateur et le mot de passe.
+Maintenant, nous avons besoin de `username` et `password` pour nous connecter à cette base de données avec la commande `kubectl exec`. Dans cet exemple, le secret `sample-mariadb-auth` contient le nom d'utilisateur et le mot de passe.
 
 ```bash
 $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
@@ -268,6 +272,9 @@ Nous exécuterons dans le pod `sample-mariadb-0` et connectez-vous à la base de
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- mariadb -u root --password='w*yOU$b53dTbjsjJ'
+```
+
+```mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 335
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -300,7 +307,7 @@ $ kubectl delete mariadb sample-mariadb -n demo
 Error from server (BadRequest): admission webhook "mariadb.validators.kubedb.com" denied the request: mariadb "mariadb-quickstart" can't be halted. To delete, change spec.deletionPolicy
 ```
 
-Maintenant, cours `kubectl edit mariadb sample-mariadb -n demo` définir `spec.deletionPolicy` à `Halt` (qui supprime l'objet mariadb et conserve le PVC, les instantanés et les secrets intacts) ou supprimez ce champ (qui est par défaut `Delete`). Vous pourrez ensuite supprimer/arrêter la base de données.
+Exécutez maintenant `kubectl edit mariadb sample-mariadb -n demo` pour définir `spec.deletionPolicy` sur `Halt` (qui supprime l'objet mariadb et conserve le PVC, les instantanés et les secrets intacts) ou supprimez ce champ (qui est par défaut `Delete`). Vous pourrez ensuite supprimer/arrêter la base de données.
 
 **Arrêt:**
 
@@ -308,7 +315,7 @@ Supposons que vous souhaitiez réutiliser le volume et les informations d'identi
 
 Quand le `DeletionPolicy` est réglé sur `Halt` et l'objet MariaDB est supprimé, l'opérateur KubeDB supprimera le PetSet et ses pods mais laisse le `PVCs`, `secrets` et les données de sauvegarde de la base de données (`snapshots`) intact. Vous pouvez définir le `deletionPolicy` à `Halt` dans la base de données existante en utilisant `edit` commande pour tester.
 
-Dans un premier temps, courez `kubectl edit mariadb sample-mariadb -n demo` définir `spec.deletionPolicy` à `Halt`. Supprimez ensuite l'objet mariadb,
+Dans un premier temps, exécutez `kubectl edit mariadb sample-mariadb -n demo` pour définir `spec.deletionPolicy` sur `Halt`. Supprimez ensuite l'objet mariadb,
 
 ```bash
 $ kubectl delete mariadb sample-mariadb -n demo
@@ -361,8 +368,11 @@ Vous pouvez totalement supprimer le `MariaDB` base de données et ressources per
 
 Supposons que nous ayons une base de données avec `deletionPolicy` réglé sur `WipeOut`. Maintenant, nous allons supprimer la base de données à l'aide de la commande suivante :
 
-```yaml
+```bash
 $ kubectl delete mariadb sample-mariadb -n demo
+```
+
+```text
 mariadb.kubedb.com "sample-mariadb" deleted
 ```
 
@@ -421,4 +431,4 @@ Si vous testez simplement quelques fonctionnalités de base, vous souhaiterez pe
 
 ## Prochaines étapes
 
-* Vous voulez pirater KubeDB ? Consultez notre [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
+* Vous souhaitez contribuer à KubeDB ? Consultez nos [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).

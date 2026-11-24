@@ -9,7 +9,7 @@ gestion des bases de données MariaDB dans Kubernetes.
 
 * Vous devriez être familier avec ce qui suit `KubeDB` notions :
   + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsDemande](../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../concepts/opsrequest.md)
 
 ## Flux de travail GitOps avec MariaDB
 

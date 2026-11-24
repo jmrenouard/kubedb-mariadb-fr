@@ -66,7 +66,7 @@ Le `--link` L'argument crée un lien symbolique qui pointe toujours vers les der
 
 > Pour en savoir plus sur `git-sync` configuration, visitez ceci [lien](https://github.com/kubernetes/git-sync).
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -79,7 +79,9 @@ Ensuite, nous nous connecterons à la base de données MariaDB et vérifierons l
 ```bash
 kubectl exec -it -n demo sample-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, mariadb-init (init), git-sync (init)
+```
 
+```mysql
 mysql@sample-mariadb-0:/$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 6

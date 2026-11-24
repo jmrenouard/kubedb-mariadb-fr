@@ -185,7 +185,7 @@ If you don’t have any existing Prometheus server running, you have to deploy o
 
 **Create ConfigMap:**
 
-At first, create a ConfigMap with the scraping configuration. Bellow, the YAML of ConfigMap that we are going to create in this tutorial.
+At first, create a ConfigMap with the scraping configuration. Below, the YAML of the ConfigMap that we are going to create in this tutorial.
 
 ```yaml
 apiVersion: v1

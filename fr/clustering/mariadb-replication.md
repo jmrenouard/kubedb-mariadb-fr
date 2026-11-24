@@ -264,6 +264,9 @@ Nous sommes maintenant prêts à vérifier l’état du cluster nouvellement cr�
 ```bash
 $ kubectl exec -it -n demo svc/sample-mariadb-mx -- bash
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬─────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID    │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼─────────┼────────────────────┤
@@ -318,6 +321,9 @@ exit
 ```bash
 # Master Node
 $ kubectl exec -it -n demo svc/sample-mariadb -- bash
+```
+
+```mysql
 mysql@sample-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -337,9 +343,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
+```bash
 # Slave Node
 $ kubectl exec -it -n demo svc/sample-mariadb-standby -- bash
+```
+
+```mysql
 mysql@sample-mariadb-1:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
@@ -374,6 +385,9 @@ Dans un cluster de réplication MariaDB, seul le membre maître peut écrire et 
 ```bash
 # master node
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 202
@@ -405,12 +419,18 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 mysql@sample-mariadb-0:/ exit
 exit
 
 # check slave node data
 
 $ kubectl exec -it -n demo sample-mariadb-1 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-1:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -430,9 +450,15 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 1 row in set (0.001 sec)
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 mysql@sample-mariadb-1:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-2 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-2:/  mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -453,6 +479,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit
 Bye
+```
+
+```bash
 mysql@sample-mariadb-2:/# exit
 exit
 ```
@@ -473,6 +502,9 @@ Now exec into maxscale server and run the following command to check the server 
 $ kubectl exec -it -n demo svc/sample-mariadb-mx -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬───────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID      │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
@@ -482,11 +514,16 @@ bash-4.4$ maxctrl list servers
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
 │ server3 │ sample-mariadb-2.sample-mariadb-pods.demo.svc.cluster.local │ 3306 │ 0           │ Slave, Running  │ 0-1-14545 │ ReplicationMonitor │
 └─────────┴─────────────────────────────────────────────────────────────┴──────┴─────────────┴─────────────────┴───────────┴────────────────────┘
+```
 
+```bash
 # sample-mariadb-1 is new master.
 # Wait some time to up sample-mariadb-0 and check the server list again
 
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬───────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID      │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
@@ -496,11 +533,16 @@ bash-4.4$ maxctrl list servers
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
 │ server3 │ sample-mariadb-2.sample-mariadb-pods.demo.svc.cluster.local │ 3306 │ 0           │ Slave, Running  │ 0-2-14551 │ ReplicationMonitor │
 └─────────┴─────────────────────────────────────────────────────────────┴──────┴─────────────┴─────────────────┴───────────┴────────────────────┘
+```
 
+```bash
 All replicas up and srunning now.
 
 # Now check `sample-mariadb-0` data
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 mysql@sample-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 10
@@ -556,8 +598,11 @@ spec:
 
 Appliquons le yaml.
 
-```yaml
+```bash
 $ kubectl apply -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/mariadb/clustering/mariadb-replication/examples/ubuntu.yaml
+```
+
+```text
 deployment.apps/ubuntu created
 ```
 
@@ -590,7 +635,7 @@ MariaDB [(none)]>
 
 Nous avons réussi à nous connecter en tant que `testuser` utilisateur. Exécutons quelques requêtes de lecture et d'écriture en utilisant cette connexion.
 
-```bash
+```mysql
 MariaDB [(none)]> show databases;
 +--------------------+
 | Database           |
@@ -632,7 +677,13 @@ MariaDB [playground]> select * from equipment;
 # Currently our server state is -
 ➤ kubectl exec -it -n demo pod/sample-mariadb-mx-0 -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
+```
+
+```bash
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬───────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID      │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
@@ -642,9 +693,13 @@ bash-4.4$ maxctrl list servers
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼───────────┼────────────────────┤
 │ server3 │ sample-mariadb-2.sample-mariadb-pods.demo.svc.cluster.local │ 3306 │ 1           │ Slave, Running  │ 0-2-52054 │ ReplicationMonitor │
 └─────────┴─────────────────────────────────────────────────────────────┴──────┴─────────────┴─────────────────┴───────────┴────────────────────┘
+```
 
+```bash
 # Now lets check read-write split
+```
 
+```mysql
 MariaDB [playground]> SELECT NOW(),@@hostname;
 +---------------------+------------------+
 | NOW()               | @@hostname       |

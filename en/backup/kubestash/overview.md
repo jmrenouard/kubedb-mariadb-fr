@@ -12,6 +12,18 @@ Fig: Backup KubeDB Databases Using KubeStash
 
 ## How Backup Works
 
+```mermaid
+flowchart LR
+  User["Operator Applies BackupConfiguration"] --> KS["KubeStash Controller"]
+  KS --> Repo["Repository + BackupStorage + Secret"]
+  KS --> Cron["CronJob -> BackupSession -> Snapshot"]
+  Cron --> Job["Backup Job"]
+  AppBind["AppBinding (Host, Port, Auth Secret)"] --> Job
+  MariaDB["MariaDB Pod"] -->|Dump / Volume Stream| Job
+  Job -->|Restic Encrypted Upload| Backend["Cloud or On-Prem Storage"]
+```
+
+
 The following diagram shows how KubeStash takes backup of a `MariaDB` database. Open the image in a new tab to see the enlarged version.
 
   ![MariaDB Backup Overview](../../../images/backup_kubestash_overview_backup_overview.svg)

@@ -16,7 +16,7 @@ Lorsqu'un utilisateur crée un crd de base de données avec `spec.monitor` confi
 
 Afin d'activer la surveillance d'une base de données, vous devez configurer `spec.monitor` section. KubeDB fournit les options suivantes à configurer `spec.monitor` section:
 
-| Champ | Taper | Utilisations |
+| Champ | Type | Utilisations |
 | --- | --- | --- |
 | `spec.monitor.agent` | `Required` | Type de l'agent de surveillance qui sera utilisé pour surveiller cette base de données. Cela peut être `prometheus.io/builtin` ou `prometheus.io/operator`. |
 | `spec.monitor.prometheus.exporter.port` | `Optional` | Numéro de port où le side-car de l'exportateur fournira des mesures. |
@@ -62,9 +62,9 @@ Ici, nous avons précisé que nous allons surveiller ce serveur à l'aide de l'o
 ## Prochaines étapes
 
 * Apprenez à surveiller `MariaDB` base de données avec KubeDB en utilisant [intégré-Prométhée](builtin-prometheus.md) et en utilisant [Opérateur Prométhée](prometheus-operator.md).
-* Apprenez à surveiller `MariaDB` base de données avec KubeDB en utilisant [intégré-Prométhée](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-builtin-prometheus) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-prometheus-operator).
+* Apprenez à surveiller une base de données `Elasticsearch` avec KubeDB en utilisant [Prometheus intégré](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-builtin-prometheus) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/monitoring/using-prometheus-operator).
 * Apprenez à surveiller `PostgreSQL` base de données avec KubeDB en utilisant [intégré-Prométhée](https://kubedb.com/docs/v2026.7.10/guides/postgres/monitoring/using-builtin-prometheus) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/postgres/monitoring/using-prometheus-operator).
-* Apprenez à surveiller `MySQL` base de données avec KubeDB en utilisant [intégré-Prométhée](https://kubedb.com/docs/v2026.7.10/guides/mysql/monitoring/builtin-prometheus/) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/mysql/monitoring/prometheus-operator/).
+* Apprenez à surveiller une base de données `MySQL` avec KubeDB en utilisant [intégré-Prométhée](https://kubedb.com/docs/v2026.7.10/guides/mysql/monitoring/builtin-prometheus/) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/mysql/monitoring/prometheus-operator/).
 * Apprenez à surveiller `MongoDB` base de données avec KubeDB en utilisant [intégré-Prométhée](https://kubedb.com/docs/v2026.7.10/guides/mongodb/monitoring/using-builtin-prometheus) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/mongodb/monitoring/using-prometheus-operator).
 * Apprenez à surveiller `Redis` serveur avec KubeDB utilisant [intégré-Prométhée](https://kubedb.com/docs/v2026.7.10/guides/redis/monitoring/using-builtin-prometheus) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/redis/monitoring/using-prometheus-operator).
 * Apprenez à surveiller `Memcached` serveur avec KubeDB utilisant [intégré-Prométhée](https://kubedb.com/docs/v2026.7.10/guides/memcached/monitoring/using-builtin-prometheus) et en utilisant [Opérateur Prométhée](https://kubedb.com/docs/v2026.7.10/guides/memcached/monitoring/using-prometheus-operator).

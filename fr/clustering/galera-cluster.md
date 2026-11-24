@@ -160,6 +160,9 @@ Une fois la base de données en cours d’exécution, nous pouvons nous connecte
 ```bash
 # First Node
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -179,10 +182,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
-
+```bash
 # Second Node
 $ kubectl exec -it -n demo sample-mariadb-1 -- bash
+```
+
+```mysql
 root@sample-mariadb-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
@@ -202,10 +209,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
-
+```bash
 # Third Node
 $ kubectl exec -it -n demo sample-mariadb-2 -- bash
+```
+
+```mysql
 root@sample-mariadb-2:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 78
@@ -233,6 +244,9 @@ Nous sommes maintenant prêts à vérifier l’état du cluster nouvellement cr�
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 137
@@ -259,6 +273,9 @@ Dans un cluster MariaDB Galera, chaque membre peut lire et écrire. Dans cette s
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 202
@@ -290,9 +307,15 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 root@sample-mariadb-0:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-1 -- bash
+```
+
+```mysql
 root@sample-mariadb-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -327,9 +350,15 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 root@sample-mariadb-1:/ exit
 exit
 ~ $ kubectl exec -it -n demo sample-mariadb-2 -- bash
+```
+
+```mysql
 root@sample-mariadb-2:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 209
@@ -356,6 +385,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit
 Bye
+```
+
+```bash
 root@sample-mariadb-2:/# exit
 exit
 ```
@@ -368,6 +400,9 @@ Pour tester le basculement automatique, nous allons forcer le redémarrage de l'
 
 ```bash
 kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
@@ -390,6 +425,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> quit;
 Bye
+```
+
+```bash
 root@sample-mariadb-0:/ exit
 exit
 
@@ -399,6 +437,9 @@ pod "sample-mariadb-0" deleted
 
 # Wait for sample-mariadb-0 to restart
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 10

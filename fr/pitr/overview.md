@@ -1,20 +1,20 @@
-> New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
+> Vous débutez avec KubeDB ? Commencez [ici](https://kubedb.com/docs/v2026.7.10/README).
 
-# KubeDB MariaDB - Continuous Archiving and Point-in-time Recovery
+# KubeDB MariaDB - Archivage continu et récupération ponctuelle (PITR)
 
 Ici, nous allons vous montrer comment utiliser KubeDB pour provisionner une MariaDB afin d'archiver en continu et de restaurer à un moment donné.
 
-## Before You Begin
+## Avant de commencer
 
 Dans un premier temps, vous devez disposer d'un cluster Kubernetes et l'outil de ligne de commande kubectl doit être configuré pour communiquer avec votre cluster. Pour cette démonstration, j'utilise le cluster linode.
 
-Maintenant, installez `KubeDB` opérateur dans votre cluster en suivant les étapes [here](https://kubedb.com/docs/v2026.7.10/setup/README).
+Maintenant, installez `KubeDB` opérateur dans votre cluster en suivant les étapes [ici](https://kubedb.com/docs/v2026.7.10/setup/README).
 
-Pour installer `KubeStash` opérateur dans votre cluster en suivant les étapes [here](https://github.com/kubestash/installer/tree/master/charts/kubestash).
+Pour installer `KubeStash` opérateur dans votre cluster en suivant les étapes [ici](https://github.com/kubestash/installer/tree/master/charts/kubestash).
 
-Pour installer `External-snapshotter` dans votre cluster en suivant les étapes [here](https://github.com/kubernetes-csi/external-snapshotter/tree/release-5.0).
+Pour installer `External-snapshotter` dans votre cluster en suivant les étapes [ici](https://github.com/kubernetes-csi/external-snapshotter/tree/release-5.0).
 
-To keep things isolated, this tutorial uses a separate namespace called `demo` throughout this tutorial.
+Pour isoler cet exercice, ce tutoriel utilise un espace de noms dédié appelé `demo`.
 
 ```bash
 $ kubectl create ns demo
@@ -23,14 +23,23 @@ namespace/demo created
 
 > Remarque : Les fichiers yaml utilisés dans ce didacticiel sont stockés dans [docs/guides/mariadb/pitr/overview/yamls](https://github.com/kubedb/docs/tree/v2026.7.10/docs/guides/mariadb/remote-replica/yamls) dossier dans le référentiel GitHub [kubedb/docs](https://github.com/kubedb/docs).
 
-## archivage continu
+## Archivage continu
 
-L'archivage continu implique la réalisation de copies régulières (ou « archives ») des fichiers journaux des transactions MariaDB. Pour garantir un archivage continu vers un emplacement distant, nous devons préparer `BackupStorage`,`RetentionPolicy`,`MariaDBArchiver` pour les bases de données MariaDB gérées par KubeDB.
+```mermaid
+flowchart LR
+  DB["Pods MariaDB"] -->|Journaux binlog| Archiver["MariaDBArchiver + Sidekick"]
+  Archiver -->|Téléversement continu| Store["Dépôt BackupStorage"]
+  Snap["VolumeSnapshot (Sauvegarde complète)"] --> Restorer["Restauration MariaDB (recoveryTimestamp)"]
+  Store -->|Relecture des binlogs| Restorer
+  Restorer --> Target["Cluster MariaDB restauré"]
+```
 
-### SauvegardeStockage
+L'archivage continu implique la réalisation de copies régulières (ou « archives ») des fichiers journaux des transactions MariaDB. Pour garantir un archivage continu vers un emplacement distant, nous devons préparer `BackupStorage`,`RetentionPolicy`,`MariaDBArchiver` pour les bases de données MariaDB gérées par KubeDB.
+
+### BackupStorage
 
 BackupStorage est un CR fourni par KubeStash qui peut gérer le stockage de divers fournisseurs tels que GCS, S3, etc.
-Nous allons stocker nos données de sauvegarde dans un `S3` seau. Nous devons créer un `Secret` avec les informations d'identification nécessaires et un `BackupStorage` CR pour utiliser ce backend. Si vous souhaitez utiliser un autre backend, veuillez lire le document de configuration du backend correspondant à partir de [here](https://kubestash.com/docs/latest/guides/backends/overview/).
+Nous allons stocker nos données de sauvegarde dans un `S3` seau. Nous devons créer un `Secret` avec les informations d'identification nécessaires et un `BackupStorage` CR pour utiliser ce backend. Si vous souhaitez utiliser un autre backend, veuillez lire le document de configuration du backend correspondant à partir de [ici](https://kubestash.com/docs/latest/guides/backends/overview/).
 
 ```yaml
 apiVersion: storage.kubestash.com/v1alpha1
@@ -59,7 +68,7 @@ $ kubectl apply -f backupstorage.yaml
    backupstorage.storage.kubestash.com/linode-storage created
 ```
 
-### secrets for backup-storage
+### Secrets pour BackupStorage
 
 ```yaml
 apiVersion: v1
@@ -79,7 +88,7 @@ $ kubectl apply -f storage-secret.yaml
   secret/storage created
 ```
 
-### Retention policy
+### Politique de rétention (`RetentionPolicy`)
 
 RetentionPolicy est une ressource personnalisée (CR) fournie par KubeStash qui vous permet de définir la durée pendant laquelle vous souhaitez conserver les données de sauvegarde.
 
@@ -249,13 +258,13 @@ retention-policy-mariadb-backup-full-backup-1726549703-wg7wt      0/1     Comple
 retention-policy-mariadb-backup-manifest-backup-17265497038pvjd   0/1     Completed   0               3m55s
 ```
 
-`mariadb-sidekick` is responsible for uploading binlog files
+`mariadb-sidekick` est chargé de téléverser les fichiers binlog.
 
 `mariadb-backup-full-backup-1726549703-bjk9w` sont le pod de sauvegardes de niveaux de volumes pour MariaDB.
 
 `mariadb-backup-manifest-backup-1726549703-fx9kx` sont le pod de la sauvegarde du manifeste lié à l'objet MariaDB
 
-### validate BackupConfiguration and VolumeSnapshots
+### Valider BackupConfiguration et VolumeSnapshots
 
 ```bash
 $ kubectl get backupconfigurations -n demo
@@ -279,7 +288,9 @@ Après chaque changement de binlog, les fichiers binlog seront téléchargés ve
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -311,7 +322,6 @@ MariaDB [hello]> select now();
 +---------------------+
 | 2024-09-17 05:28:26 |
 +---------------------+
-+---------------------+
 
 MariaDB [hello]> select count(*) from demo_table;
 +----------+
@@ -325,8 +335,8 @@ MariaDB [hello]> select count(*) from demo_table;
 
 ## Récupération ponctuelle
 
-Point-In-Time Recovery allows you to restore a MariaDB database to a specific point in time using the archived transaction logs. This is particularly useful in scenarios where you need to recover to a state just before a specific error or data corruption occurred.
-Let’s say accidentally our dba drops the table demo\_table and we want to restore.
+La récupération ponctuelle (PITR) permet de restaurer une base de données MariaDB à un instant précis à l'aide des journaux de transactions archivés. Ce mécanisme est particulièrement utile pour revenir à un état juste avant une erreur ou une corruption des données.
+Supposons que notre DBA supprime accidentellement la table `demo_table` et souhaite la restaurer.
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
@@ -338,9 +348,9 @@ MariaDB [hello]> flush logs;
 
 Nous ne pouvons pas restaurer à partir d'une sauvegarde complète car à ce stade, aucune sauvegarde complète n'a été effectuée. nous pouvons donc choisir une heure spécifique à laquelle nous voulons restaurer. Nous pouvons obtenir l'heure spécifique à partir du journal binaire archivé dans le stockage de sauvegarde. Accédez au fichier binlog et trouvez où stocker. Vous pouvez analyser les fichiers binlog en utilisant `mariadbbinlog`.
 
-For the demo I will use the previous time we get form `select now()`
+Pour cette démonstration, nous utilisons l'horodatage précédent obtenu avec `select now()`.
 
-```bash
+```mysql
 MariaDB [hello]> select now();
 +---------------------+
 | now()               |
@@ -415,6 +425,9 @@ restore-mariadb   11.1.3    Ready    5m37s
 
 ```bash
 $ kubectl exec -it -n demo restore-mariadb-0 -- bash
+```
+
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 mariadb> use hello
@@ -428,11 +441,11 @@ MariaDB [hello]> select count(*) from demo_table;
 1 row in set (0.00 sec)
 ```
 
-**so we are able to successfully recover from a disaster**
+**Nous avons ainsi réussi la récupération après sinistre.**
 
 ## Nettoyage
 
-To cleanup the Kubernetes resources created by this tutorial, run:
+Pour nettoyer les ressources Kubernetes créées dans ce tutoriel, exécutez :
 
 ```bash
 $ kubectl delete -n demo mariadb/mariadb
@@ -442,13 +455,13 @@ $ kubectl delete -n demo mariadbarchiver
 $ kubectl delete ns demo
 ```
 
-## Next Steps
+## Prochaines étapes
 
 * En savoir plus sur [backup and restore](../backup/kubestash/overview.md) Base de données MariaDB utilisant KubeStash.
 * En savoir plus sur l'initialisation [MariaDB with Script](../initialization/using-script.md).
 * Vous souhaitez configurer le cluster MariaDB ? Vérifiez comment [configurer le cluster MariaDB hautement disponible](../clustering/galera-cluster.md)
-* Monitor your MariaDB database with KubeDB using [Prometheus intégré](../monitoring/builtin-prometheus.md).
-* Monitor your MariaDB database with KubeDB using [Opérateur Prométhée](../monitoring/prometheus-operator.md).
-* Detail concepts of [Objet MariaDB](../concepts/mariadb.md).
-* Utiliser [registre Docker privé](../private-registry/quickstart.md) pour déployer MariaDB avec KubeDB.
-* Want to hack on KubeDB? Check our [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
+* Surveillez votre base de données MariaDB avec KubeDB à l'aide de [Prometheus intégré](../monitoring/builtin-prometheus.md).
+* Surveillez votre base de données MariaDB avec KubeDB à l'aide de [l'opérateur Prometheus](../monitoring/prometheus-operator.md).
+* Consultez les concepts détaillés de l'[objet MariaDB](../concepts/mariadb.md).
+* Utilisez un [registre Docker privé](../private-registry/quickstart.md) pour déployer MariaDB avec KubeDB.
+* Vous souhaitez contribuer à KubeDB ? Consultez nos [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).

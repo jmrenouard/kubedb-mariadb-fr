@@ -77,7 +77,7 @@ spec:
   version: 12.1.2
 ```
 
-### spécification.version
+### spec.version
 
 `spec.version` est un champ obligatoire précisant le nom du [Version MariaDB](mariadb-version.md) crd où les images du docker sont spécifiées. Actuellement, lorsque vous installez KubeDB, cela crée ce qui suit : `MariaDBVersion` ressources,
 
@@ -116,7 +116,7 @@ type: Opaque
 
 `spec.storageType` est un champ facultatif qui spécifie le type de stockage à utiliser pour la base de données. Cela peut être soit `Durable` ou `Ephemeral`. La valeur par défaut de ce champ est `Durable`. Si `Ephemeral` est utilisé, KubeDB créera la base de données MariaDB en utilisant [videDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) volume. Dans ce cas, vous n’êtes pas obligé de préciser `spec.storage` champ.
 
-### spécification.stockage
+### spec.storage
 
 Si vous définissez `spec.storageType:` à `Durable`, alors `spec.storage` est un champ obligatoire qui spécifie la StorageClass des PVC alloués dynamiquement pour stocker les données de la base de données. Cette spécification de stockage sera transmise au PetSet créé par l'opérateur KubeDB pour exécuter les pods de base de données. Vous pouvez spécifier n'importe quelle StorageClass disponible dans votre cluster avec les demandes de ressources appropriées.
 
@@ -159,7 +159,7 @@ spec:
 
 Dans l'exemple ci-dessus, l'opérateur KubeDB lancera un Job pour exécuter tous les scripts js de `md-init-script` par ordre alphabétique une fois que les pods PetSet sont en cours d’exécution.
 
-### spec.moniteur
+### spec.monitor
 
 MariaDB gérée par KubeDB peut être surveillée avec l'opérateur Prometheus et Prometheus intégré prêt à l'emploi.
 
@@ -205,12 +205,14 @@ Les champs suivants sont configurables dans le `spec.tls` section:
   + `uriSANs` (facultatif) est une liste de noms alternatifs de sujets URI à définir dans le certificat.
   + `emailSANs` (facultatif) est une liste de noms alternatifs de sujets de courrier électronique à définir dans le certificat.
 
-### spécification.configuration
+### spec.configuration
 
 `spec.configuration` est un champ facultatif qui spécifie une configuration personnalisée pour le cluster Mariadb. Il comporte les champs suivants :
 
 * `configuration.inline` est un champ facultatif qui vous permet de fournir une configuration personnalisée directement dans l'objet Mariadb.
-  + ```yaml
+  + Extrait de configuration :
+
+    ```yaml
     configuration:
          inline:
            md.cnf: |
@@ -225,23 +227,23 @@ KubeDB permet de fournir un modèle pour le pod de base de données via `spec.po
 
 KubeDB accepte les champs suivants à définir `spec.podTemplate:`
 
-* métadonnées :
-  + annotations (annotation du pod)
-* contrôleur:
-  + annotations (annotation de petset)
-* spécification :
-  + conteneurs
-  + tomes
-  + podPlacementPolitique
-  + initConteneurs
-  + imagePullSecrets
-  + sélecteur de nœud
-  + serviceAccountName
-  + Nom du planificateur
-  + tolérances
-  + nomClassePriorité
-  + priorité
-  + contexte de sécurité
+* `metadata` :
+  + `annotations` (annotation du pod)
+* `controller` :
+  + `annotations` (annotation de petset)
+* `spec` :
+  + `containers`
+  + `volumes`
+  + `podPlacementPolicy`
+  + `initContainers`
+  + `imagePullSecrets`
+  + `nodeSelector`
+  + `serviceAccountName`
+  + `schedulerName`
+  + `tolerations`
+  + `priorityClassName`
+  + `priority`
+  + `securityContext`
 
 Utilisations de certains domaines de `spec.podTemplate` est décrit ci-dessous,
 
@@ -288,7 +290,7 @@ Le `spec.podTemplate.spec.containers[].name` champ utilisé pour spécifier le n
 
 Notez que KubeDB n'autorise pas `MYSQL_ROOT_PASSWORD`, `MYSQL_ALLOW_EMPTY_PASSWORD`, `MYSQL_RANDOM_ROOT_PASSWORD`, et `MYSQL_ONETIME_PASSWORD` variables d'environnement à définir `spec.env`. Si vous souhaitez définir le mot de passe root, veuillez utiliser `spec.authSecret` au lieu de cela décrit plus tôt.
 
-Si vous essayez de définir l'une des variables d'environnement interdites, c'est-à-dire `MYSQL_ROOT_PASSWORD` dans MariaDB crd, l'opérateur Kubed rejettera la demande avec l'erreur suivante,
+Si vous essayez de définir l'une des variables d'environnement interdites, c'est-à-dire `MYSQL_ROOT_PASSWORD` dans MariaDB crd, l'opérateur KubeDB rejettera la demande avec l'erreur suivante,
 
 ```bash
 Error from server (Forbidden): error when creating "./mariadb.yaml": admission webhook "mariadb.validators.kubedb.com" denied the request: environment variable MYSQL_ROOT_PASSWORD is forbidden to use in MariaDB spec
@@ -337,20 +339,20 @@ Vous pouvez également fournir un modèle pour les services créés par l'opéra
 
 KubeDB permet de définir les champs suivants `spec.serviceTemplates`:
 
-* métadonnées :
-  + annotations
-* spécification :
-  + taper
-  + ports
-  + clusterIP
-  + adresses IP externes
-  + LoadBalancerIP
-  + loadBalancerSourceRanges
-  + politique de trafic externe
-  + healthCheckNodePort
-  + sessionAffinityConfig
+* `metadata` :
+  + `annotations`
+* `spec` :
+  + `type`
+  + `ports`
+  + `clusterIP`
+  + `externalIPs`
+  + `loadBalancerIP`
+  + `loadBalancerSourceRanges`
+  + `externalTrafficPolicy`
+  + `healthCheckNodePort`
+  + `sessionAffinityConfig`
 
-```bash
+```yaml
 spec:
   version: "12.1.2"
   serviceTemplates:
@@ -366,7 +368,7 @@ spec:
 
 Voir [ici](https://github.com/kmodules/offshoot-api/blob/kubernetes-1.16.3/api/v1/types.go#L163) pour comprendre ces domaines en détail.
 
-### spec.arrêté
+### spec.halted
 
 `spec.halted` est un champ facultatif. Supposons que vous vouliez supprimer le `MariaDB` ressources(`PetSet`, `Service` etc.) sauf `MariaDB` objet, `PVCs` et `Secret` alors vous devez définir `spec.halted` à `true`. Si vous définissez `spec.halted` à `true` alors le `deletionPolicy` dans `MariaDB` l'objet sera défini `Halt` par défaut.
 

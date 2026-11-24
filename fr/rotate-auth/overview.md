@@ -8,9 +8,9 @@ Ce guide donnera un aperçu de la configuration de l'authentification par rotati
 
 * Vous devriez être familier avec ce qui suit `KubeDB` notions :
   + [MariaDB](../concepts/mariadb.md)
-  + [MariaDBOpsDemande](../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../concepts/opsrequest.md)
 
-## Comment fonctionne le processus de configuration de l'authentification Rotate MariaDB
+## Fonctionnement du processus de rotation des identifiants MariaDB
 
 Le processus de rotation d'authentification pour MariaDB à l'aide de KubeDB implique les étapes suivantes :
 
