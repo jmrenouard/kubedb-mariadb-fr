@@ -1291,7 +1291,7 @@ Appliquons le yaml.
 $ kubectl apply -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/mariadb/clustering/mariadb-replication/examples/ubuntu.yaml
 ```
 
-```yaml
+```text
 deployment.apps/ubuntu created
 ```
 
@@ -2137,7 +2137,7 @@ Les champs suivants sont configurables dans le `spec.tls` section:
 `spec.configuration` est un champ facultatif qui spécifie une configuration personnalisée pour le cluster Mariadb. Il comporte les champs suivants :
 
 * `configuration.inline` est un champ facultatif qui vous permet de fournir une configuration personnalisée directement dans l'objet Mariadb.
-  + Configuration snippet:
+  + Extrait de configuration :
 
     ```yaml
     configuration:
@@ -2154,23 +2154,23 @@ KubeDB permet de fournir un modèle pour le pod de base de données via `spec.po
 
 KubeDB accepte les champs suivants à définir `spec.podTemplate:`
 
-* métadonnées :
-  + annotations (annotation du pod)
-* contrôleur:
-  + annotations (annotation de petset)
-* spécification :
-  + conteneurs
-  + tomes
-  + podPlacementPolitique
-  + initConteneurs
-  + imagePullSecrets
-  + sélecteur de nœud
-  + serviceAccountName
-  + Nom du planificateur
-  + tolérances
-  + nomClassePriorité
-  + priorité
-  + contexte de sécurité
+* `metadata` :
+  + `annotations` (annotation du pod)
+* `controller` :
+  + `annotations` (annotation de petset)
+* `spec` :
+  + `containers`
+  + `volumes`
+  + `podPlacementPolicy`
+  + `initContainers`
+  + `imagePullSecrets`
+  + `nodeSelector`
+  + `serviceAccountName`
+  + `schedulerName`
+  + `tolerations`
+  + `priorityClassName`
+  + `priority`
+  + `securityContext`
 
 Utilisations de certains domaines de `spec.podTemplate` est décrit ci-dessous,
 
@@ -2266,18 +2266,18 @@ Vous pouvez également fournir un modèle pour les services créés par l'opéra
 
 KubeDB permet de définir les champs suivants `spec.serviceTemplates`:
 
-* métadonnées :
-  + annotations
-* spécification :
-  + taper
-  + ports
-  + clusterIP
-  + adresses IP externes
-  + LoadBalancerIP
-  + loadBalancerSourceRanges
-  + politique de trafic externe
-  + healthCheckNodePort
-  + sessionAffinityConfig
+* `metadata` :
+  + `annotations`
+* `spec` :
+  + `type`
+  + `ports`
+  + `clusterIP`
+  + `externalIPs`
+  + `loadBalancerIP`
+  + `loadBalancerSourceRanges`
+  + `externalTrafficPolicy`
+  + `healthCheckNodePort`
+  + `sessionAffinityConfig`
 
 ```yaml
 spec:
@@ -3061,21 +3061,21 @@ KubeDB permet de fournir un modèle pour le pod de base de données via `spec.po
 
 KubeDB accepte les champs suivants à définir `spec.podTemplate:`
 
-* métadonnées :
-  + annotations (annotation du pod)
-* contrôleur:
-  + annotations (annotation de petset)
-* spécification :
-  + env
-  + ressources
-  + initConteneurs
-  + imagePullSecrets
-  + sélecteur de nœud
-  + Nom du planificateur
-  + tolérances
-  + nomClassePriorité
-  + priorité
-  + contexte de sécurité
+* `metadata` :
+  + `annotations` (annotation du pod)
+* `controller` :
+  + `annotations` (annotation de petset)
+* `spec` :
+  + `env`
+  + `resources`
+  + `initContainers`
+  + `imagePullSecrets`
+  + `nodeSelector`
+  + `schedulerName`
+  + `tolerations`
+  + `priorityClassName`
+  + `priority`
+  + `securityContext`
 
 Découvrez les champs en détail dans [Concept de modèle de pod](fr/concepts/mariadb.md#specpodtemplate),
 
@@ -5893,7 +5893,7 @@ Le `--link` L'argument crée un lien symbolique qui pointe toujours vers les der
 
 > Pour en savoir plus sur `git-sync` configuration, visitez ceci [lien](https://github.com/kubernetes/git-sync).
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -7988,7 +7988,7 @@ $ kubectl apply -f backupstorage.yaml
    backupstorage.storage.kubestash.com/linode-storage created
 ```
 
-### secrets for backup-storage
+### Secrets pour BackupStorage
 
 ```yaml
 apiVersion: v1
@@ -8008,7 +8008,7 @@ $ kubectl apply -f storage-secret.yaml
   secret/storage created
 ```
 
-### Retention policy
+### Politique de rétention (`RetentionPolicy`)
 
 RetentionPolicy est une ressource personnalisée (CR) fournie par KubeStash qui vous permet de définir la durée pendant laquelle vous souhaitez conserver les données de sauvegarde.
 
@@ -8585,11 +8585,11 @@ NAME      VERSION   DB_IMAGE                                        DEPRECATED  
 12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d
 ```
 
-## Create a MariaDB database
+## Créer une base de données MariaDB
 
-KubeDB implements a `MariaDB` CRD to define the specification of a MariaDB database. Below is the `MariaDB` object created in this tutorial.
+KubeDB implémente un CRD `MariaDB` pour définir la spécification d'une base de données MariaDB. Vous trouverez ci-dessous l'objet `MariaDB` créé dans ce tutoriel.
 
-`Note`: If your `KubeDB version` is less or equal to `v2024.6.4`, You have to use `v1alpha2` apiVersion.
+`Note` : Si votre version de `KubeDB` est inférieure ou égale à `v2024.6.4`, utilisez la version d'API `v1alpha2`.
 
 ```yaml
 apiVersion: kubedb.com/v1
@@ -8793,7 +8793,7 @@ L'opérateur KubeDB a créé un nouveau secret appelé `mariadb-quickstart-auth`
 
 Si vous souhaitez utiliser un secret existant, veuillez le préciser lors de la création de l'objet MariaDB à l'aide de `spec.authSecret.name`. Lors de la création manuelle de ce secret, assurez-vous que le secret contient ces deux clés contenant des données `username` et `password` et assurez-vous également d'utiliser `root` comme valeur de `username`.
 
-Maintenant, nous avons besoin `username` et `password` pour se connecter à cette base de données depuis `kubeclt exec` commande. Dans cet exemple, `sample-mariadb-auth` secret contient le nom d'utilisateur et le mot de passe.
+Maintenant, nous avons besoin de `username` et `password` pour nous connecter à cette base de données avec la commande `kubectl exec`. Dans cet exemple, le secret `sample-mariadb-auth` contient le nom d'utilisateur et le mot de passe.
 
 ```bash
 $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
@@ -8907,7 +8907,7 @@ Supposons que nous ayons une base de données avec `deletionPolicy` réglé sur 
 $ kubectl delete mariadb sample-mariadb -n demo
 ```
 
-```yaml
+```text
 mariadb.kubedb.com "sample-mariadb" deleted
 ```
 
@@ -9197,7 +9197,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -9828,7 +9828,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo 
@@ -10460,7 +10460,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo 
@@ -11302,8 +11302,8 @@ Si vous pouvez accéder à la table de données et exécuter des requêtes, cela
 
 #### 1. Utilisation des informations d'identification générées par l'opérateur :
 
-Afin de faire pivoter l'authentification vers le `MariaDB` en utilisant l'opérateur généré, nous devons créer un
-`MariaDBOpsRequest` CRO avec `RotateAuth` taper. Vous trouverez ci-dessous le YAML du `MariaDBOpsRequest` CRO que nous
+Afin de faire pivoter l'authentification vers `MariaDB` en utilisant l'opérateur généré, nous devons créer un
+CR `MariaDBOpsRequest` de type `RotateAuth`. Vous trouverez ci-dessous le YAML du CR `MariaDBOpsRequest` que nous
 allons créer,
 
 ```yaml
@@ -11460,9 +11460,9 @@ $ kubectl create secret generic sample-mariadb-auth-user -n demo \
 secret/sample-mariadb-auth-user created
 ```
 
-Créez maintenant un `MariaDBOpsRequest` avec `RotateAuth` taper. Vous trouverez ci-dessous le YAML du `MariaDBOpsRequest` que nous allons créer,
+Créez maintenant un CR `MariaDBOpsRequest` de type `RotateAuth`. Vous trouverez ci-dessous le YAML du CR `MariaDBOpsRequest` que nous allons créer,
 
-```shell
+```yaml
 apiVersion: ops.kubedb.com/v1alpha1
 kind: MariaDBOpsRequest
 metadata:
@@ -12239,7 +12239,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` créé a le statut `Ready`. c'est-à-dire,
+Attendez maintenant que la ressource `sample-mariadb` atteigne le statut `Ready` :
 
 ```bash
 $ kubectl get mariadb -n demo                                                                                                                                             
@@ -12449,7 +12449,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/examples/
 mariadb.kubedb.com/md-replication created
 ```
 
-Maintenant, attends `md-replication` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `md-replication` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -12758,7 +12758,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -12986,7 +12986,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -13550,7 +13550,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -17638,7 +17638,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/mariadb created
 ```
 
-Maintenant, attends `mariadb` a un statut `Ready`:
+Attendez maintenant que la ressource `mariadb` passe au statut `Ready` :
 
 ```bash
 $ kubectl get mariadb -n demo --context demo-controller
@@ -17885,7 +17885,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -18163,7 +18163,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/examples/
 mariadb.kubedb.com/md-replication created
 ```
 
-Maintenant, attends `md-replication` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `md-replication` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -18415,7 +18415,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -18636,7 +18636,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/examples/
 mariadb.kubedb.com/md-replication created
 ```
 
-Maintenant, attends `md-replication` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `md-replication` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo
@@ -20158,7 +20158,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo --context demo-controller
@@ -20680,7 +20680,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo --context demo-controller

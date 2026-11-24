@@ -210,7 +210,7 @@ Les champs suivants sont configurables dans le `spec.tls` section:
 `spec.configuration` est un champ facultatif qui spécifie une configuration personnalisée pour le cluster Mariadb. Il comporte les champs suivants :
 
 * `configuration.inline` est un champ facultatif qui vous permet de fournir une configuration personnalisée directement dans l'objet Mariadb.
-  + Configuration snippet:
+  + Extrait de configuration :
 
     ```yaml
     configuration:
@@ -227,23 +227,23 @@ KubeDB permet de fournir un modèle pour le pod de base de données via `spec.po
 
 KubeDB accepte les champs suivants à définir `spec.podTemplate:`
 
-* métadonnées :
-  + annotations (annotation du pod)
-* contrôleur:
-  + annotations (annotation de petset)
-* spécification :
-  + conteneurs
-  + tomes
-  + podPlacementPolitique
-  + initConteneurs
-  + imagePullSecrets
-  + sélecteur de nœud
-  + serviceAccountName
-  + Nom du planificateur
-  + tolérances
-  + nomClassePriorité
-  + priorité
-  + contexte de sécurité
+* `metadata` :
+  + `annotations` (annotation du pod)
+* `controller` :
+  + `annotations` (annotation de petset)
+* `spec` :
+  + `containers`
+  + `volumes`
+  + `podPlacementPolicy`
+  + `initContainers`
+  + `imagePullSecrets`
+  + `nodeSelector`
+  + `serviceAccountName`
+  + `schedulerName`
+  + `tolerations`
+  + `priorityClassName`
+  + `priority`
+  + `securityContext`
 
 Utilisations de certains domaines de `spec.podTemplate` est décrit ci-dessous,
 
@@ -339,18 +339,18 @@ Vous pouvez également fournir un modèle pour les services créés par l'opéra
 
 KubeDB permet de définir les champs suivants `spec.serviceTemplates`:
 
-* métadonnées :
-  + annotations
-* spécification :
-  + taper
-  + ports
-  + clusterIP
-  + adresses IP externes
-  + LoadBalancerIP
-  + loadBalancerSourceRanges
-  + politique de trafic externe
-  + healthCheckNodePort
-  + sessionAffinityConfig
+* `metadata` :
+  + `annotations`
+* `spec` :
+  + `type`
+  + `ports`
+  + `clusterIP`
+  + `externalIPs`
+  + `loadBalancerIP`
+  + `loadBalancerSourceRanges`
+  + `externalTrafficPolicy`
+  + `healthCheckNodePort`
+  + `sessionAffinityConfig`
 
 ```yaml
 spec:

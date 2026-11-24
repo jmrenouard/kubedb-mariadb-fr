@@ -59,7 +59,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/ma
 mariadb.kubedb.com/sample-mariadb created
 ```
 
-Maintenant, attends `sample-mariadb` créé a le statut `Ready`. c'est-à-dire,
+Attendez maintenant que la ressource `sample-mariadb` atteigne le statut `Ready` :
 
 ```bash
 $ kubectl get mariadb -n demo                                                                                                                                             

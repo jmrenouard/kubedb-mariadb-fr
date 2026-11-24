@@ -66,7 +66,7 @@ Le `--link` L'argument crée un lien symbolique qui pointe toujours vers les der
 
 > Pour en savoir plus sur `git-sync` configuration, visitez ceci [lien](https://github.com/kubernetes/git-sync).
 
-Maintenant, attends `sample-mariadb` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `sample-mariadb` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo

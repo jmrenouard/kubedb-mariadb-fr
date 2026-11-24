@@ -68,7 +68,7 @@ $ kubectl apply -f backupstorage.yaml
    backupstorage.storage.kubestash.com/linode-storage created
 ```
 
-### secrets for backup-storage
+### Secrets pour BackupStorage
 
 ```yaml
 apiVersion: v1
@@ -88,7 +88,7 @@ $ kubectl apply -f storage-secret.yaml
   secret/storage created
 ```
 
-### Retention policy
+### Politique de rétention (`RetentionPolicy`)
 
 RetentionPolicy est une ressource personnalisée (CR) fournie par KubeStash qui vous permet de définir la durée pendant laquelle vous souhaitez conserver les données de sauvegarde.
 

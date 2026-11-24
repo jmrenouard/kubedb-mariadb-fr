@@ -120,8 +120,8 @@ Si vous pouvez accéder à la table de données et exécuter des requêtes, cela
 
 #### 1. Utilisation des informations d'identification générées par l'opérateur :
 
-Afin de faire pivoter l'authentification vers le `MariaDB` en utilisant l'opérateur généré, nous devons créer un
-`MariaDBOpsRequest` CRO avec `RotateAuth` taper. Vous trouverez ci-dessous le YAML du `MariaDBOpsRequest` CRO que nous
+Afin de faire pivoter l'authentification vers `MariaDB` en utilisant l'opérateur généré, nous devons créer un
+CR `MariaDBOpsRequest` de type `RotateAuth`. Vous trouverez ci-dessous le YAML du CR `MariaDBOpsRequest` que nous
 allons créer,
 
 ```yaml
@@ -278,9 +278,9 @@ $ kubectl create secret generic sample-mariadb-auth-user -n demo \
 secret/sample-mariadb-auth-user created
 ```
 
-Créez maintenant un `MariaDBOpsRequest` avec `RotateAuth` taper. Vous trouverez ci-dessous le YAML du `MariaDBOpsRequest` que nous allons créer,
+Créez maintenant un CR `MariaDBOpsRequest` de type `RotateAuth`. Vous trouverez ci-dessous le YAML du CR `MariaDBOpsRequest` que nous allons créer,
 
-```shell
+```yaml
 apiVersion: ops.kubedb.com/v1alpha1
 kind: MariaDBOpsRequest
 metadata:

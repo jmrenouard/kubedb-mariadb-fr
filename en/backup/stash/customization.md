@@ -166,7 +166,7 @@ spec:
 
 ### Restore specific snapshot
 
-You can also restore a specific snapshot. At first, list the available snapshot as bellow,
+You can also restore a specific snapshot. At first, list the available snapshot as below,
 
 ```bash
 ❯ kubectl get snapshots -n demo

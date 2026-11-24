@@ -23,21 +23,21 @@ KubeDB permet de fournir un modèle pour le pod de base de données via `spec.po
 
 KubeDB accepte les champs suivants à définir `spec.podTemplate:`
 
-* métadonnées :
-  + annotations (annotation du pod)
-* contrôleur:
-  + annotations (annotation de petset)
-* spécification :
-  + env
-  + ressources
-  + initConteneurs
-  + imagePullSecrets
-  + sélecteur de nœud
-  + Nom du planificateur
-  + tolérances
-  + nomClassePriorité
-  + priorité
-  + contexte de sécurité
+* `metadata` :
+  + `annotations` (annotation du pod)
+* `controller` :
+  + `annotations` (annotation de petset)
+* `spec` :
+  + `env`
+  + `resources`
+  + `initContainers`
+  + `imagePullSecrets`
+  + `nodeSelector`
+  + `schedulerName`
+  + `tolerations`
+  + `priorityClassName`
+  + `priority`
+  + `securityContext`
 
 Découvrez les champs en détail dans [Concept de modèle de pod](../concepts/mariadb.md#specpodtemplate),
 

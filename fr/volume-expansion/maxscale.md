@@ -88,7 +88,7 @@ $ kubectl create -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/examples/
 mariadb.kubedb.com/md-replication created
 ```
 
-Maintenant, attends `md-replication` a un statut `Ready`. c'est-à-dire,
+Attendez maintenant que `md-replication` atteigne le statut `Ready`. c'est-à-dire,
 
 ```bash
 $ kubectl get mariadb -n demo

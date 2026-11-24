@@ -1291,7 +1291,7 @@ Let’s apply the yaml.
 $ kubectl apply -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/mariadb/clustering/mariadb-replication/examples/ubuntu.yaml
 ```
 
-```yaml
+```text
 deployment.apps/ubuntu created
 ```
 
@@ -8793,7 +8793,7 @@ KubeDB operator has created a new Secret called `mariadb-quickstart-auth` *(form
 
 If you want to use an existing secret please specify that when creating the MariaDB object using `spec.authSecret.name`. While creating this secret manually, make sure the secret contains these two keys containing data `username` and `password` and also make sure of using `root` as value of `username`.
 
-Now, we need `username` and `password` to connect to this database from `kubeclt exec` command. In this example, `sample-mariadb-auth` secret holds username and password.
+Now, we need `username` and `password` to connect to this database from `kubectl exec` command. In this example, `sample-mariadb-auth` secret holds username and password.
 
 ```bash
 $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
@@ -8907,7 +8907,7 @@ Suppose, we have a database with `deletionPolicy` set to `WipeOut`. Now, are goi
 $ kubectl delete mariadb sample-mariadb -n demo
 ```
 
-```yaml
+```text
 mariadb.kubedb.com "sample-mariadb" deleted
 ```
 
@@ -15655,7 +15655,7 @@ spec:
 
 ### Restore specific snapshot
 
-You can also restore a specific snapshot. At first, list the available snapshot as bellow,
+You can also restore a specific snapshot. At first, list the available snapshot as below,
 
 ```bash
 $ kubectl get snapshots.storage.kubestash.com -n demo -l=kubestash.com/repo-name=gcs-mariadb-repo
@@ -17345,7 +17345,7 @@ spec:
 
 ### Restore specific snapshot
 
-You can also restore a specific snapshot. At first, list the available snapshot as bellow,
+You can also restore a specific snapshot. At first, list the available snapshot as below,
 
 ```bash
 ❯ kubectl get snapshots -n demo

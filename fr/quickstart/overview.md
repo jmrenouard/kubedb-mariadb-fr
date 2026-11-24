@@ -50,11 +50,11 @@ NAME      VERSION   DB_IMAGE                                        DEPRECATED  
 12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d
 ```
 
-## Create a MariaDB database
+## Créer une base de données MariaDB
 
-KubeDB implements a `MariaDB` CRD to define the specification of a MariaDB database. Below is the `MariaDB` object created in this tutorial.
+KubeDB implémente un CRD `MariaDB` pour définir la spécification d'une base de données MariaDB. Vous trouverez ci-dessous l'objet `MariaDB` créé dans ce tutoriel.
 
-`Note`: If your `KubeDB version` is less or equal to `v2024.6.4`, You have to use `v1alpha2` apiVersion.
+`Note` : Si votre version de `KubeDB` est inférieure ou égale à `v2024.6.4`, utilisez la version d'API `v1alpha2`.
 
 ```yaml
 apiVersion: kubedb.com/v1
@@ -258,7 +258,7 @@ L'opérateur KubeDB a créé un nouveau secret appelé `mariadb-quickstart-auth`
 
 Si vous souhaitez utiliser un secret existant, veuillez le préciser lors de la création de l'objet MariaDB à l'aide de `spec.authSecret.name`. Lors de la création manuelle de ce secret, assurez-vous que le secret contient ces deux clés contenant des données `username` et `password` et assurez-vous également d'utiliser `root` comme valeur de `username`.
 
-Maintenant, nous avons besoin `username` et `password` pour se connecter à cette base de données depuis `kubeclt exec` commande. Dans cet exemple, `sample-mariadb-auth` secret contient le nom d'utilisateur et le mot de passe.
+Maintenant, nous avons besoin de `username` et `password` pour nous connecter à cette base de données avec la commande `kubectl exec`. Dans cet exemple, le secret `sample-mariadb-auth` contient le nom d'utilisateur et le mot de passe.
 
 ```bash
 $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.username}' | base64 -d
@@ -372,7 +372,7 @@ Supposons que nous ayons une base de données avec `deletionPolicy` réglé sur 
 $ kubectl delete mariadb sample-mariadb -n demo
 ```
 
-```yaml
+```text
 mariadb.kubedb.com "sample-mariadb" deleted
 ```
 

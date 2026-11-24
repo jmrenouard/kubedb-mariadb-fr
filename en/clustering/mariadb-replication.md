@@ -602,7 +602,7 @@ Let’s apply the yaml.
 $ kubectl apply -f https://github.com/kubedb/docs/raw/v2026.7.10/docs/guides/mariadb/clustering/mariadb-replication/examples/ubuntu.yaml
 ```
 
-```yaml
+```text
 deployment.apps/ubuntu created
 ```
 
