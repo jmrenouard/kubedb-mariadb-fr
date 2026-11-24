@@ -55,12 +55,13 @@ Read [CRDs and Operations Matrix](../03-reference/01-crds-and-operations-matrix.
        name: sample-mariadb
      verticalScaling:
        mariadb:
-         requests:
-           cpu: "500m"
-           memory: "512Mi"
-         limits:
-           cpu: "1000m"
-           memory: "1Gi"
+         resources:
+           requests:
+             cpu: "500m"
+             memory: "512Mi"
+           limits:
+             cpu: "1000m"
+             memory: "1Gi"
    ```
 
 5. Apply `mdops-vscale.yaml` in namespace `demo`:

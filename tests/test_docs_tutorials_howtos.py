@@ -179,6 +179,40 @@ class TestDocsTutorialsHowTos(unittest.TestCase):
                         meta = doc.get("metadata", {})
                         self.assertIsInstance(meta, dict)
                         self.assertTrue(meta.get("name"), f"Missing metadata.name in {md.name}:{blk['open_line']}")
+                        spec = doc.get("spec", {})
+                        self.assertIsInstance(spec, dict)
+                        kind = doc["kind"]
+                        if kind == "RetentionPolicy":
+                            for field in ("successfulSnapshots", "failedSnapshots"):
+                                val = spec.get(field)
+                                self.assertIsInstance(val, dict, f"{md.name}:{blk['open_line']} {field} must be mapping")
+                                self.assertIsInstance(val.get("last"), int)
+                        elif kind == "MariaDBArchiver":
+                            self.assertNotIn("databaseRef", spec)
+                            self.assertIsInstance(spec.get("databases"), dict)
+                            self.assertIsInstance(spec.get("retentionPolicy"), dict)
+                            self.assertIsInstance(spec.get("encryptionSecret"), dict)
+                            fb = spec.get("fullBackup", {})
+                            self.assertIsInstance(fb, dict)
+                            self.assertIsInstance(fb.get("scheduler"), dict)
+                            self.assertTrue(fb["scheduler"].get("schedule"))
+                            bs = spec.get("backupStorage", {})
+                            self.assertIsInstance(bs, dict)
+                            self.assertIsInstance(bs.get("ref"), dict)
+                        elif kind == "MariaDB":
+                            arch = (spec.get("init") or {}).get("archiver")
+                            if arch is not None:
+                                self.assertIsInstance(arch, dict)
+                                self.assertIsInstance(arch.get("encryptionSecret"), dict)
+                                self.assertIsInstance(arch.get("fullDBRepository"), dict)
+                                self.assertTrue(arch.get("recoveryTimestamp"))
+                        elif kind == "MariaDBOpsRequest" and spec.get("type") == "VerticalScaling":
+                            mdb_vs = (spec.get("verticalScaling") or {}).get("mariadb")
+                            if mdb_vs is not None:
+                                self.assertIsInstance(mdb_vs, dict)
+                                self.assertNotIn("requests", mdb_vs)
+                                self.assertNotIn("limits", mdb_vs)
+                                self.assertIsInstance(mdb_vs.get("resources"), dict)
 
     def test_tutorial_and_howto_cli_commands(self) -> None:
         """Validate kubectl/bash/mysql syntax and ensure zero ASCII tables in bash blocks."""

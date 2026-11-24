@@ -55,12 +55,13 @@ Consultez la [matrice des CRD et opérations](../03-reference/01-matrice-crd-et-
        name: sample-mariadb
      verticalScaling:
        mariadb:
-         requests:
-           cpu: "500m"
-           memory: "512Mi"
-         limits:
-           cpu: "1000m"
-           memory: "1Gi"
+         resources:
+           requests:
+             cpu: "500m"
+             memory: "512Mi"
+           limits:
+             cpu: "1000m"
+             memory: "1Gi"
    ```
 
 5. Appliquez le fichier `mdops-vscale.yaml` dans `demo` :

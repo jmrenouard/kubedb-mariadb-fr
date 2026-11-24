@@ -51,7 +51,7 @@ kubectl apply -f s3-secret.yaml
 kubectl apply -f s3-storage.yaml
 ```
 
-## 2. Configure `RetentionPolicy` and `MariaDBArchiver`
+## 2. Configure `RetentionPolicy`, `Secret`, and `MariaDBArchiver`
 
 Enable continuous binlog archiving alongside full scheduled backups:
 
@@ -62,9 +62,22 @@ metadata:
   name: demo-retention
   namespace: demo
 spec:
-  maxRetentionPeriod: 30d
-  successfulSnapshots: 5
-  failedSnapshots: 2
+  maxRetentionPeriod: "30d"
+  successfulSnapshots:
+    last: 5
+  failedSnapshots:
+    last: 2
+```
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: encrypt-secret
+  namespace: demo
+type: Opaque
+stringData:
+  RESTIC_PASSWORD: "replace-with-restic-passphrase"
 ```
 
 ```yaml
@@ -75,26 +88,42 @@ metadata:
   namespace: demo
 spec:
   pause: false
-  databaseRef:
-    name: mariadb
+  databases:
+    namespaces:
+      from: Selector
+      selector:
+        matchLabels:
+          kubernetes.io/metadata.name: demo
+    selector:
+      matchLabels:
+        archiver: "true"
+  retentionPolicy:
+    name: demo-retention
+    namespace: demo
+  encryptionSecret:
+    name: encrypt-secret
     namespace: demo
   fullBackup:
     driver: VolumeSnapshotter
     task:
-      name: mariadb-volumesnapshot-backup
-    schedule: "*/5 * * * *"
-    retentionPolicy:
-      name: demo-retention
-      namespace: demo
-    backupStorage:
+      params:
+        volumeSnapshotClassName: "longhorn-snapshot-vsc"
+    scheduler:
+      successfulJobsHistoryLimit: 1
+      failedJobsHistoryLimit: 1
+      schedule: "*/5 * * * *"
+    sessionHistoryLimit: 2
+  backupStorage:
+    ref:
       name: s3-storage
       namespace: demo
 ```
 
 ```bash
 kubectl apply -f retention.yaml
+kubectl apply -f encrypt-secret.yaml
 kubectl apply -f mariadb-archiver.yaml
-kubectl get backupconfiguration,volumesnapshots -n demo
+kubectl get mariadbarchiver,backupconfiguration,volumesnapshots -n demo
 ```
 
 ## 3. Record Timestamp Before Simulated Drop
@@ -142,6 +171,12 @@ spec:
         storage: 10Gi
   init:
     archiver:
+      encryptionSecret:
+        name: encrypt-secret
+        namespace: demo
+      fullDBRepository:
+        name: mariadb-full
+        namespace: demo
       recoveryTimestamp: "2026-08-12T10:15:00Z"
   deletionPolicy: WipeOut
 ```

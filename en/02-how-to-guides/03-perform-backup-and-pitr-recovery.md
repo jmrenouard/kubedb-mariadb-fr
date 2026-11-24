@@ -35,6 +35,12 @@ Read [Backup and PITR Workflow](../01-tutorials/02-backup-and-pitr-workflow.md) 
            storage: 10Gi
      init:
        archiver:
+         encryptionSecret:
+           name: encrypt-secret
+           namespace: demo
+         fullDBRepository:
+           name: mariadb-full
+           namespace: demo
          recoveryTimestamp: "2026-08-12T10:15:00Z"
      deletionPolicy: WipeOut
    ```
