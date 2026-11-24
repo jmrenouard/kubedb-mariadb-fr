@@ -12,7 +12,7 @@ Ce guide vous montrera comment utiliser `KubeDB` Opérateur d'entreprise pour fa
 
   + [MariaDB](../../concepts/mariadb.md)
   + [Cluster MariaDB](../../clustering/galera-cluster.md)
-  + [MariaDBOpsDemande](../../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
   + [Présentation de la mise à l'échelle horizontale](overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.
@@ -96,6 +96,9 @@ Connectons-nous maintenant à une instance mariadb et exécutons une commande in
 
 ```bash
 $  kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
@@ -169,6 +172,9 @@ Connectons-nous maintenant à une instance mariadb et exécutons une commande in
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |
@@ -240,6 +246,9 @@ Connectons-nous maintenant à une instance mariadb et exécutons une commande in
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -uroot -p$MYSQL_ROOT_PASSWORD -e "show status like 'wsrep_cluster_size';"
 +--------------------+-------+
 | Variable_name      | Value |

@@ -60,7 +60,7 @@ Ici, les variables sont analysées comme suit :
 | `TARGET_APP_RESOURCE` | Représente la ressource sous ce groupe d'applications que cette liaison d'application représente (c'est-à-dire : `mariadb`). |
 | `TARGET_APP_TYPE` | Représente le type complet de l’application. C'est simplement `TARGET_APP_GROUP/TARGET_APP_RESOURCE` (c'est-à-dire : `kubedb.com/mariadb`). |
 
-#### spécification.secret
+#### spec.secret
 
 `spec.secret` spécifie le nom du secret qui contient les informations d'identification requises pour accéder à la base de données. Ce secret doit être dans le même espace de noms que le `AppBinding`.
 

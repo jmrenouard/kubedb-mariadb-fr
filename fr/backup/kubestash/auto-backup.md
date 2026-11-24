@@ -14,8 +14,8 @@ Dans ce didacticiel, nous allons montrer comment configurer un plan de sauvegard
 
 Vous devriez être familier avec ce qui suit `KubeStash` notions :
 
-* [SauvegardeStockage](https://kubestash.com/docs/latest/concepts/crds/backupstorage/)
-* [SauvegardeConfiguration](https://kubestash.com/docs/latest/concepts/crds/backupconfiguration/)
+* [BackupStorage](https://kubestash.com/docs/latest/concepts/crds/backupstorage/)
+* [BackupConfiguration](https://kubestash.com/docs/latest/concepts/crds/backupconfiguration/)
 * [Session de sauvegarde](https://kubestash.com/docs/latest/concepts/crds/backupsession/)
 * [Restaurer la session](https://kubestash.com/docs/latest/concepts/crds/restoresession/)
 * [Ajouter sur](https://kubestash.com/docs/latest/concepts/crds/addon/)

@@ -76,6 +76,9 @@ Now, you can exec into the pod `sample-mariadb` and connect to database using `u
 ```shell
 $ kubectl exec -it -n demo sample-mariadb-0 -- mariadb -u root --password='s)cJQ*iL8wHySpvT'
 Defaulted container "mariadb" out of: mariadb, mariadb-init (init)
+```
+
+```mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 207
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~ubu2004 mariadb.org binary distribution

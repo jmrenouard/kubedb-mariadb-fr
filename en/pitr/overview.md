@@ -23,7 +23,16 @@ namespace/demo created
 
 > Note: The yaml files used in this tutorial are stored in [docs/guides/mariadb/pitr/overview/yamls](https://github.com/kubedb/docs/tree/v2026.7.10/docs/guides/mariadb/remote-replica/yamls) folder in GitHub repository [kubedb/docs](https://github.com/kubedb/docs).
 
-## continuous archiving
+## Continuous Archiving
+
+```mermaid
+flowchart LR
+  DB["MariaDB Cluster Pods"] -->|Write Binlogs| Archiver["MariaDBArchiver + Sidekick"]
+  Archiver -->|Upload Binlogs| Store["BackupStorage Repository"]
+  Snap["VolumeSnapshot (Full Backup)"] --> Restorer["Restore MariaDB CR (recoveryTimestamp)"]
+  Store -->|Replay Binlogs| Restorer
+  Restorer --> Target["Recovered MariaDB Cluster"]
+```
 
 Continuous archiving involves making regular copies (or “archives”) of the MariaDB transaction log files.To ensure continuous archiving to a remote location we need prepare `BackupStorage`,`RetentionPolicy`,`MariaDBArchiver` for the KubeDB Managed MariaDB Databases.
 
@@ -279,7 +288,9 @@ After each and every binlog switch the binlog files will be uploaded to backup s
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -311,7 +322,6 @@ MariaDB [hello]> select now();
 +---------------------+
 | 2024-09-17 05:28:26 |
 +---------------------+
-+---------------------+
 
 MariaDB [hello]> select count(*) from demo_table;
 +----------+
@@ -340,7 +350,7 @@ We can’t restore from a full backup since at this point no full backup was per
 
 For the demo I will use the previous time we get form `select now()`
 
-```bash
+```mysql
 MariaDB [hello]> select now();
 +---------------------+
 | now()               |
@@ -415,6 +425,9 @@ restore-mariadb   11.1.3    Ready    5m37s
 
 ```bash
 $ kubectl exec -it -n demo restore-mariadb-0 -- bash
+```
+
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 mariadb> use hello

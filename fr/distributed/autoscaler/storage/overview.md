@@ -9,7 +9,7 @@ Ce guide donnera un aperçu de la façon dont l'opérateur KubeDB Autoscaler met
 * Vous devriez être familier avec ce qui suit `KubeDB` notions :
   + [MariaDB](../../../concepts/mariadb.md)
   + [MariaDBAutoscaler](../../../concepts/autoscaler.md)
-  + [MariaDBOpsDemande](../../../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../../../concepts/opsrequest.md)
   + [Présentation de MariaDB distribuée](../../overview.md)
 
 ## Fonctionnement de la mise à l'échelle automatique du stockage

@@ -4,6 +4,17 @@
 
 ## What is MariaDBOpsRequest
 
+```mermaid
+stateDiagram-v2
+  [*] --> Pending: Apply MariaDBOpsRequest CR
+  Pending --> Progressing: Ops-Manager validates and acquires lock
+  Progressing --> Successful: Rolling PetSet and Pod update complete
+  Progressing --> Failed: Precondition or validation fails
+  Successful --> [*]
+  Failed --> [*]
+```
+
+
 `MariaDBOpsRequest` is a Kubernetes `Custom Resource Definitions` (CRD). It provides a declarative configuration for MariaDB administrative operations like database version updating, horizontal scaling, vertical scaling etc. in a Kubernetes native way.
 
 ## MariaDBOpsRequest CRD Specifications

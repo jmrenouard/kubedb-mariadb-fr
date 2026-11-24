@@ -422,7 +422,9 @@ After each and every binlog switch the binlog files will be uploaded to backup s
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -454,7 +456,6 @@ MariaDB [hello]> select now();
 +---------------------+
 | 2024-09-17 05:28:26 |
 +---------------------+
-+---------------------+
 
 MariaDB [hello]> select count(*) from demo_table;
 +----------+
@@ -483,7 +484,7 @@ We can’t restore from a full backup since at this point no full backup was per
 
 For the demo I will use the previous time we get form `select now()`
 
-```bash
+```mysql
 MariaDB [hello]> select now();
 +---------------------+
 | now()               |
@@ -558,6 +559,9 @@ restore-mariadb   11.1.3    Ready    5m37s
 
 ```bash
 $ kubectl exec -it -n demo restore-mariadb-0 -- bash
+```
+
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 mariadb> use hello

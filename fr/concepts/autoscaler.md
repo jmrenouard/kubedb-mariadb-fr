@@ -69,7 +69,7 @@ Tous ont les sous-champs suivants :
 * `podLifeTimeThreshold` spécifie la durée de vie minimale d'au moins un des pods avant de déclencher la mise à l'échelle automatique.
 * `InMemoryScalingThreshold` le pourcentage de mémoire qui sera transmis comme inMemorySizeGB pour le moteur de base de données inmemory, qui n'est disponible que pour la variante percona de mariadb.
 
-### spécification.stockage
+### spec.storage
 
 `spec.compute` spécifie la configuration de mise à l'échelle automatique pour les ressources de stockage des composants de base de données. Ce champ est constitué du sous-champ suivant :
 

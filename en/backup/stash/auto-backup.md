@@ -153,8 +153,11 @@ app-sample-mariadb                                                              
 
 Now, let’s check the YAML of the `Repository`.
 
-```yaml
+```bash
 ❯ kubectl get repository -n demo app-sample-mariadb -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1alpha1
 kind: Repository
 metadata:
@@ -183,8 +186,11 @@ app-sample-mariadb   mariadb-backup-11.8.5   */5 * * * *            Ready   7m28
 
 Now, let’s check the YAML of the `BackupConfiguration`.
 
-```yaml
+```bash
 ❯ kubectl get backupconfiguration -n demo app-sample-mariadb -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1beta1
 kind: BackupConfiguration
 metadata:
@@ -320,8 +326,11 @@ app-sample-mariadb-2                                                            
 
 Now, let’s check the YAML of the `Repository`.
 
-```yaml
+```bash
 ❯ kubectl get repository -n demo-2 app-sample-mariadb-2  -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1alpha1
 kind: Repository
 metadata:
@@ -350,9 +359,11 @@ app-sample-mariadb-2   mariadb-backup-11.8.5   */3 * * * *            Ready   3m
 
 Now, let’s check the YAML of the `BackupConfiguration`.
 
-```yaml
+```bash
 ❯ kubectl get backupconfiguration -n demo-2 app-sample-mariadb-2 -o yaml
+```
 
+```text
 apiVersion: stash.appscode.com/v1beta1
 kind: BackupConfiguration
 metadata:
@@ -500,8 +511,11 @@ app-sample-mariadb-3                                                            
 
 Now, let’s check the YAML of the `Repository`.
 
-```yaml
+```bash
 ❯ kubectl get repository -n demo-3 app-sample-mariadb-3 -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1alpha1
 kind: Repository
 metadata:
@@ -530,8 +544,11 @@ app-sample-mariadb-3   mariadb-backup-11.8.5   */5 * * * *            Ready   10
 
 Now, let’s check the YAML of the `BackupConfiguration`.
 
-```yaml
+```bash
 ❯ kubectl get backupconfiguration -n demo-3 app-sample-mariadb-3 -o yaml
+```
+
+```text
 apiVersion: stash.appscode.com/v1beta1
 kind: BackupConfiguration
 metadata:

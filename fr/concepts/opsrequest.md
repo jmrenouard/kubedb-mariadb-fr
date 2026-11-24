@@ -1,8 +1,19 @@
 > Vous êtes nouveau sur KubeDB ? Veuillez commencer [ici](https://kubedb.com/docs/v2026.7.10/README).
 
-# MariaDBOpsDemande
+# MariaDBOpsRequest
 
 ## Qu'est-ce que MariaDBOpsRequest
+
+```mermaid
+stateDiagram-v2
+  [*] --> Pending: Appliquer MariaDBOpsRequest CR
+  Pending --> Progressing: Validation Ops-Manager et verrouillage
+  Progressing --> Successful: Mise à jour progressive PetSet/Pod terminée
+  Progressing --> Failed: Échec de précondition ou validation
+  Successful --> [*]
+  Failed --> [*]
+```
+
 
 `MariaDBOpsRequest` est un Kubernetes `Custom Resource Definitions` (CRD). Il fournit une configuration déclarative pour les opérations administratives de MariaDB telles que la mise à jour de la version de la base de données, la mise à l'échelle horizontale, la mise à l'échelle verticale, etc. de manière native Kubernetes.
 
@@ -279,7 +290,7 @@ spec:
 
 Cela augmentera la taille du volume de tous les nœuds mariadb à 2 Go.
 
-### spécification.configuration
+### spec.configuration
 
 Si vous souhaitez reconfigurer votre cluster Running MariaDB avec une nouvelle configuration personnalisée, vous devez spécifier `spec.configuration` section. Ce champ est composé des sous-champs suivants :
 
@@ -300,31 +311,31 @@ Si vous souhaitez reconfigurer la configuration TLS de votre base de données, c
 * `spec.tls.rotateCertificates` précise que nous souhaitons faire tourner le certificat de cette base de données.
 * `spec.tls.remove` précise que nous souhaitons supprimer tls de cette base de données.
 
-### MariaDBOpsDemande `Status`
+### MariaDBOpsRequest `Status`
 
 `.status` décrit l'état actuel et la progression d'un `MariaDBOpsRequest` opération. Il comporte les champs suivants :
 
-### statut.phase
+### status.phase
 
 `status.phase` indique la phase globale de l'opération pour cette `MariaDBOpsRequest`. Il peut avoir les trois valeurs suivantes :
 
 | Phase | Signification |
 | --- | --- |
-| Réussi | KubeDB a effectué avec succès l'opération demandée dans MariaDBOpsRequest |
-| Échoué | KubeDB a échoué à l'opération demandée dans MariaDBOpsRequest |
-| Refusé | KubeDB a refusé l'opération demandée dans MariaDBOpsRequest |
+| `Successful` | KubeDB a effectué avec succès l'opération demandée dans MariaDBOpsRequest |
+| `Failed` | KubeDB a échoué à l'opération demandée dans MariaDBOpsRequest |
+| `Denied` | KubeDB a refusé l'opération demandée dans MariaDBOpsRequest |
 
-### statut.observedGeneration
+### status.observedGeneration
 
 `status.observedGeneration` montre la génération la plus récente observée par le `MariaDBOpsRequest` contrôleur.
 
-### statut.conditions
+### status.conditions
 
 `status.conditions` est un tableau qui spécifie les conditions des différentes étapes de `MariaDBOpsRequest` traitement. Chaque entrée de condition comporte les champs suivants :
 
 * `types` spécifie le type de la condition. MariaDBOpsRequest a les types de conditions suivants :
 
-| Taper | Signification |
+| Type | Signification |
 | --- | --- |
 | `Progressing` | Spécifie que l'opération est maintenant à l'état en cours |
 | `Successful` | Spécifie un état tel que l'opération sur la base de données a réussi. |

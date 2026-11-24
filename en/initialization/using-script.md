@@ -71,8 +71,11 @@ Here,
 
 KubeDB operator watches for `MariaDB` objects using Kubernetes api. When a `MariaDB` object is created, KubeDB operator will create a new PetSet and a Service with the matching MariaDB object name. KubeDB operator will also create a governing service for PetSets with the name `kubedb`, if one is not already present. No MariaDB specific RBAC roles are required for [RBAC enabled clusters](https://kubedb.com/docs/v2026.7.10/setup/README#using-yaml).
 
-```yaml
+```bash
 $ kubectl get mariadb -n demo sample-mariadb -oyaml
+```
+
+```text
 apiVersion: kubedb.com/v1
 kind: MariaDB
 metadata:
@@ -112,6 +115,9 @@ Now, we will connect to this database and check the data inserted by the initliz
 ```bash
 # Connecting to the database
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 40

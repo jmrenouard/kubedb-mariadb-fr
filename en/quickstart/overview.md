@@ -47,7 +47,8 @@ NAME      VERSION   DB_IMAGE                                        DEPRECATED  
 11.5.2    11.5.2    ghcr.io/appscode-images/mariadb:11.5.2-noble                 12d
 11.6.2    11.6.2    ghcr.io/appscode-images/mariadb:11.6.2-noble                 12d
 11.8.5    11.8.5    ghcr.io/appscode-images/mariadb:11.8.5-noble                 12d
-12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d```
+12.1.2    12.1.2    ghcr.io/appscode-images/mariadb:12.1.2-noble                 12d
+```
 
 ## Create a MariaDB database
 
@@ -210,8 +211,11 @@ sample-mariadb-pods   ClusterIP   None             <none>        3306/TCP   28m
 
 KubeDB operator sets the `status.phase` to `Running` once the database is successfully created. Run the following command to see the modified MariaDB object:
 
-```yaml
+```bash
 $ kubectl get mariadb -n demo sample-mariadb -o yaml
+```
+
+```text
 apiVersion: kubedb.com/v1
 kind: MariaDB
 metadata:
@@ -268,6 +272,9 @@ We will exec into the pod `sample-mariadb-0` and conncet to the database using `
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- mariadb -u root --password='w*yOU$b53dTbjsjJ'
+```
+
+```mysql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 335
 Server version: 11.8.5-MariaDB-1:11.8.5+maria~focal mariadb.org binary distribution
@@ -361,8 +368,11 @@ You can totally delete the `MariaDB` database and relevant resources without any
 
 Suppose, we have a database with `deletionPolicy` set to `WipeOut`. Now, are going to delete the database using the following command:
 
-```yaml
+```bash
 $ kubectl delete mariadb sample-mariadb -n demo
+```
+
+```yaml
 mariadb.kubedb.com "sample-mariadb" deleted
 ```
 

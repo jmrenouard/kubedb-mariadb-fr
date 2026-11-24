@@ -12,7 +12,7 @@ Ce guide vous montrera comment utiliser `KubeDB` Opérateur de gestion des opér
 
   + [MariaDB](../../concepts/mariadb.md)
   + [Réplication MariaDB](../../clustering/mariadb-replication.md)
-  + [MariaDBOpsDemande](../../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
   + [Présentation de la mise à l'échelle horizontale](overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.

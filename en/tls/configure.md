@@ -165,7 +165,9 @@ root@md-standalone-tls-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-standalone-tls-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
 
+```mysql
 root@md-standalone-tls-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 64
@@ -344,7 +346,9 @@ root@md-cluster-tls-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-cluster-tls-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
 
+```mysql
 root@md-cluster-tls-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 64
@@ -391,6 +395,9 @@ root@md-cluster-tls-1:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-cluster-tls-1:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
+
+```mysql
 root@md-cluster-tls-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 34

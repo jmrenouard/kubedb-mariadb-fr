@@ -12,7 +12,7 @@ Ce guide vous montrera comment utiliser `KubeDB` Opérateur d'entreprise pour re
 
   + [MariaDB](../concepts/mariadb.md)
   + [Cluster MariaDB](../clustering/galera-cluster.md)
-  + [MariaDBOpsDemande](../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../concepts/opsrequest.md)
   + [Présentation de la reconfiguration](overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.
@@ -103,6 +103,9 @@ Nous allons maintenant vérifier si la base de données a démarré avec la conf
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -256,6 +259,9 @@ Connectons-nous maintenant à une instance mariadb et exécutons une commande in
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -326,6 +332,9 @@ Avant d'appliquer ce yaml nous allons vérifier la valeur existante de notre nou
 
 ```bash
 $ kubectl exec -it sample-mariadb-0 -n demo -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/# mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -436,6 +445,9 @@ Connectons-nous maintenant à une instance mariadb et exécutons une commande in
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23
@@ -529,6 +541,9 @@ Connectons-nous maintenant à une instance mariadb et exécutons une commande in
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 23

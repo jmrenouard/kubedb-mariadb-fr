@@ -808,4 +808,4 @@ Vérifiez que la surveillance est activée en vérifiant les cibles prometheus.
   + [Mise à l'échelle verticale](../scaling/vertical-scaling/overview.md)
 * Apprendre la demande et les contraintes des opérations de mise à jour de version [ici](../update-version/overview.md)
 * Surveillez votre base de données MariaDBQL avec KubeDB en utilisant [Prometheus intégré](../monitoring/prometheus-operator.md).
-* Vous voulez pirater KubeDB ? Consultez notre [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
+* Vous souhaitez contribuer à KubeDB ? Consultez nos [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).

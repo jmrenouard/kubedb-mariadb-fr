@@ -17,9 +17,9 @@ Cette page est la **Introduction spécifique à MariaDB**: quelles recommandatio
 
 ---
 
-## Concepts KubeDB pertinents
+## Concepts KubeDB associés
 
-* [MariaDBOpsDemande](../concepts/opsrequest.md)
+* [MariaDBOpsRequest](../concepts/opsrequest.md)
 * [MariaDBRotateAuth](../rotate-auth/overview.md)
 * [MariaDBReconfigureTLS](../tls/overview.md)
 * [MariaDBUpdateVersion](../update-version/overview.md)
@@ -28,7 +28,7 @@ Cette page est la **Introduction spécifique à MariaDB**: quelles recommandatio
 
 ## Types de recommandations pour MariaDB
 
-| Taper | Déclenché lorsque | Procédure pas à pas |
+| Type | Déclenché lorsque | Procédure pas à pas |
 | --- | --- | --- |
 | **Mise à jour de la version** | Une nouvelle version majeure, mineure ou corrective devient disponible | [Recommandation de mise à jour de version](https://kubedb.com/docs/v2026.7.10/operatormanual/recommendation/version-update-recommendation) |
 | **Mise à jour de la même version** | L'image du conteneur pour votre *actuel* la version est actualisée (par exemple, correctif de sécurité) | [Recommandation de mise à jour de version](https://kubedb.com/docs/v2026.7.10/operatormanual/recommendation/version-update-recommendation) |

@@ -140,6 +140,9 @@ Vous pouvez également le vérifier sur l'état du cluster :
 $ kubectl exec -it -n demo svc/ha-mariadb-mx -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬─────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID    │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼─────────┼────────────────────┤
@@ -194,6 +197,9 @@ exit
 ```bash
 # Master Node
 $ kubectl exec -it -n demo svc/ha-mariadb -- bash
+```
+
+```mysql
 mysql@ha-mariadb-0:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 26
@@ -213,9 +219,14 @@ MariaDB [(none)]> SELECT 1;
 
 MariaDB [(none)]> quit;
 Bye
+```
 
+```bash
 # Slave Node
 $ kubectl exec -it -n demo svc/ha-mariadb-standby -- bash
+```
+
+```mysql
 mysql@ha-mariadb-1:/ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 94
@@ -255,6 +266,9 @@ insérons les données dans le nœud maître
 ```bash
 $ kubectl exec -it -n demo ha-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-0:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 3459
@@ -283,6 +297,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> exit
 Bye
+```
+
+```bash
 mysql@ha-mariadb-0:/$ exit
 exit
 ```
@@ -292,6 +309,9 @@ Vous pouvez lire les données des nœuds esclaves
 ```shell
 kubectl exec -it -n demo ha-mariadb-1 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-1:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 2304
@@ -311,6 +331,9 @@ MariaDB [(none)]> SELECT * FROM playground.equipment;
 
 MariaDB [(none)]> exit
 Bye
+```
+
+```shell
 mysql@ha-mariadb-1:/$ exit
 exit
 ```
@@ -385,6 +408,9 @@ Maintenant que nous savons comment s'effectue le basculement, vérifions si le n
 ```shell
 $ kubectl exec -it -n demo ha-mariadb-1 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-1:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 652
@@ -411,6 +437,9 @@ MariaDB [(none)]> CREATE DATABASE playground2;
 Query OK, 1 row affected (0.000 sec)
 MariaDB [(none)]> exit
 Bye
+```
+
+```shell
 mysql@ha-mariadb-1:/$ exit
 exit
 ```
@@ -420,6 +449,9 @@ Vérifions si le nouvel esclave (`ha-mariadb-0`) a obtenu les données mises à 
 ```shell
 $  kubectl exec -it -n demo ha-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-0:/$ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 340
@@ -445,6 +477,9 @@ MariaDB [(none)]> SHOW DATABASES;
 
 MariaDB [(none)]> exit 
 Bye
+```
+
+```shell
 mysql@ha-mariadb-0:/$ exit
 exit
 ```
@@ -484,6 +519,9 @@ Validons l'état du cluster à partir du nouveau `Master`(`ha-mariadb-0`).
 ```shell
 $ kubectl exec -it -n demo ha-mariadb-0 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-0:/$ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 377
@@ -512,6 +550,9 @@ Query OK, 1 row affected (0.000 sec)
 
 MariaDB [(none)]> exit
 Bye
+```
+
+```shell
 mysql@ha-mariadb-0:/$ exit
 exit
 ```
@@ -521,6 +562,9 @@ Vérifions si les nœuds esclaves, `ha-mariadb-2` récupère toutes les données
 ```shell
 kubectl exec -it -n demo ha-mariadb-2 -- bash
 Defaulted container "mariadb" out of: mariadb, md-coordinator, mariadb-init (init)
+```
+
+```mysql
 mysql@ha-mariadb-2:/$ mariadb -utestuser -ptestpassword
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 47
@@ -613,6 +657,9 @@ Vérifions maintenant l'état du cluster.
 $ kubectl exec -it -n demo svc/ha-mariadb-mx -- bash
 Defaulted container "maxscale" out of: maxscale, maxscale-init (init)
 bash-4.4$ maxctrl list servers
+```
+
+```text
 ┌─────────┬─────────────────────────────────────────────────────────────┬──────┬─────────────┬─────────────────┬──────────┬────────────────────┐
 │ Server  │ Address                                                     │ Port │ Connections │ State           │ GTID     │ Monitor            │
 ├─────────┼─────────────────────────────────────────────────────────────┼──────┼─────────────┼─────────────────┼──────────┼────────────────────┤
@@ -642,4 +689,4 @@ namespace "demo" deleted
 * Surveillez votre base de données MariaDB avec KubeDB en utilisant [Prometheus intégré](../monitoring/prometheus-operator.md).
 * Concepts détaillés de [Objet MariaDB](../concepts/mariadb.md).
 * Utiliser [registre Docker privé](../private-registry/quickstart.md) pour déployer MariaDB avec KubeDB.
-* Vous voulez pirater KubeDB ? Consultez notre [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
+* Vous souhaitez contribuer à KubeDB ? Consultez nos [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).

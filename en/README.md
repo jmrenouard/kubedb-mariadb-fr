@@ -28,7 +28,7 @@
 * Create [MariaDB Cluster](clustering/galera-cluster.md).
 * Create [MariaDB with Custom Configuration](configuration/using-config-file.md).
 * Use [Custom RBAC](custom-rbac/using-custom-rbac.md).
-* Use [private Docker registry](private-registry/quickstart.md) to deploy MySQL with KubeDB.
+* Use [private Docker registry](private-registry/quickstart.md) to deploy MariaDB with KubeDB.
 * Initialize [MariaDB with Script](initialization/using-script.md).
 * Backup and Restore [MariaDB](backup/stash/overview.md).
 * Want to hack on KubeDB? Check our [contribution guidelines](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
@@ -62,7 +62,7 @@
 ### Backup ➔ Stash ➔ Logical
 
 * [Backup KubeDB managed MariaDB Cluster using Stash](backup/stash/logical/cluster.md)
-* [Backup KubeDB managed stanadlone MariaDB using Stash](backup/stash/logical/standalone.md)
+* [Backup KubeDB managed standalone MariaDB using Stash](backup/stash/logical/standalone.md)
 
 ### Clustering
 
@@ -186,8 +186,8 @@
 
 ### Update-Version
 
-* [update version of MariaDB Cluster](update-version/cluster.md)
-* [updating MariaDB version Overview](update-version/overview.md)
+* [Update Version of MariaDB Cluster](update-version/cluster.md)
+* [Updating MariaDB Version Overview](update-version/overview.md)
 
 ### Volume-Expansion
 

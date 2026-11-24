@@ -1,4 +1,4 @@
-# Sauvegarder KubeDB géré Stanadlone MariaDB à l'aide de Stash
+# Sauvegarder une instance MariaDB autonome gérée par KubeDB avec Stash
 
 Planque `v0.11.8+` prend en charge la sauvegarde et la restauration des bases de données MariaDB. Ce guide vous montrera comment effectuer une sauvegarde logique de vos bases de données MariaDB et les restaurer à l'aide de Stash.
 
@@ -15,7 +15,7 @@ Vous devez être familier avec les ressources personnalisées suivantes :
 * [Liaison d'application](https://kubedb.com/docs/v2026.7.10/guides/elasticsearch/concepts/appbinding/)
 * [Fonction](https://stash.run/docs/latest/concepts/crds/function/)
 * [Tâche](https://stash.run/docs/latest/concepts/crds/task/)
-* [SauvegardeConfiguration](https://stash.run/docs/latest/concepts/crds/backupconfiguration/)
+* [BackupConfiguration](https://stash.run/docs/latest/concepts/crds/backupconfiguration/)
 * [Session de sauvegarde](https://stash.run/docs/latest/concepts/crds/backupsession/)
 * [Restaurer la session](https://stash.run/docs/latest/concepts/crds/restoresession/)
 
@@ -108,6 +108,9 @@ Ici, nous allons utiliser l'utilisateur root (`MYSQL_ROOT_USERNAME`) information
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -393,6 +396,9 @@ Maintenant, simulons un scénario de suppression accidentelle. Ici, nous allons 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -490,6 +496,9 @@ Maintenant, exécutons le pod de base de données et vérifions si les données 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341

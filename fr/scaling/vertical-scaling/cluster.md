@@ -12,7 +12,7 @@ Ce guide vous montrera comment utiliser `KubeDB` Opérateur d'entreprise pour me
 
   + [MariaDB](../../concepts/mariadb.md)
   + [Regroupement](../../clustering/galera-cluster.md)
-  + [MariaDBOpsDemande](../../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../../concepts/opsrequest.md)
   + [Présentation de la mise à l'échelle verticale](overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.

@@ -69,6 +69,9 @@ $ kubectl get secrets -n demo sample-mariadb-auth -o jsonpath='{.data.password}'
 U6(h_pYrekLZ2OOd
 
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb  -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/  mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 108
@@ -206,10 +209,19 @@ Exécutons dans le pod pour vérifier la configuration TLS/SSL,
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
+```
+
+```bash
 root@sample-mariadb-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 58
@@ -250,7 +262,7 @@ Bye
 
 Nous pouvons voir à partir du résultat ci-dessus que, `have_ssl` est réglé sur `ture`. Ainsi, la base de données TLS est activée avec succès sur cette base de données.
 
-> Remarque : Ajoutez ou mettez à jour, reconfigurez TLS avec with `RequireSSL=true` créera un temps d'arrêt de la base de données pendant `MariaDBOpsRequest` est dans `Progressing` statut.
+> Remarque : Ajoutez ou mettez à jour, reconfigurez TLS avec `RequireSSL=true` créera un temps d'arrêt de la base de données pendant `MariaDBOpsRequest` est dans `Progressing` statut.
 
 ## Rotation du certificat
 

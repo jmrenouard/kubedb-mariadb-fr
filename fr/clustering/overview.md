@@ -43,6 +43,18 @@ Certaines limitations du cluster MariaDB Galera sont répertoriées [ici](https:
 
 ## Réplication standard MariaDB
 
+```mermaid
+flowchart LR
+  App["Application cliente"] --> Proxy["Service MaxScale (:3306)"]
+  Proxy -->|Écritures| Primary["ha-mariadb-0 (Primaire / RW)"]
+  Proxy -->|Lectures| Replica1["ha-mariadb-1 (Réplica / RO)"]
+  Proxy -->|Lectures| Replica2["ha-mariadb-2 (Réplica / RO)"]
+  Primary -->|Binlog asynchrone + GTID| Replica1
+  Primary -->|Binlog asynchrone + GTID| Replica2
+  Monitor["ReplicationMonitor"] -.->|Détecte la panne et promeut| Replica1
+```
+
+
 La réplication standard MariaDB est un mécanisme largement utilisé pour copier des données d'un serveur MariaDB (maître) vers un ou plusieurs autres serveurs MariaDB (esclave). Ce mode de réplication garantit la redondance des données, améliore la disponibilité et prend en charge l'évolutivité de la lecture en répartissant les opérations de lecture sur plusieurs serveurs. Il fonctionne dans une architecture à maître unique et esclave, dans laquelle le serveur maître gère à la fois les opérations de lecture et d'écriture, tandis que les serveurs esclaves sont limités aux opérations de lecture.
 
 Réf : [À propos de la réplication standard MariadDB](https://mariadb.com/kb/en/replication-overview/#standard-replication)

@@ -210,7 +210,9 @@ The following fields are configurable in the `spec.tls` section:
 `spec.configuration` is an optional field that specifies custom configuration for Mariadb cluster. It has the following fields:
 
 * `configuration.inline` is an optional field that allows you to provide custom configuration directly in the Mariadb object.
-  + ```yaml
+  + Configuration snippet:
+
+    ```yaml
     configuration:
          inline:
            md.cnf: |
@@ -288,7 +290,7 @@ The `spec.podTemplate.spec.containers[].name` field used to specify the name of 
 
 Note that, KubeDB does not allow `MYSQL_ROOT_PASSWORD`, `MYSQL_ALLOW_EMPTY_PASSWORD`, `MYSQL_RANDOM_ROOT_PASSWORD`, and `MYSQL_ONETIME_PASSWORD` environment variables to set in `spec.env`. If you want to set the root password, please use `spec.authSecret` instead described earlier.
 
-If you try to set any of the forbidden environment variables i.e. `MYSQL_ROOT_PASSWORD` in MariaDB crd, Kubed operator will reject the request with the following error,
+If you try to set any of the forbidden environment variables i.e. `MYSQL_ROOT_PASSWORD` in the MariaDB CRD, KubeDB operator will reject the request with the following error,
 
 ```bash
 Error from server (Forbidden): error when creating "./mariadb.yaml": admission webhook "mariadb.validators.kubedb.com" denied the request: environment variable MYSQL_ROOT_PASSWORD is forbidden to use in MariaDB spec
@@ -350,7 +352,7 @@ KubeDB allows following fields to set in `spec.serviceTemplates`:
   + healthCheckNodePort
   + sessionAffinityConfig
 
-```bash
+```yaml
 spec:
   version: "12.1.2"
   serviceTemplates:

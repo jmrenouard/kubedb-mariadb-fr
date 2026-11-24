@@ -18,7 +18,7 @@ Ce guide vous montrera comment utiliser `KubeDB` pour mettre à l'échelle autom
 
   + [MariaDB](../../../concepts/mariadb.md)
   + [MariaDBAutoscaler](../../../concepts/autoscaler.md)
-  + [MariaDBOpsDemande](../../../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../../../concepts/opsrequest.md)
   + [Présentation de la mise à l'échelle automatique du calcul MariaDB distribué](overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.

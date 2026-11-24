@@ -1,18 +1,18 @@
-> Vous êtes nouveau sur KubeDB ? Veuillez commencer [here](https://kubedb.com/docs/v2026.7.10/README).
+> Vous débutez avec KubeDB ? Commencez [ici](https://kubedb.com/docs/v2026.7.10/README).
 
-# version de mise à jour du cluster MariaDB
+# Mettre à jour la version d'un cluster MariaDB
 
-This guide will show you how to use `KubeDB` Enterprise operator to update the version of `MariaDB` Cluster.
+Ce guide montre comment utiliser l'opérateur KubeDB Enterprise pour mettre à jour la version d'un cluster `MariaDB`.
 
-## Before You Begin
+## Avant de commencer
 
-* Dans un premier temps, vous devez disposer d'un cluster Kubernetes, et le `kubectl` command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
-* Installer `KubeDB` Opérateur Communauté et Entreprise dans votre cluster en suivant les étapes [here](https://kubedb.com/docs/v2026.7.10/setup/README).
+* Vous devez disposer d'un cluster Kubernetes et de l'outil en ligne de commande `kubectl` configuré pour communiquer avec lui. Si vous n'avez pas encore de cluster, créez-en un avec [kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
+* Installer `KubeDB` Opérateur Communauté et Entreprise dans votre cluster en suivant les étapes [ici](https://kubedb.com/docs/v2026.7.10/setup/README).
 * Vous devriez être familier avec ce qui suit `KubeDB` notions :
 
   + [MariaDB](../concepts/mariadb.md)
   + [Cluster](../clustering/overview.md)
-  + [MariaDBOpsDemande](../concepts/opsrequest.md)
+  + [MariaDBOpsRequest](../concepts/opsrequest.md)
   + [Mise à jour de l'aperçu](overview.md)
 
 Pour que tout reste isolé, nous allons utiliser un espace de noms distinct appelé `demo` tout au long de ce tutoriel.
@@ -22,15 +22,15 @@ $ kubectl create ns demo
 namespace/demo created
 ```
 
-## Prepare MariaDB Cluster
+## Préparer le cluster MariaDB
 
 Maintenant, nous allons déployer un `MariaDB` base de données cluster avec version `11.8.5`.
 
-### Deploy MariaDB cluster
+### Déployer le cluster MariaDB
 
 Dans cette section, nous allons déployer un cluster MariaDB. Ensuite, dans la section suivante, nous mettrons à jour la version de la base de données en utilisant `MariaDBOpsRequest` CRD. Vous trouverez ci-dessous le YAML du `MariaDB` CR que nous allons créer,
 
-> If you want to update `MariaDB Standalone`, Just remove the `spec.Replicas` à partir du yaml ci-dessous et le reste des étapes sont les mêmes.
+> Pour mettre à jour une instance `MariaDB` autonome (`Standalone`), supprimez simplement `spec.replicas` du manifeste YAML ci-dessous ; les autres étapes restent identiques.
 
 ```yaml
 apiVersion: kubedb.com/v1
@@ -93,7 +93,7 @@ spec:
 
 Ici,
 
-* `spec.databaseRef.name` specifies that we are performing operation on `sample-mariadb` MariaDB database.
+* `spec.databaseRef.name` indique que l'opération porte sur la base de données MariaDB `sample-mariadb`.
 * `spec.type` précise que nous allons effectuer `UpdateVersion` sur notre base de données.
 * `spec.updateVersion.targetVersion` spécifie la version attendue de la base de données `12.1.2`.
 
@@ -106,7 +106,7 @@ mariadbopsrequest.ops.kubedb.com/mdops-update created
 
 #### Vérifiez la version de MariaDB mise à jour avec succès
 
-If everything goes well, `KubeDB` Enterprise operator will update the image of `MariaDB` objet et associé `PetSets` and `Pods`.
+Si tout se déroule correctement, l'opérateur KubeDB Enterprise met à jour l'image de l'objet `MariaDB` ainsi que des objets `PetSet` et `Pod` associés.
 
 Attendons `MariaDBOpsRequest` être `Successful`. Exécutez la commande suivante pour regarder `MariaDBOpsRequest` CR,
 
@@ -117,9 +117,9 @@ NAME              TYPE            STATUS       AGE
 mdops-update      UpdateVersion   Successful    84s
 ```
 
-We can see from the above output that the `MariaDBOpsRequest` a réussi.
+La sortie ci-dessus confirme que la ressource `MariaDBOpsRequest` a réussi.
 
-Now, we are going to verify whether the `MariaDB` et le connexe `PetSets` and their `Pods` avoir l'image de la nouvelle version. Vérifions,
+Vérifions maintenant que la ressource `MariaDB`, le `PetSet` associé et ses `Pods` utilisent bien l'image de la nouvelle version :
 
 ```bash
 $ kubectl get mariadb -n demo sample-mariadb -o=jsonpath='{.spec.version}{"\n"}'
@@ -132,11 +132,11 @@ $ kubectl get pods -n demo sample-mariadb-0 -o=jsonpath='{.spec.containers[0].im
 mariadb:12.1.2
 ```
 
-You can see from above, our `MariaDB` cluster database has been updated with the new version. So, the update process is successfully completed.
+La sortie ci-dessus confirme que le cluster `MariaDB` utilise désormais la nouvelle version et que la mise à jour est terminée.
 
 ## Nettoyage
 
-To clean up the Kubernetes resources created by this tutorial, run:
+Pour nettoyer les ressources Kubernetes créées dans ce tutoriel, exécutez :
 
 ```bash
 $ kubectl delete mariadb -n demo sample-mariadb

@@ -422,7 +422,9 @@ Après chaque changement de binlog, les fichiers binlog seront téléchargés ve
 
 ```bash
 $ kubectl exec -it -n demo  mariadb-0 -- bash
+```
 
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 MariaDB> create database hello;
@@ -454,7 +456,6 @@ MariaDB [hello]> select now();
 +---------------------+
 | 2024-09-17 05:28:26 |
 +---------------------+
-+---------------------+
 
 MariaDB [hello]> select count(*) from demo_table;
 +----------+
@@ -483,7 +484,7 @@ Nous ne pouvons pas restaurer à partir d'une sauvegarde complète car à ce sta
 
 Pour la démo, j'utiliserai la fois précédente où nous recevrons le formulaire `select now()`
 
-```bash
+```mysql
 MariaDB [hello]> select now();
 +---------------------+
 | now()               |
@@ -558,6 +559,9 @@ restore-mariadb   11.1.3    Ready    5m37s
 
 ```bash
 $ kubectl exec -it -n demo restore-mariadb-0 -- bash
+```
+
+```mysql
 bash-4.4$ mariadb -uroot -p$MYSQL_ROOT_PASSWORD
 
 mariadb> use hello
@@ -594,4 +598,4 @@ $ kubectl delete ns demo
 * Surveillez votre base de données MariaDB avec KubeDB en utilisant [Opérateur Prométhée](../monitoring/prometheus-operator.md).
 * Concepts détaillés de [Objet MariaDB](../concepts/mariadb.md).
 * Utiliser [registre Docker privé](../private-registry/quickstart.md) pour déployer MariaDB avec KubeDB.
-* Vous voulez pirater KubeDB ? Consultez notre [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).
+* Vous souhaitez contribuer à KubeDB ? Consultez nos [directives de contribution](https://kubedb.com/docs/v2026.7.10/CONTRIBUTING).

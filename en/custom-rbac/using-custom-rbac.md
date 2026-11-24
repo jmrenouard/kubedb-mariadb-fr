@@ -40,8 +40,11 @@ serviceaccount/md-custom-serviceaccount created
 
 It should create a service account.
 
-```yaml
+```bash
 $ kubectl get serviceaccount -n demo md-custom-serviceaccount -o yaml
+```
+
+```yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:

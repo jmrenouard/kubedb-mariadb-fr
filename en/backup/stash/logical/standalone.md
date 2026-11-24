@@ -1,4 +1,4 @@
-# Backup KubeDB managed stanadlone MariaDB using Stash
+# Backup KubeDB Managed Standalone MariaDB using Stash
 
 Stash `v0.11.8+` supports backup and restoration of MariaDB databases. This guide will show you how you can take a logical backup of your MariaDB databases and restore them using Stash.
 
@@ -108,6 +108,9 @@ Here, we are going to use the root user (`MYSQL_ROOT_USERNAME`) credential `MYSQ
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -393,6 +396,9 @@ Now, let’s simulate an accidental deletion scenario. Here, we are going to exe
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341
@@ -490,6 +496,9 @@ Now, let’s exec into the database pod and verify whether data actual data was 
 
 ```bash
 $ kubectl exec -it -n demo sample-mariadb-0 -c mariadb -- bash
+```
+
+```mysql
 root@sample-mariadb-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 341

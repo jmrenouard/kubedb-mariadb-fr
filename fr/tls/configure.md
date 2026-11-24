@@ -122,7 +122,7 @@ mariadb.kubedb.com/md-standalone-tls created
 
 **Attendez que la base de données soit prête :**
 
-Maintenant, attends `MariaDB` en cours `Running` état et aussi attendre `PetSet` et son pod à créer et à destination `Running` État,
+Attendez ensuite que l'objet `MariaDB` passe à l'état `Running` et que son `PetSet` et son pod à créer et à destination `Running` État,
 
 ```bash
 $ kubectl get mariadb -n demo md-standalone-tls
@@ -165,7 +165,9 @@ root@md-standalone-tls-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-standalone-tls-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
 
+```mysql
 root@md-standalone-tls-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 64
@@ -204,7 +206,7 @@ MariaDB [(none)]> quit;
 Bye
 ```
 
-La sortie ci-dessus montre que le `MariaDB` Le serveur est configuré sur TLS/SSL. Vous pouvez également voir que le `.crt` et `.key` les fichiers sont stockés dans `/etc/mysql/certs/client/` et `/etc/mysql/certs/server/` répertoire pour le client et le serveur respectivement.
+La sortie ci-dessus montre que le serveur `MariaDB` est configuré pour TLS/SSL. Vous pouvez également voir que le `.crt` et `.key` les fichiers sont stockés dans `/etc/mysql/certs/client/` et `/etc/mysql/certs/server/` répertoire pour le client et le serveur respectivement.
 
 **Vérifiez la connexion sécurisée pour l'utilisateur SSL requis :**
 
@@ -300,7 +302,7 @@ mariadb.kubedb.com/md-cluster-tls created
 
 **Attendez que la base de données soit prête :**
 
-Maintenant, attends `MariaDB` en cours `Running` état et aussi attendre `PetSet` et ses pods à créer et à destination `Running` État,
+Attendez ensuite que l'objet `MariaDB` passe à l'état `Running` et que son `PetSet` et ses pods à créer et à destination `Running` État,
 
 ```bash
 $ kubectl get mariadb -n demo md-cluster-tls
@@ -344,7 +346,9 @@ root@md-cluster-tls-0:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-cluster-tls-0:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
 
+```mysql
 root@md-cluster-tls-0:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 64
@@ -391,6 +395,9 @@ root@md-cluster-tls-1:/ ls /etc/mysql/certs/client
 ca.crt  tls.crt  tls.key
 root@md-cluster-tls-1:/ ls /etc/mysql/certs/server
 ca.crt  tls.crt  tls.key
+```
+
+```mysql
 root@md-cluster-tls-1:/ mariadb -u${MYSQL_ROOT_USERNAME} -p${MYSQL_ROOT_PASSWORD}
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 34
@@ -429,7 +436,7 @@ MariaDB [(none)]> quit;
 Bye
 ```
 
-La sortie ci-dessus montre que le `MariaDB` Le serveur est configuré sur TLS/SSL. Vous pouvez également voir que le `.crt` et `.key` les fichiers sont stockés dans `/etc/mysql/certs/client/` et `/etc/mysql/certs/server/` répertoire pour le client et le serveur respectivement.
+La sortie ci-dessus montre que le serveur `MariaDB` est configuré pour TLS/SSL. Vous pouvez également voir que le `.crt` et `.key` les fichiers sont stockés dans `/etc/mysql/certs/client/` et `/etc/mysql/certs/server/` répertoire pour le client et le serveur respectivement.
 
 **Vérifiez la connexion sécurisée pour l'utilisateur SSL requis :**
 
