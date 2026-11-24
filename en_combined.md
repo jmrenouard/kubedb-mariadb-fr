@@ -1,7 +1,7 @@
 # KubeDB MariaDB Documentation - Combined (EN)
 
 <!-- PAGE_START: README.md -->
-> New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
+> New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README), or browse the structured [EN Diataxis Portal](en/index.md) ([Tutorials](en/01-tutorials/index.md) | [How-To Guides](en/02-how-to-guides/index.md) | [Reference](en/03-reference/index.md) | [Explanation](en/04-explanation/index.md)).
 
 ## Supported MariaDB Features
 
