@@ -1,4 +1,4 @@
-> Vous êtes nouveau sur KubeDB ? Veuillez commencer [ici](https://kubedb.com/docs/v2026.7.10/README).
+> Vous êtes nouveau sur KubeDB ? Commencez [ici](https://kubedb.com/docs/v2026.7.10/README), ou parcourez le [Portail Diataxis FR](index.md) ([Tutoriels](01-tutoriels/index.md) | [Guides pratiques](02-guides-pratiques/index.md) | [Référence](03-reference/index.md) | [Explications](04-explications/index.md)).
 
 ## Fonctionnalités MariaDB prises en charge
 

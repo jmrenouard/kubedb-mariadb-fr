@@ -1,4 +1,4 @@
-> New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README).
+> New to KubeDB? Please start [here](https://kubedb.com/docs/v2026.7.10/README), or browse the structured [EN Diataxis Portal](index.md) ([Tutorials](01-tutorials/index.md) | [How-To Guides](02-how-to-guides/index.md) | [Reference](03-reference/index.md) | [Explanation](04-explanation/index.md)).
 
 ## Supported MariaDB Features
 

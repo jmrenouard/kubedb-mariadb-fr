@@ -2,8 +2,8 @@
 
 Welcome to the offline copy of the KubeDB MariaDB documentation.
 
-- 🇬🇧 [English Version (EN)](en/README.md)
-- 🇫🇷 [Version Française (FR)](fr/README.md)
+- 🇬🇧 [English Documentation Portal (Diataxis)](en/index.md) — [Full EN Topic Index](en/README.md)
+- 🇫🇷 [Portail de documentation français (Diataxis)](fr/index.md) — [Index complet FR](fr/README.md)
 
 ## Architecture Overview
 
